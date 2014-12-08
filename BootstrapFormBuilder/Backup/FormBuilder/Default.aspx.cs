@@ -7,11 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace FormBuilder
 {
-    public partial class About : System.Web.UI.Page
+    /// <summary>
+    /// 
+    /// </summary>
+    public partial class _Default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //
+            
         }
     }
 }
