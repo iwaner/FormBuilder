@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FormBuilder {
+namespace FormBuilder.Bootstrap_Form_Builder {
     
     
-    public partial class _Default {
+    public partial class FormBuilderMain {
     }
 }

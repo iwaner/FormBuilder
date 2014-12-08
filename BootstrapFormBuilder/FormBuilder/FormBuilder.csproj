@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApplication1</RootNamespace>
-    <AssemblyName>WebApplication1</AssemblyName>
+    <RootNamespace>FormBuilder</RootNamespace>
+    <AssemblyName>FormBuilder</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
@@ -120,6 +120,7 @@
     <Content Include="Bootstrap-Form-Builder\assets\js\views\temp-snippet.js" />
     <Content Include="Bootstrap-Form-Builder\DragForm.html" />
     <Content Include="Bootstrap-Form-Builder\DragForm2.html" />
+    <Content Include="Bootstrap-Form-Builder\FormBuilderMain.aspx" />
     <Content Include="Bootstrap-Form-Builder\HelloTest.htm" />
     <Content Include="Bootstrap-Form-Builder\index-dev.html" />
     <Content Include="Bootstrap-Form-Builder\index.html" />
@@ -173,6 +174,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap-Form-Builder\FormBuilderMain.aspx.cs">
+      <DependentUpon>FormBuilderMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap-Form-Builder\FormBuilderMain.aspx.designer.cs">
+      <DependentUpon>FormBuilderMain.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

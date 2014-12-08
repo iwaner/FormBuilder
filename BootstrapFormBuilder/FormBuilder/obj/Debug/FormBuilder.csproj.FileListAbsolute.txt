@@ -10,7 +10,7 @@ H:\OA\BootstrapFormBuilder\FormBuilder\bin\WebApplication1.dll
 H:\OA\BootstrapFormBuilder\FormBuilder\bin\WebApplication1.pdb
 H:\OA\BootstrapFormBuilder\FormBuilder\obj\Debug\WebApplication1.dll
 H:\OA\BootstrapFormBuilder\FormBuilder\obj\Debug\WebApplication1.pdb
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\WebApplication1.dll
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\WebApplication1.pdb
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\WebApplication1.dll
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\WebApplication1.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
