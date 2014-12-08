@@ -17,13 +17,13 @@ namespace FormBuilder.Model
         /// varchar(max)表单的html模板
         /// 示例（有占位符）：<form class='form-horizontal span6' id='temp'><%= text %></form>
         /// </summary>
-        public string FormTemplate { get; set; }
+        public string FormHtmlTemplate { get; set; }
 
         /// <summary>
         /// 表单的model，json格式的字符串
         /// <form class='form-horizontal span6' id='temp'><%= text %></form>
         /// </summary>
-        public string FormIModel { get; set; }
+        public string FormModel { get; set; }
 
         /// <summary>
         /// --int64对应一个工作流
@@ -170,7 +170,7 @@ namespace FormBuilder.Model
         /// 表单的model，json格式的字符串
         /// <form class='form-horizontal span6' id='temp'><%= text %></form>
         /// </summary>
-        public string FormIModel { get; set; }
+        public string FormModel { get; set; }
 
         /// <summary>
         /// 表单的实际html格式(辅助使用)
