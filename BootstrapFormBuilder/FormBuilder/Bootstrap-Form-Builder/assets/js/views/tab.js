@@ -7,7 +7,8 @@ define([
   return Backbone.View.extend({
     tagName: "div"
     , className: "tab-pane"
-    , initialize: function() {
+    , initialize: function (options) {
+      this.options = options;
       this.id = this.options.title.toLowerCase().replace(/\W/g,'');
       this.tabNavTemplate = _.template(_tabNavTemplate);
       this.render();
