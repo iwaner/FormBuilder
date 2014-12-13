@@ -8,7 +8,7 @@ define([
   , SnippetModel
   , SnippetView, TempSnippetView
   , PubSub
-){
+){//tab-snippet扩展(继承)了snippet
   return SnippetView.extend({
     events:{
       "mousedown" : "mouseDownHandler"

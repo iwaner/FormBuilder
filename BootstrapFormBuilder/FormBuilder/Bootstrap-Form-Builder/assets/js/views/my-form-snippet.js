@@ -31,7 +31,7 @@ define([
             Math.abs(mouseDownEvent.pageY - mouseMoveEvent.pageY) > 10
           ){
             that.$el.popover('destroy');
-            PubSub.trigger("mySnippetDrag", mouseDownEvent, that.model);//��һ������ʲô��˼�����ĸ�����
+            PubSub.trigger("mySnippetDrag", mouseDownEvent, that.model);//µÚÒ»¸ö²ÎÊýÊ²Ã´ÒâË¼£¬ÊÇÄÄ¸ö¶ÔÏó
             that.mouseUpHandler();
           };
         });
@@ -47,7 +47,7 @@ define([
         $("body").off("mousemove");
     }
 
-    , saveHandler : function(boundContext) {
+    , saveHandler : function(boundContext) {//保存在popover中编辑的控件的各个属性
       return function(mouseEvent) {
         mouseEvent.preventDefault();
         var fields = $(".popover .field");
