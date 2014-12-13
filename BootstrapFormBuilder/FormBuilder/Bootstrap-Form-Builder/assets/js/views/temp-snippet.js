@@ -8,7 +8,7 @@ define([
   , SnippetView
   , _tempTemplate
   , PubSub
-){
+){//实现拖动控件效果的clone出的临时view
   return SnippetView.extend({
     initialize: function(){
       PubSub.on("newTempPostRender", this.postRender, this);
