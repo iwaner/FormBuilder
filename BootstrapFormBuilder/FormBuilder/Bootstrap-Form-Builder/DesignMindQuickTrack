@@ -1,0 +1,18 @@
+
+2014-12-15
+1.参考popover的实现，通过设置一个css class或者data-xxx标志，筛选出表单中的真正数据控件
+另外，设置data-type属性，标志该控件是何种类型(是但不完全是html控件类型)，便于使用合适的方法取出控件的值；
+示例：views/my-form-snippet.js
+switch(type) {
+case "checkbox":
+case "input":
+case "textarea":
+case "textarea-split":
+case "select":
+}
+
+a.给template中的各个数据snippet添加data-type
+b.model中添加data-type属性
+c.定义一个controltype常量值对象
+d.rendered方法中添加对model的保存，或者说，添加一个额外的保存方法
+
