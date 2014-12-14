@@ -1,3 +1,4 @@
+//表单设计器的view
 define([
        "jquery", "underscore", "backbone"
       , "views/temp-snippet"
@@ -60,7 +61,7 @@ define([
       PubSub.trigger("newTempPostRender", mouseEvent);
     }
 
-    , handleTempMove: function(mouseEvent){//拖动控件（随着鼠标移动的snippt）的移动事件handler
+    , handleTempMove: function(mouseEvent){//被拖动控件（随着鼠标移动的snippt）的移动事件handler
       $(".target").removeClass("target");
       if(mouseEvent.pageX >= this.$build.position().left &&
           mouseEvent.pageX < (this.$build.width() + this.$build.position().left) &&

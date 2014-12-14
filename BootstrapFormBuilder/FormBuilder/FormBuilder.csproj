@@ -43,6 +43,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LibResource\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -94,6 +98,7 @@
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\renderform.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\tab-nav.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\temp.html" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\user-doc.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\popover\popover-checkbox.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\popover\popover-input.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\popover\popover-main.html" />
@@ -134,6 +139,7 @@
     <Content Include="Bootstrap-Form-Builder\index-dev.html" />
     <Content Include="Bootstrap-Form-Builder\index.html" />
     <Content Include="Bootstrap-Form-Builder\LocalToDO.htm" />
+    <Content Include="LibResource\Newtonsoft.Json.dll" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -201,6 +207,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\FormJson.cs" />
     <Compile Include="Model\FormTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

@@ -20,7 +20,7 @@ namespace FormBuilder.Model
         public string FormHtmlTemplate { get; set; }
 
         /// <summary>
-        /// 表单的model，json格式的字符串
+        /// 表单的model，json格式的字符串，结构为FormBuilder.Model.FormModel
         /// <form class='form-horizontal span6' id='temp'><%= text %></form>
         /// </summary>
         public string FormModel { get; set; }
@@ -71,82 +71,86 @@ namespace FormBuilder.Model
         public string ControlType { get; set; }
         /// <summary>
         ///控件html模板
-        /// 示例：<!-- Button -->
-        ///<div class="control-group">
-        ///  <label class="control-label" for="<%- id %>"><%- label %></label>
-        ///  <div class="controls">
-        ///    <button id="<%- id %>" name="<%- id %>" class='btn <%- buttontype %>'><%- buttonlabel %></button>
-        ///  </div>
-        ///</div>
         /// </summary>
-        public string ControlTemplate { get; set; }
+        public string ControlTemplate { get; set;
+            #region  示例：<!-- Button -->
+            // 示例：<!-- Button -->
+            //<div class="control-group">
+            //  <label class="control-label" for="<%- id %>"><%- label %></label>
+            //  <div class="controls">
+            //    <button id="<%- id %>" name="<%- id %>" class='btn <%- buttontype %>'><%- buttonlabel %></button>
+            //  </div>
+            //</div>
+            #endregion
+        }
         /// <summary>
         /// 控件model，json格式的字符串,示例：
         /// </summary>
-        public string ControlModel { 
-            //示例格式
-  //          "fields": {
-  //    "buttontype": {
-  //      "type": "select",
-  //      "label": "Button Type",
-  //      "value": [
-  //        {
-  //          "label": "Default",
-  //          "value": "btn-default",
-  //          "selected": false
-  //        },
-  //        {
-  //          "label": "Primary",
-  //          "value": "btn-primary",
-  //          "selected": true
-  //        },
-  //        {
-  //          "label": "Info",
-  //          "value": "btn-info",
-  //          "selected": false
-  //        },
-  //        {
-  //          "label": "Success",
-  //          "value": "btn-success",
-  //          "selected": false
-  //        },
-  //        {
-  //          "label": "Warning",
-  //          "value": "btn-warning",
-  //          "selected": false
-  //        },
-  //        {
-  //          "label": "Danger",
-  //          "value": "btn-danger",
-  //          "selected": false
-  //        },
-  //        {
-  //          "label": "Inverse",
-  //          "value": "btn-inverse",
-  //          "selected": false
-  //        }
-  //      ]
-  //    },
-  //    "id": {
-  //      "type": "input",
-  //      "label": "ID / Name",
-  //      "value": "singlebutton"
-  //    },
-  //    "label": {
-  //      "type": "input",
-  //      "label": "Label Text",
-  //      "value": "Single Button"
-  //    },
-  //    "buttonlabel": {
-  //      "type": "input",
-  //      "label": "Button Label",
-  //      "value": "Button"
-  //    }
-  //  },
-  //  "title": "Single Button"
-  //}
-            
-            get; set; }
+        public string ControlModel { get; set;
+            #region ControlModel示例格式
+            //          "fields": {
+            //    "buttontype": {
+            //      "type": "select",
+            //      "label": "Button Type",
+            //      "value": [
+            //        {
+            //          "label": "Default",
+            //          "value": "btn-default",
+            //          "selected": false
+            //        },
+            //        {
+            //          "label": "Primary",
+            //          "value": "btn-primary",
+            //          "selected": true
+            //        },
+            //        {
+            //          "label": "Info",
+            //          "value": "btn-info",
+            //          "selected": false
+            //        },
+            //        {
+            //          "label": "Success",
+            //          "value": "btn-success",
+            //          "selected": false
+            //        },
+            //        {
+            //          "label": "Warning",
+            //          "value": "btn-warning",
+            //          "selected": false
+            //        },
+            //        {
+            //          "label": "Danger",
+            //          "value": "btn-danger",
+            //          "selected": false
+            //        },
+            //        {
+            //          "label": "Inverse",
+            //          "value": "btn-inverse",
+            //          "selected": false
+            //        }
+            //      ]
+            //    },
+            //    "id": {
+            //      "type": "input",
+            //      "label": "ID / Name",
+            //      "value": "singlebutton"
+            //    },
+            //    "label": {
+            //      "type": "input",
+            //      "label": "Label Text",
+            //      "value": "Single Button"
+            //    },
+            //    "buttonlabel": {
+            //      "type": "input",
+            //      "label": "Button Label",
+            //      "value": "Button"
+            //    }
+            //  },
+            //  "title": "Single Button"
+            //}
+
+            #endregion
+        }
         public DateTime CreateTime { get; set; }
         public string CreateUser { get; set; }
         public DateTime ModifyTime { get; set; }
