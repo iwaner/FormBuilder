@@ -1,0 +1,115 @@
+﻿
+.ui-widget {
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 1.1em;
+}
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 1em;
+}
+
+.ui-icon { 
+    width: 16px;
+    height: 16px; 
+    background-image: url(../img/ui-icons_0073ea_256x240.png);
+    display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+   /* position: absolute;
+	top: 50%;
+	margin-top: 2px;
+    left: 50%;
+	margin-left: -8px;*/
+}
+.ui-icon-circle-minus { background-position: -16px -192px; }
+.ui-icon-circle-plus { background-position: 0 -192px; }
+.ui-icon-circle-arrow-e { background-position: -112px -192px; }
+.ui-icon-circle-close { background-position: -32px -192px; }
+.ui-icon-circle-minus { background-position: -16px -192px; }
+.ui-icon-circle-check { background-position: -208px -192px; }
+
+.ui-button {
+    text-decoration: none;
+	display: inline-block;
+	position: relative;
+	padding: 0;
+	line-height: normal;
+	margin-right: .1em;
+	cursor: pointer;
+	vertical-align: middle;
+	text-align: center;
+	overflow: visible; /* removes extra width in IE */
+}
+
+.ui-widget-header .ui-state-default {
+	border: 1px solid #dddddd;
+	background: #f6f6f6 url(../img/ui-bg_highlight-soft_100_f6f6f6_1x100.png) 50% 50% repeat-x;
+	font-weight: bold;
+	color: #0073ea;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+	color: #0073ea;
+	text-decoration: none;
+}
+
+.ui-button,
+.ui-button:link,
+.ui-button:visited,
+.ui-button:hover,
+.ui-button:active {
+	text-decoration: none;
+}
+
+.ui-button .ui-button-text { 
+    display: block;
+	line-height: normal; 
+
+}
+
+.ui-button-text-icon-primary {
+    padding: .4em 1em .4em 2.1em;
+    /*position: absolute;*/
+	top: 50%;
+	margin-top: -8px;
+    left: .5em;
+}
+
+.ui-icon {
+	position: absolute;
+	top: .2em;
+	left: .2em;
+}
+
+.ui-corner-all {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+	opacity: .35;
+	filter:Alpha(Opacity=35);
+	background-image: none;
+}
+.ui-state-disabled .ui-icon {
+	filter:Alpha(Opacity=35); /* For IE8 - See #6059 */
+}
+.ui-widget-header {
+	/*border: 1px solid #dddddd;
+	background: #dddddd url(../img/ui-bg_highlight-soft_50_dddddd_1x100.png) 50% 50% repeat-x;
+	color: #444444;
+	font-weight: bold;*/
+}
