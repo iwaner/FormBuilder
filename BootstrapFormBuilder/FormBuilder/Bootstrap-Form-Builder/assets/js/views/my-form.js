@@ -4,11 +4,13 @@ define([
       , "views/temp-snippet"
       , "helper/pubsub"
       , "text!templates/app/renderform.html"
+      ,"models/test"
 ], function(
   $, _, Backbone
   , TempSnippetView
   , PubSub
   , _renderForm
+  ,testModel
 ){
   return Backbone.View.extend({
     tagName: "fieldset"
@@ -22,6 +24,11 @@ define([
       this.$build = $("#build");//待build的目标表单
       this.renderForm = _.template(_renderForm);
       this.render();
+      /*
+      console.log(testModel);
+      console.log(typeof testModel);
+      console.log(testModel.prototype);
+      */
     }
 
     , render: function(){

@@ -12,13 +12,14 @@ namespace FormBuilder.Model
     /// </summary>
     public class FormModel
     {
-        public ControlSnipptCollection ControlCollection { get; set; }
-    }
-
-    public class ControlSnipptCollection
-    {
+        //public ControlSnipptCollection ControlCollection { get; set; }
         public List<ControlSnipptModel> ControlSnippts { get; set; }
     }
+
+    //public class ControlSnipptCollection
+    //{
+    //    public List<ControlSnipptModel> ControlSnippts { get; set; }
+    //}
 
     /// <summary>
     /// 控件类型

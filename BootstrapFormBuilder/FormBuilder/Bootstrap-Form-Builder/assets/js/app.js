@@ -4,16 +4,30 @@ define([
        , "views/tab" , "views/my-form"
        , "text!data/input.json", "text!data/radio.json", "text!data/select.json", "text!data/buttons.json"
        , "text!templates/app/render.html",  "text!templates/app/about.html", "text!templates/app/user-doc.html"
+       ,"models/test"
 ], function(
   $, _, Backbone
   , SnippetsCollection, MyFormSnippetsCollection
   , TabView, MyFormView
   , inputJSON, radioJSON, selectJSON, buttonsJSON
   , renderTab, aboutTab,userDocTab
+  ,testModel
 ){
   return {
     initialize: function(){
+      /*
+      var testM=new testModel();
+      console.log(testM.name);
+      testM.setName("New name");
+      console.log(testM.name);
+      */
 
+       
+      console.log(testModel);
+      console.log(typeof testModel);
+      console.log(testModel.constructor);
+      console.log(testModel.prototype);
+      
       //Bootstrap tabs from json.
       new TabView({
         title: "Input文本框"
@@ -66,3 +80,5 @@ define([
     }
   }
 });
+
+//console.log(appModual);
