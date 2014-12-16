@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap Form Builder</title>
+    <title>表单设计器</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -23,11 +23,11 @@
   </head>
 
   <body>
-    <a href="https://github.com/minikomi/Bootstrap-Form-Builder/"><img style="z-index: 100000; position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+    <a href="###"><img style="z-index: 100000; position: absolute; top: 0; right: 0; border: 0;" src="" alt="put your logo here"></a>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="#">Bootstrap Form Builder</a>
+          <a class="brand" href="#">表单设计器</a>
         </div>
       </div>
     </div>
@@ -36,19 +36,20 @@
         <!-- Building Form. -->
         <div class="span6">
           <div class="clearfix">
-            <h2>Your Form</h2>
+            <h2>当前表单</h2>
             <hr>
             <div id="build">
               <form id="target" class="form-horizontal">
               </form>
             </div>
+            <button id="saveForm" class="btn btn-info">保存表单</button>
           </div>
         </div>
         <!-- / Building Form. -->
 
         <!-- Components -->
         <div class="span6">
-          <h2>Drag & Drop components</h2>
+          <h2>拖放组件</h2>
           <hr>
           <div class="tabbable">
             <ul class="nav nav-tabs" id="formtabs">
@@ -70,25 +71,13 @@
       <div class="row clearfix">
         <div class="span12">
           <hr>
-          By Adam Moore (<a href="http://twitter.com/minikomi" >@minikomi</a>).<br/>
-          Source on (<a href="https://github.com/minikomi/Bootstrap-Form-Builder" >Github</a>).
+          By 广易东方 (<a href="### >@minikomi</a>).<br/>
+          Source on (<a href="### ></a>).
         </div>
       </div>
 
     </div> <!-- /container -->
 
     <script data-main="assets/js/main.js" src="assets/js/lib/require.js" ></script>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-13083321-13', 'minikomi.github.io');
-        ga('send', 'pageview');
-
-    </script>
   </body>
 </html>
