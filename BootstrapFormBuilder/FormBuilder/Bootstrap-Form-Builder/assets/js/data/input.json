@@ -45,7 +45,7 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Text Input11"
+        "value": "Text Input"
       },
       "helptext": {
         "type": "input",
