@@ -23,7 +23,7 @@ namespace FormBuilder.Model
         /// 表单的model，json格式的字符串，结构为FormBuilder.Model.FormModel
         /// <form class='form-horizontal span6' id='temp'><%= text %></form>
         /// </summary>
-        public string FormModel { get; set; }
+        public FormTemplateModel FormTemplateData { get; set; }
 
         /// <summary>
         /// --int64对应一个工作流
@@ -51,7 +51,7 @@ namespace FormBuilder.Model
         /// <summary>
         /// --表单保存的数据，json格式
         /// </summary>
-        public string FormData { get; set; }
+        public FormInstanceModel FormData { get; set; }
         public Int64 WorkflowId { get; set; }
         public DateTime CreateTime { get; set; }
         public string CreateUser { get; set; }
