@@ -25,3 +25,9 @@ C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilde
 C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.csprojResolveAssemblyReference.cache
 C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
 C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Bootstrap-Form-Builder\assets\js\data\buttons.json
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Newtonsoft.Json.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
