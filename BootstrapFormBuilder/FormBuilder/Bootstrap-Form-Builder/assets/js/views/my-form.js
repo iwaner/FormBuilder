@@ -40,7 +40,11 @@ define([
       });
       $("#render").val(that.renderForm({
         text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
-      }));
+    }));
+    //表单预览
+    $("#previewContent").html(that.renderForm({
+        text: _.map(this.collection.renderAllClean(), function (e) { return e.html() }).join("\n")
+    }));
       this.$el.appendTo("#build form");
       this.delegateEvents();
     }

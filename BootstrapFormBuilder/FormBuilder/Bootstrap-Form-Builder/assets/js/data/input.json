@@ -45,7 +45,7 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Text Input"
+        "value": "Text Input文本框"
       },
       "helptext": {
         "type": "input",
@@ -111,7 +111,7 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Password Input"
+        "value": "Password Input密码"
       },
       "helptext": {
         "type": "input",
@@ -177,7 +177,7 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Search Input"
+        "value": "Search Input搜索框"
       },
       "helptext": {
         "type": "input",

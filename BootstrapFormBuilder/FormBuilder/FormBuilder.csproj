@@ -94,6 +94,7 @@
     <Content Include="Bootstrap-Form-Builder\assets\js\main.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\models\snippet.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\about.html" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\preview.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\render.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\renderform.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\tab-nav.html" />

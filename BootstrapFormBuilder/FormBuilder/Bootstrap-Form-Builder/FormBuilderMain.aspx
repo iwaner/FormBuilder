@@ -71,7 +71,7 @@
       <div class="row clearfix">
         <div class="span12">
           <hr>
-          By 广易东方 (<a href="### >@minikomi</a>).<br/>
+          By xxx (<a href="### ></a>).<br/>
           Source on (<a href="### ></a>).
         </div>
       </div>
