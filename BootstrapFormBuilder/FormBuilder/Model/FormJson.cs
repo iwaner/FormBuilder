@@ -8,23 +8,44 @@ using Newtonsoft;
 namespace FormBuilder.Model
 {
     /// <summary>
-    /// 表单model(Json格式)
+    /// 表单模板model
     /// </summary>
-    public class FormModel
+    public class FormTemplateModel
     {
-        //public ControlSnipptCollection ControlCollection { get; set; }
-        public List<ControlSnipptModel> ControlSnippts { get; set; }
+        public Int64 FormId { get; set; }
+
+        public string FormName { get; set; }
+
+        public List<ControlGroupModel> ControlGroups { get; set; }
     }
 
-    //public class ControlSnipptCollection
-    //{
-    //    public List<ControlSnipptModel> ControlSnippts { get; set; }
-    //}
+    /// <summary>
+    /// 表单数据model
+    /// </summary>
+    public class FormInstanceModel
+    {
+        /// <summary>
+        /// 实例Id
+        /// </summary>
+        public Int64 FormInstanceId { get; set; }
+        /// <summary>
+        /// 表单对应的模板ID
+        /// </summary>
+        public Int64 FormTemplateId { get; set; }
+
+        public List<FormFieldDataModel> DataFields{ get; set; }
+    }
 
     /// <summary>
-    /// 控件类型
+    /// 控件组类型，Form temlate级别，和一个form template记录挂钩，对于该template值来说，这个值是一样的
+    /// 控件组：
+    /// 一个控件组是若干个控件组合成的，在表单中作为最小的拖动/添加/移除单元，
+    /// 一个控件组中有一个控件是表单业务数据真正保存和编辑的，这个控件有id，有data-attr表示控件是哪种业务数据（请假日期，请假天数）;
+    /// 控件组的model:
+    /// 一个控件组对应一个model{title:"",formFieldKey:"",orderInForm:1,fields:{}},model绑定到模板上，输出html
+    /// 
     /// </summary>
-    public class ControlSnipptModel
+    public class ControlGroupModel
     {
         /// <summary>
         /// input/select ...
@@ -46,13 +67,39 @@ namespace FormBuilder.Model
         /// <summary>
         /// 控件的属相，属性值，格式为json
         /// </summary>
-        public FormFieldDataJson FieldData { get; set; }
+        public string ControlGroupTemplateModel { get; set; }
+
+        /// <summary>
+        /// 根据控件类型获得不同格式的控件model格式
+        /// </summary>
+        /// <param name="ctrType"></param>
+        /// <returns></returns>
+        public string GetControlGroupTemplateModel(ControlTypeEnum ctrType)
+        {
+            string valueJsonStr = string.Empty;
+            //根据控件类型返回不同格式的控件值
+            switch (ControlTypeEnum.input)
+            {
+                case ControlTypeEnum.input:
+
+                    break;
+                case ControlTypeEnum.select:
+                    break;
+                default:
+                    break;
+            }
+            return valueJsonStr;
+        }
+
     }
 
+
+
     /// <summary>
+    /// 表单真正的业务数据保存在此，和一个具体的form instance挂钩
     /// 控件的属性和属性值参考input.json
     /// </summary>
-    public class FormFieldDataJson
+    public class FormFieldDataModel
     {
         public string ControlType { get; set; }
 
@@ -109,32 +156,39 @@ namespace FormBuilder.Model
           //}
         //}
         #endregion
-        /// <summary>
-        /// 根据控件类型获得不同格式的控件值
-        /// </summary>
-        /// <param name="ctrType"></param>
-        /// <returns></returns>
-        public string GetFieldValue(ControlTypeEnum ctrType)
-        {
-            string valueJsonStr = string.Empty;
-            //根据控件类型返回不同格式的控件值
-            switch (ControlTypeEnum.Input)
-            {
-                case ControlTypeEnum.Input:
-
-                    break;
-                case ControlTypeEnum.Select:
-                    break;
-                default:
-                    break;
-            }
-            return valueJsonStr;
-        }
+      
     }
 
     public enum ControlTypeEnum
     { 
-        Input,
-        Select
+        input,
+        select
+    }
+    /// <summary>
+    /// 控件组类型
+    /// </summary>
+    public enum ControlGroupTypeEnum
+    {
+        textinput,
+        passwordinput,
+        searchinput,
+        prependedtext,
+        appendedtext,
+        prependedcheckbox,
+        appendedcheckbox,
+        buttondropdown,
+        textarea,
+
+        multipleradios,
+        multipleradiosinline,
+        multiplecheckboxes,
+        multiplecheckboxesinline,
+
+        filebutton,
+        singlebutton,
+        doubleButton,
+
+        selectbasic,
+        selectmultiple,
     }
 }
