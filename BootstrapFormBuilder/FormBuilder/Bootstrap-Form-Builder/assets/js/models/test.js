@@ -1,12 +1,12 @@
 define([
       'jquery', 'underscore', 'backbone'
 ], function($, _, Backbone) {
-  return Backbone.Model.extend({
+  return {
     initialize: function() {
     }
     , name:"Initial name"
     ,setName: function (e){
       this.name=e;
     }
-  });
+  };
 });

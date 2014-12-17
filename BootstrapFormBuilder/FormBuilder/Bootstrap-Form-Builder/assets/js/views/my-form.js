@@ -5,16 +5,17 @@ define([
       , "helper/pubsub"
       , "text!templates/app/renderform.html"
       ,"models/test","models/GlobalModel"
+      ,"collections/my-form-snippets","views/my-form","views/use-form"
 ], function(
   $, _, Backbone
   , TempSnippetView
   , PubSub
   , _renderForm
   ,testModel,GlobalModel
+  ,MyFormSnippetsCollection,MyFormView,UseFormView
 ){
   return Backbone.View.extend({
     tagName: "fieldset"
-    , globalSaveModel:{}
     , initialize: function(){
       this.collection.on("add", this.render, this);
       this.collection.on("remove", this.render, this);
@@ -22,17 +23,33 @@ define([
       PubSub.on("mySnippetDrag", this.handleSnippetDrag, this);
       PubSub.on("tempMove", this.handleTempMove, this);
       PubSub.on("tempDrop", this.handleTempDrop, this);
+
+      //////////保存表单
+      $("#saveForm").bind("click", function (argument) {
+            g_globalModel.GlobalModelRef.save();
+        });
+       //////////使用表单
+      $("#btnUseForm").bind("click", function (argument) {
+        /*
+        var useformView=new UseFormView({
+          title: "Original"
+          , collection: new MyFormSnippetsCollection(JSON.parse(g_globalModel.FormTemplate.FormTemplateData.ControlGroups))
+        });*/
+      var useformView=new UseFormView({
+          title: "Original"
+          , collection: new MyFormSnippetsCollection(JSON.parse($("#formTemplateData").val()))
+        });
+        $("#useForm").html(useformView.renderForm({
+            text: _.map(useformView.collection.renderAllClean(), function (e) { return e.html() }).join("\n")
+        }));
+        
+        });
+
+
       this.$build = $("#build");//待build的目标表单
       this.renderForm = _.template(_renderForm);
       this.render();
-      /*
-      console.log(testModel);
-      console.log(typeof testModel);
-      console.log(testModel.prototype);
-      */
-      this.globalSaveModel=new GlobalModel();
     }
-
     , render: function(){
       //Render Snippet Views
       this.$el.empty();
@@ -49,12 +66,10 @@ define([
     }));
       this.$el.appendTo("#build form");
       this.delegateEvents();
-      //保存
-      if(!this.globalSaveModel)
-      {
-        this.globalSaveModel=new GlobalModel();
-      }
-      this.globalSaveModel.save(this.collection.model);
+      //保存表单数据
+      //g_globalModel.GlobalModelRef.setControlGroups(this.collection.models);
+      //g_globalModel.GlobalModelRef.save();
+      //
     }
 
     , getBottomAbove: function(eventY){//找出满足条件的组件：拖动组件插入表单时，判断当前拖动的组件应该插入到表单中哪个组件的位置
@@ -100,10 +115,23 @@ define([
         var index = $(".target").index();
         $(".target").removeClass("target");
         this.collection.add(model,{at: index+1});//将model添加进目标比偶单的collection，
+        g_globalModel.GlobalModelRef.addControlGroup(model);
       } else {
         $(".target").removeClass("target");
       }
     }
+    ,useExistingForm:function(formTemplateData){
+      //根据保存的表单数据查看和使用表单
+
+    }
+    ,editFormTemplate:function(formTemplateData){
+      //编辑表单模板
+
+    }
+    ,saveFormHandler:function(formTemplateData){
+      //保存表单
+    }
     
   })
 });
+

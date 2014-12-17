@@ -92,7 +92,10 @@
     <Content Include="Bootstrap-Form-Builder\assets\js\lib\underscore.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\main-built.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\main.js" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\models\FormSaveModel.js" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\models\GlobalModel.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\models\snippet.js" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\models\test.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\about.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\preview.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\render.html" />

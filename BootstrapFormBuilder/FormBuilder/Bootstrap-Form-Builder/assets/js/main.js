@@ -23,6 +23,7 @@ require.config({
     , views       : "../views"
   }
 });
-require([ 'app/app'], function(app){
+require([ 'app/app','models/GlobalModel'], function(app,globalModual){
+  globalModual.initialize();
   app.initialize();
 });

@@ -41,8 +41,10 @@
             <div id="build">
               <form id="target" class="form-horizontal">
               </form>
+               <button id="saveForm" class="btn btn-info">保存表单</button>
+               <button id="btnUseForm" class="btn btn-info">使用表单</button>
             </div>
-            <button id="saveForm" class="btn btn-info">保存表单</button>
+           
           </div>
         </div>
         <!-- / Building Form. -->
@@ -77,7 +79,11 @@
       </div>
 
     </div> <!-- /container -->
-
+    <script type="text/javascript" >
+        var g_globalModel = {};
+        
+    </script>
     <script data-main="assets/js/main.js" src="assets/js/lib/require.js" ></script>
+
   </body>
 </html>

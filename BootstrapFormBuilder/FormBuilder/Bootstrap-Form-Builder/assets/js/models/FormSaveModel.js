@@ -11,9 +11,9 @@ define([
      	this.intialFormData();
     }
     //保存表单的数据，此数据将被传回服务器
-    , FormSaveModel: {}
+    , FormTemplate: {}
     ,intialFormData:function(){
-    	this.FormSaveModel=
+    	this.FormTemplate=
     	{
 	    	ControlSnippts:[
 	    	{
