@@ -6,7 +6,8 @@
 *.user
 *.userosscache
 *.sln.docstates
-*DesignTimeResolveAssemblyReferencesInput.cache
+DesignTimeResolveAssemblyReferencesInput.cache
+FormBuilder.csproj.FileListAbsolute.txt
 
 # Build results
 [Dd]ebug/
