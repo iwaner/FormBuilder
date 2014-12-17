@@ -153,6 +153,7 @@
     <Content Include="Scripts\jquery.ui.plupload\img\ui-bg_highlight-soft_50_dddddd_1x100.png" />
     <Content Include="Scripts\jquery.ui.plupload\img\ui-icons_0073ea_256x240.png" />
     <Content Include="Scripts\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="Sql\FormBuilderTables.sql" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -243,7 +244,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Sql\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
