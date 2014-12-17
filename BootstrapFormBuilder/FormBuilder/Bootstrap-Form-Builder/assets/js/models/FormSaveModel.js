@@ -1,11 +1,13 @@
 /*
 保存表单的数据，此数据将被传回服务器
 */
+
+
 define([
       'jquery', 'underscore', 'backbone'
 ], function($, _, Backbone) {
   return Backbone.Model.extend({
-    initialize: function() {
+       initialize: function() {
      	this.intialFormData();
     }
     //保存表单的数据，此数据将被传回服务器
@@ -31,5 +33,5 @@ define([
 	    }
 
     }
-    );
+  });
 });

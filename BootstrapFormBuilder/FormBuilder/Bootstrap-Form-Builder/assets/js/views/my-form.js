@@ -4,16 +4,17 @@ define([
       , "views/temp-snippet"
       , "helper/pubsub"
       , "text!templates/app/renderform.html"
-      ,"models/test"
+      ,"models/test","models/GlobalModel"
 ], function(
   $, _, Backbone
   , TempSnippetView
   , PubSub
   , _renderForm
-  ,testModel
+  ,testModel,GlobalModel
 ){
   return Backbone.View.extend({
     tagName: "fieldset"
+    , globalSaveModel:{}
     , initialize: function(){
       this.collection.on("add", this.render, this);
       this.collection.on("remove", this.render, this);
@@ -29,6 +30,7 @@ define([
       console.log(typeof testModel);
       console.log(testModel.prototype);
       */
+      this.globalSaveModel=new GlobalModel();
     }
 
     , render: function(){
@@ -47,6 +49,12 @@ define([
     }));
       this.$el.appendTo("#build form");
       this.delegateEvents();
+      //保存
+      if(!this.globalSaveModel)
+      {
+        this.globalSaveModel=new GlobalModel();
+      }
+      this.globalSaveModel.save(this.collection.model);
     }
 
     , getBottomAbove: function(eventY){//找出满足条件的组件：拖动组件插入表单时，判断当前拖动的组件应该插入到表单中哪个组件的位置
@@ -96,5 +104,6 @@ define([
         $(".target").removeClass("target");
       }
     }
+    
   })
 });

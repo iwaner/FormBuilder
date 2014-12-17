@@ -1,5 +1,5 @@
-var g_globalModel={};
 
+var g_globalModel;
 /*
 此model通过给全局变量赋值用来保存页面中的全局数据
 */
@@ -15,9 +15,20 @@ define([
      
     }
     //保存表单的数据，此数据将被传回服务器
-    , formSaveModel: new FormSaveModel());
-    ,save: function (){
+    , formSaveModel: new FormSaveModel({title:""})
+    ,save: function (dataToSave){
+      /**/
     	//保存model到全局变量
-    	g_globalModel.FormSaveModel=this.formSaveModel;
+      if(dataToSave)
+      {
+        g_globalModel.FormSaveModel=dataToSave;
+      }
+      else
+      {
+        g_globalModel.FormSaveModel=this.formSaveModel;
+      }
+      console.log(JSON.stringify(g_globalModel.FormSaveModel));
+    	
     }
+});
 });

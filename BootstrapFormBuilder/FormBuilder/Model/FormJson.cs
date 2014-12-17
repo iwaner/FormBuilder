@@ -12,6 +12,11 @@ namespace FormBuilder.Model
     /// </summary>
     public class FormTemplateModel
     {
+        public FormTemplateModel()
+        {
+            ControlGroups = new List<ControlGroupModel>();
+        }
+
         public Int64 FormId { get; set; }
 
         public string FormName { get; set; }
@@ -24,6 +29,12 @@ namespace FormBuilder.Model
     /// </summary>
     public class FormInstanceModel
     {
+        public FormInstanceModel()
+        {
+            DataFields = new List<FormFieldDataModel>();
+        }
+
+
         /// <summary>
         /// 实例Id
         /// </summary>
