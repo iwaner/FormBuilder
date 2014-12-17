@@ -31,3 +31,9 @@ H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.pdb
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Newtonsoft.Json.dll
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Bootstrap-Form-Builder\assets\js\data\buttons.json
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Newtonsoft.Json.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
