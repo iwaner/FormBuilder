@@ -54,9 +54,11 @@ define([
       //Render Snippet Views
       this.$el.empty();
       var that = this;
+      //el元素赋值
       _.each(this.collection.renderAll(), function(snippet){
         that.$el.append(snippet);
       });
+      //展示比较干净的html(移除了某些html元素的自定义属性)
       $("#render").val(that.renderForm({
         text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
     }));

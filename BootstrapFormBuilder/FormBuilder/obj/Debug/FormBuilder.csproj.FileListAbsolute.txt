@@ -37,3 +37,4 @@ H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.pdb
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Newtonsoft.Json.dll
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
+H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.csprojResolveAssemblyReference.cache
