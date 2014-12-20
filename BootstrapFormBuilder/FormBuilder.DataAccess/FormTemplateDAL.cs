@@ -62,9 +62,20 @@ namespace FormBuilder.DataAccess
             }
         }
 
-        public static void GetFormTemplateByTemplateId()
+        public static void GetFormTemplateByTemplateId(Int64 templateId)
         {
-
+            using (var conn = new SqlConnection(ConnectionString))
+            {
+                var cmdTxt = "SELECT * FROM [dbo].[FormTemplate] WHERE FormId = " + templateId +
+                             "; SELECT * FROM [dbo].[FormControlGroup] WHERE FormTemplateId =  " + templateId;
+                var cmd = new SqlCommand(cmdTxt, conn)
+                {
+                    CommandType = CommandType.Text
+                };
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
         }
     }
 }
