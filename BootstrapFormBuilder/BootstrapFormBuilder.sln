@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormBuilder", "FormBuilder\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormBuilder.DataAccess", "FormBuilder.DataAccess\FormBuilder.DataAccess.csproj", "{95570770-ECF0-459C-8C79-949E8BAC1FAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormBuilder.DataModel", "FormBuilder.DataModel\FormBuilder.DataModel.csproj", "{0BE5EA93-FD5F-4B40-8581-163963B00EDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{95570770-ECF0-459C-8C79-949E8BAC1FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95570770-ECF0-459C-8C79-949E8BAC1FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95570770-ECF0-459C-8C79-949E8BAC1FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE5EA93-FD5F-4B40-8581-163963B00EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE5EA93-FD5F-4B40-8581-163963B00EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE5EA93-FD5F-4B40-8581-163963B00EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE5EA93-FD5F-4B40-8581-163963B00EDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

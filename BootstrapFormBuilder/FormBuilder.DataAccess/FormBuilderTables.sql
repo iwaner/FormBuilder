@@ -1,6 +1,6 @@
 ﻿GO
 CREATE TABLE [dbo].[FormTemplate](
-	[FormId] [bigint] NULL,
+	[FormTemplateId] [bigint] NULL,
 	[FormName] [nchar](50) NULL,
 	[FormDescription] [nchar](200) NULL,
 	[FormHtmlTemplate] [bigint] NULL
@@ -28,3 +28,26 @@ CREATE TABLE [dbo].[FormControlGroup](
 	[FormTemplateId] [bigint] NOT NULL
 ) ON [PRIMARY]
 GO
+
+CREATE PROCEDURE [dbo].[SP_GETFormInstanceById] 
+	@FormInstanceId BIGINT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	DECLARE @templateId BIGINT = (SELECT FormTemplateId FROM dbo.FormInstance WHERE FormInstanceId = @FormInstanceId)
+	SELECT * FROM dbo.FormInstance WHERE FormInstanceId = @FormInstanceId;
+	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @templateId;
+	SELECT * FROM dbo.FormControlGroup WHERE FormTemplateId = @templateId;
+	SELECT * FROM dbo.FormControlGroupProperty WHERE ControlGroupId IN (SELECT ControlGroupId FROM dbo.FormControlGroup WHERE FormTemplateId = @templateId)
+END
+
+GO
+CREATE PROCEDURE [dbo].[SP_GETFormTemplateById] 
+	@FormTemplateId BIGINT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @FormTemplateId;
+	SELECT * FROM dbo.FormControlGroup WHERE FormTemplateId = @FormTemplateId;
+	SELECT * FROM dbo.FormControlGroupProperty WHERE ControlGroupId IN (SELECT ControlGroupId FROM dbo.FormControlGroup WHERE FormTemplateId = @FormTemplateId)
+END

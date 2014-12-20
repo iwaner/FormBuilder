@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{95570770-ECF0-459C-8C79-949E8BAC1FAC}</ProjectGuid>
+    <ProjectGuid>{0BE5EA93-FD5F-4B40-8581-163963B00EDB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FormBuilder.DataAccess</RootNamespace>
-    <AssemblyName>FormBuilder.DataAccess</AssemblyName>
+    <RootNamespace>FormBuilder.DataModel</RootNamespace>
+    <AssemblyName>FormBuilder.DataModel</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,21 +38,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessBase.cs" />
-    <Compile Include="FormControlGroupDAL.cs" />
-    <Compile Include="FormControlGroupPropertyDAL.cs" />
-    <Compile Include="FormInstanceDAL.cs" />
-    <Compile Include="FormTemplateDAL.cs" />
+    <Compile Include="FormControlGroupModel.cs" />
+    <Compile Include="FormControlGroupPropertyModel.cs" />
+    <Compile Include="FormInstanceModel.cs" />
+    <Compile Include="FormTemplateModel.cs" />
+    <Compile Include="ModeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="FormBuilderTables.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FormBuilder.DataModel\FormBuilder.DataModel.csproj">
-      <Project>{0be5ea93-fd5f-4b40-8581-163963b00edb}</Project>
-      <Name>FormBuilder.DataModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using FormBuilder.DataModel;
 
 namespace FormBuilder.DataAccess
 {
@@ -62,19 +63,30 @@ namespace FormBuilder.DataAccess
             }
         }
 
-        public static void GetFormTemplateByTemplateId(Int64 templateId)
+        public static FormTemplateModel GetFormTemplateByTemplateId(Int64 templateId)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
-                var cmdTxt = "SELECT * FROM [dbo].[FormTemplate] WHERE FormId = " + templateId +
-                             "; SELECT * FROM [dbo].[FormControlGroup] WHERE FormTemplateId =  " + templateId;
-                var cmd = new SqlCommand(cmdTxt, conn)
+                var cmd = new SqlCommand("[dbo].[SP_GETFormTemplateById]", conn)
                 {
-                    CommandType = CommandType.Text
+                    CommandType = CommandType.StoredProcedure
                 };
+
+                var param = new SqlParameter
+                {
+                    ParameterName = "@FormTemplateId",
+                    Value = templateId,
+                    SqlDbType = SqlDbType.BigInt
+                };
+                cmd.Parameters.Add(param);
+
                 conn.Open();
-                cmd.ExecuteNonQuery();
+                var da = new SqlDataAdapter(cmd);
+                var ds = new DataSet();
+                da.Fill(ds, "BaseData");
                 conn.Close();
+                var tempData = new FormTemplateModel();
+                return tempData;
             }
         }
     }
