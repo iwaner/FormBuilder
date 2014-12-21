@@ -72,6 +72,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="App_Data\FormControlResourceConfig.xml" />
     <Content Include="Bootstrap-Form-Builder\.gitignore" />
     <Content Include="Bootstrap-Form-Builder\assets\css\custom.css" />
     <Content Include="Bootstrap-Form-Builder\assets\css\lib\bootstrap-responsive.min.css" />
@@ -215,6 +216,7 @@
     <Compile Include="Bootstrap-Form-Builder\FormBuilderMain.aspx.designer.cs">
       <DependentUpon>FormBuilderMain.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Common\ControlGroupResourceConfig.cs" />
     <Compile Include="Common\FileHelper.cs" />
     <Compile Include="Common\uploadFiles.ashx.cs">
       <DependentUpon>uploadFiles.ashx</DependentUpon>
@@ -230,7 +232,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\FormJson.cs" />
-    <Compile Include="Model\FormTemplate.cs" />
+    <Compile Include="Model\FormTemplateBak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\jquery.ui.plupload\css\Related.css.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -247,7 +249,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Sql\" />
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +272,12 @@
     <Content Include="Bootstrap-Form-Builder\web.config" />
     <Content Include="Scripts\jquery.ui.plupload\jquery.ui.plupload.js.bak" />
     <Content Include="Common\uploadFiles.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FormBuilder.DataModel\FormBuilder.DataModel.csproj">
+      <Project>{0be5ea93-fd5f-4b40-8581-163963b00edb}</Project>
+      <Name>FormBuilder.DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

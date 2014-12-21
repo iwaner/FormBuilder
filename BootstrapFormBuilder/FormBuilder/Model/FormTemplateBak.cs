@@ -8,7 +8,7 @@ namespace FormBuilder.Model
     /// <summary>
     /// 表单模板表
     /// </summary>
-    public class FormTemplate
+    public class FormTemplateBak
     {
         public Int64 FormId { get; set; }
         public string FormName { get; set; }
@@ -23,7 +23,7 @@ namespace FormBuilder.Model
         /// 表单的model，json格式的字符串，结构为FormBuilder.Model.FormModel
         /// <form class='form-horizontal span6' id='temp'><%= text %></form>
         /// </summary>
-        public FormTemplateModel FormTemplateData { get; set; }
+        public FormTemplateModelBak FormTemplateData { get; set; }
 
         /// <summary>
         /// --int64对应一个工作流
@@ -38,7 +38,7 @@ namespace FormBuilder.Model
     /// <summary>
     /// 具体的表单实例，关联到具体某个workflow instan
     /// </summary>
-    public class FormInstance
+    public class FormInstanceBak
     {
         /// <summary>
         /// 实例Id
@@ -51,7 +51,7 @@ namespace FormBuilder.Model
         /// <summary>
         /// --表单保存的数据，json格式
         /// </summary>
-        public FormInstanceModel FormData { get; set; }
+        public FormInstanceModelBak FormData { get; set; }
         public Int64 WorkflowId { get; set; }
         public DateTime CreateTime { get; set; }
         public string CreateUser { get; set; }
@@ -62,7 +62,7 @@ namespace FormBuilder.Model
     /// <summary>
     /// 表单所用控件表
     /// </summary>
-    public class FormControl
+    public class FormControlBak
     {
         public Int32 ControlId { get; set; }
         /// <summary>
@@ -159,7 +159,7 @@ namespace FormBuilder.Model
     /// <summary>
     /// 表单操作日志
     /// </summary>
-    public class FormTemplateHistory
+    public class FormTemplateHistoryBak
     {
         public Int64 FormId { get; set; }
         public string FormName { get; set; }

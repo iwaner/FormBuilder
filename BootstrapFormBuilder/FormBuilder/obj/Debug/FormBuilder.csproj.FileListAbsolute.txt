@@ -38,3 +38,5 @@ C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilde
 C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.csprojResolveAssemblyReference.cache
 C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
 C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
+C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataModel.dll
+C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataModel.pdb

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-using FormBuilder.Model;
+using System.Web.Services;
+using FormBuilder.DataModel;
 using Newtonsoft.Json;
 namespace FormBuilder.Bootstrap_Form_Builder
 {
@@ -13,8 +8,20 @@ namespace FormBuilder.Bootstrap_Form_Builder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            FormTemplateModel formTemplate = new FormTemplateModel();
+            var formTemplate = new FormTemplateModel();
             string formTemplateJsonStr = JsonConvert.SerializeObject(formTemplate);
+        }
+
+        [WebMethod]
+        public static void InsertoUpdateFormTemplate(string formTemplate)
+        {
+
+        }
+
+        [WebMethod]
+        public static void InsertoUpdateFormInstance(string formInstance)
+        {
+
         }
     }
 }

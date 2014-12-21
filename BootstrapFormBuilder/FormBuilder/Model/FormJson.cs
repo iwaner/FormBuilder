@@ -9,28 +9,28 @@ namespace FormBuilder.Model
     /// <summary>
     /// 表单模板model
     /// </summary>
-    public class FormTemplateModel
+    public class FormTemplateModelBak
     {
-        public FormTemplateModel()
+        public FormTemplateModelBak()
         {
-            ControlGroups = new List<ControlGroupModel>();
+            ControlGroups = new List<ControlGroupModelBak>();
         }
 
         public Int64 FormId { get; set; }
 
         public string FormName { get; set; }
 
-        public List<ControlGroupModel> ControlGroups { get; set; }
+        public List<ControlGroupModelBak> ControlGroups { get; set; }
     }
 
     /// <summary>
     /// 表单数据model
     /// </summary>
-    public class FormInstanceModel
+    public class FormInstanceModelBak
     {
-        public FormInstanceModel()
+        public FormInstanceModelBak()
         {
-            DataFields = new List<FormFieldDataModel>();
+            DataFields = new List<FormFieldDataModelBak>();
         }
 
 
@@ -43,7 +43,7 @@ namespace FormBuilder.Model
         /// </summary>
         public Int64 FormTemplateId { get; set; }
 
-        public List<FormFieldDataModel> DataFields{ get; set; }
+        public List<FormFieldDataModelBak> DataFields{ get; set; }
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ namespace FormBuilder.Model
     /// 一个控件组对应一个model{title:"",formFieldKey:"",orderInForm:1,fields:{}},model绑定到模板上，输出html
     /// 
     /// </summary>
-    public class ControlGroupModel
+    public class ControlGroupModelBak
     {
         /// <summary>
         /// input/select ...
@@ -109,7 +109,7 @@ namespace FormBuilder.Model
     /// 表单真正的业务数据保存在此，和一个具体的form instance挂钩
     /// 控件的属性和属性值参考input.json
     /// </summary>
-    public class FormFieldDataModel
+    public class FormFieldDataModelBak
     {
         public string ControlType { get; set; }
 

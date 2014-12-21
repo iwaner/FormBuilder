@@ -104,9 +104,9 @@ namespace FormBuilder.DataAccess
                 conn.Open();
                 var da = new SqlDataAdapter(cmd);
                 var ds = new DataSet();
-                da.Fill(ds, "BaseData");
+                da.Fill(ds, "FormTemplate");
                 conn.Close();
-                var tempData = new FormTemplateModel();
+                var tempData = FormTemplateModeMapping.MapDataTableToFormTemplateModel(ds.Tables[0], ds.Tables[1]);
                 return tempData;
             }
         }

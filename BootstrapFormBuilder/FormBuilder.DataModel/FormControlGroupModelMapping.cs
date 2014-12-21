@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 
 namespace FormBuilder.DataModel
 {
-    public static class FormControlGroupModelHelper
+    public static class FormControlGroupModelMapping
     {
-        static private DataTable MapIemsEventSubjectToDataTable(List<FormControlGroupModel> controlGroups)
+        static public DataTable MapFormGroupModelToDataTable(List<FormControlGroupModel> controlGroups)
         {
             var tb = new DataTable();
             tb.Columns.Add("ControlType", typeof(string));
@@ -21,7 +19,7 @@ namespace FormBuilder.DataModel
             {
                 foreach (var controlGroup in controlGroups)
                 {
-                    DataRow row = tb.NewRow();
+                    var row = tb.NewRow();
                     row["ControlType"] = controlGroup.ControlType;
                     row["OrderInForm"] = controlGroup.OrderInForm;
                     row["FormFieldMapKey"] = controlGroup.FormFieldMapKey;
@@ -33,6 +31,29 @@ namespace FormBuilder.DataModel
                 }
             }
             return tb;
+        }
+
+        static public List<FormControlGroupModel> MapDataTableToFormGroupModel(DataTable dt)
+        {
+            var controlGroups = new List<FormControlGroupModel>();
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    var controlGroup = new FormControlGroupModel
+                    {
+                        ControlType = row["ControlType"].ToString(),
+                        OrderInForm = row["OrderInForm"].ToString().ToInt(),
+                        FormFieldMapKey = row["FormFieldMapKey"].ToString(),
+                        ControlGroupTemplateModel = row["ControlGroupTemplateModel"].ToString(),
+                        FormTemplateId = row["FormTemplateId"].ToString().ToInt64(),
+                        FormControlGroupPropertys = row["FormControlGroupPropertys"].ToString()
+                    };
+                    controlGroup.ControlPropertys = controlGroup.FormControlGroupPropertys.ToModelBaseObject<FormControlGroupPropertyModel>();
+                    controlGroups.Add(controlGroup);
+                }
+            }
+            return controlGroups;
         }
     }
 }

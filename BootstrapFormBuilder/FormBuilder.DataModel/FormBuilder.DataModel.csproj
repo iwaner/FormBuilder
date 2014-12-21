@@ -46,10 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FormControlGroupModel.cs" />
-    <Compile Include="FormControlGroupModelHelper.cs" />
+    <Compile Include="FormControlGroupModelMapping.cs" />
     <Compile Include="FormControlGroupPropertyModel.cs" />
     <Compile Include="FormInstanceModel.cs" />
+    <Compile Include="FormInstanceModeMapping.cs" />
     <Compile Include="FormTemplateModel.cs" />
+    <Compile Include="FormTemplateModeMapping.cs" />
+    <Compile Include="FromControlType.cs" />
     <Compile Include="ModeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

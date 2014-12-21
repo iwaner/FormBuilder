@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FormBuilder.DataModel
 {
@@ -13,7 +11,7 @@ namespace FormBuilder.DataModel
         public string FormFieldMapKey { get; set; }
         public string ControlGroupTemplateModel { get; set; }
         public string FormControlGroupPropertys { get; set; }
-        public string FormTemplateId { get; set; }
+        public Int64 FormTemplateId { get; set; }
         public List<FormControlGroupPropertyModel> ControlPropertys { get; set; }
     }
 }

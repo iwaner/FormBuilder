@@ -5,7 +5,7 @@ using FormBuilder.DataModel;
 
 namespace FormBuilder.DataAccess
 {
-    public class FormInstanceDAL: DataAccessBase
+    public class FormInstanceDAL : DataAccessBase
     {
         public static void InsertOrUpdateFormInstance(Int64 formInstanceId, string formDataFields, Int64 formTemplateId)
         {
@@ -87,9 +87,9 @@ namespace FormBuilder.DataAccess
                 conn.Open();
                 var da = new SqlDataAdapter(cmd);
                 var ds = new DataSet();
-                da.Fill(ds, "BaseData");
+                da.Fill(ds, "FormInstance");
                 conn.Close();
-                var tempData = new FormInstanceModel();
+                var tempData = FormInstanceModeMapping.MapDataTableToFormTemplateModel(ds);
                 return tempData;
             }
         }
