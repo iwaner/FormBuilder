@@ -7,56 +7,77 @@ namespace FormBuilder.DataAccess
 {
     public class FormTemplateDAL : DataAccessBase
     {
-        public static void InsertFormTemplate(string formName, string formDescription, Int64 formHtmlTemplateId)
+        public static void InsertOrUpdateFormTemplate(Int64 formTemplateId, string formName, string formDescription, Int64 formHtmlTemplate, DataTable dt)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
-                var cmdTxt = "INSERT INTO [dbo].[FormTemplate] ( FormName, FormDescription, FormHtmlTemplate )" +
-                              " VALUES" +
-                              " ( " + formName + " ," + formDescription + " ," + formHtmlTemplateId + " )";
-                var cmd = new SqlCommand(cmdTxt, conn)
+                var cmd = new SqlCommand("[dbo].[SP_AddOrUpdateFormTemplate]", conn)
                 {
-                    CommandType = CommandType.Text
+                    CommandType = CommandType.StoredProcedure
                 };
+
+                var param = new SqlParameter
+                {
+                    ParameterName = "@FormTemplateId",
+                    Value = formTemplateId,
+                    SqlDbType = SqlDbType.BigInt
+                };
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter
+                {
+                    ParameterName = "@FormName",
+                    Value = formName,
+                    SqlDbType = SqlDbType.NVarChar
+                };
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter
+                {
+                    ParameterName = "@FormDescription",
+                    Value = formDescription,
+                    SqlDbType = SqlDbType.NVarChar
+                };
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter
+                {
+                    ParameterName = "@FormHtmlTemplate",
+                    Value = formDescription,
+                    SqlDbType = SqlDbType.BigInt
+                };
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter
+                {
+                    ParameterName = "@FormControlGroup",
+                    Value = dt,
+                    SqlDbType = SqlDbType.Structured
+                };
+                cmd.Parameters.Add(param);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
         }
 
-        public static void UpdateFormTemplate(Int64 formId, string formName, string formDescription, Int64 formHtmlTemplateId)
+        public static void DeleteFormTemplate(Int64 formTemplateId)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
-                var cmdTxt = "UPDATE [dbo].[FormTemplate] SET" +
-                             "FormName = " + formName +
-                             " , FormDescription = " + formDescription +
-                             " , FormHtmlTemplate = " + formHtmlTemplateId +
-                             " WHERE FormId = " + formId;
-                var cmd = new SqlCommand(cmdTxt, conn)
+                var cmd = new SqlCommand("[dbo].[SP_DeleteFormTemplate]", conn)
                 {
-                    CommandType = CommandType.Text
+                    CommandType = CommandType.StoredProcedure
                 };
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-        }
 
-
-        public static void DeleteFormTemplate(Int64 formId, string formName, string formDescription, Int64 formHtmlTemplateId)
-        {
-            using (var conn = new SqlConnection(ConnectionString))
-            {
-                var cmdTxt = "UPDATE [dbo].[FormTemplate] SET" +
-                             "FormName = " + formName +
-                             " , FormDescription = " + formDescription +
-                             " , FormHtmlTemplate = " + formHtmlTemplateId +
-                             " WHERE FormId = " + formId;
-                var cmd = new SqlCommand(cmdTxt, conn)
+                var param = new SqlParameter
                 {
-                    CommandType = CommandType.Text
+                    ParameterName = "@FormTemplateId",
+                    Value = formTemplateId,
+                    SqlDbType = SqlDbType.BigInt
                 };
+                cmd.Parameters.Add(param);
+
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();

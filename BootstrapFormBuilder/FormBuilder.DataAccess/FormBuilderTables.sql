@@ -1,16 +1,44 @@
 ﻿GO
 CREATE TABLE [dbo].[FormTemplate](
-	[FormTemplateId] [bigint] NULL,
-	[FormName] [nchar](50) NULL,
-	[FormDescription] [nchar](200) NULL,
-	[FormHtmlTemplate] [bigint] NULL
+	[FormTemplateId] [bigint] IDENTITY(1,1) NOT NULL,
+	[FormName] [nvarchar](50) NULL,
+	[FormDescription] [nvarchar](200) NULL,
+	[FormHtmlTemplate] [bigint] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[FormTemplateId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[FormInstance]    Script Date: 12/21/2014 15:31:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE TABLE [dbo].[FormInstance](
-	[FormInstanceId] [bigint] NULL,
+	[FormInstanceId] [bigint] IDENTITY(1,1) NOT NULL,
+	[FormDataFields] [nvarchar](max) NULL,
 	[FormTemplateId] [bigint] NULL,
-	[FormDataFields] [nvarchar](max) NULL
+PRIMARY KEY CLUSTERED 
+(
+	[FormInstanceId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+/****** Object:  UserDefinedTableType [dbo].[FormControlGroupUDT]    Script Date: 12/21/2014 15:31:46 ******/
+CREATE TYPE [dbo].[FormControlGroupUDT] AS TABLE(
+	[ControlType] [nvarchar](20) NOT NULL,
+	[OrderInForm] [int] NOT NULL,
+	[FormFieldMapKey] [nvarchar](20) NULL,
+	[ControlGroupTemplateModel] [nvarchar](1) NULL,
+	[FormTemplateId] [bigint] NOT NULL,
+	[FormControlGroupPropertys] [nvarchar](max) NULL
+)
+GO
+/****** Object:  Table [dbo].[FormControlGroupProperty]    Script Date: 12/21/2014 15:31:46 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[FormControlGroupProperty](
 	[ControlPropertyId] [bigint] NOT NULL,
@@ -19,16 +47,44 @@ CREATE TABLE [dbo].[FormControlGroupProperty](
 	[ControlGroupId] [bigint] NOT NULL
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[FormControlGroup]    Script Date: 12/21/2014 15:31:46 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE TABLE [dbo].[FormControlGroup](
-	[ControlGroupId] [bigint] NOT NULL,
 	[ControlType] [nvarchar](20) NOT NULL,
 	[OrderInForm] [int] NOT NULL,
 	[FormFieldMapKey] [nvarchar](20) NULL,
 	[ControlGroupTemplateModel] [nvarchar](max) NULL,
-	[FormTemplateId] [bigint] NOT NULL
+	[FormTemplateId] [bigint] NOT NULL,
+	[ControlGroupId] [bigint] IDENTITY(1,1) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ControlGroupId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-
+/****** Object:  StoredProcedure [dbo].[SP_GETFormTemplateById]    Script Date: 12/21/2014 15:31:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_GETFormTemplateById] 
+	@FormTemplateId BIGINT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @FormTemplateId;
+	SELECT * FROM dbo.FormControlGroup WHERE FormTemplateId = @FormTemplateId;
+	SELECT * FROM dbo.FormControlGroupProperty WHERE ControlGroupId IN (SELECT ControlGroupId FROM dbo.FormControlGroup WHERE FormTemplateId = @FormTemplateId)
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GETFormInstanceById]    Script Date: 12/21/2014 15:31:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE PROCEDURE [dbo].[SP_GETFormInstanceById] 
 	@FormInstanceId BIGINT
 AS
@@ -40,14 +96,81 @@ BEGIN
 	SELECT * FROM dbo.FormControlGroup WHERE FormTemplateId = @templateId;
 	SELECT * FROM dbo.FormControlGroupProperty WHERE ControlGroupId IN (SELECT ControlGroupId FROM dbo.FormControlGroup WHERE FormTemplateId = @templateId)
 END
-
 GO
-CREATE PROCEDURE [dbo].[SP_GETFormTemplateById] 
+/****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormTemplate]    Script Date: 12/21/2014 15:31:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormTemplate] 
+	@FormTemplateId BIGINT,
+	@FormName NVARCHAR(50),
+	@FormDescription NVARCHAR(200),
+	@FormHtmlTemplate BIGINT,
+	@FormControlGroup [dbo].[FormControlGroupUDT] READONLY
+AS
+BEGIN
+	IF (@FormTemplateId = -1) 
+	BEGIN
+		INSERT INTO dbo.FormTemplate
+		VALUES(@FormName,@FormDescription,@FormHtmlTemplate)
+		SET @FormTemplateId = SCOPE_IDENTITY()
+	END 
+	ELSE
+	BEGIN
+		UPDATE dbo.FormTemplate
+		SET FormName = @FormName
+			,FormDescription = @FormDescription
+			,FormHtmlTemplate = @FormHtmlTemplate
+		WHERE FormTemplateId = @FormTemplateId;
+	END
+	DELETE dbo.FormControlGroup
+	WHERE FormTemplateId = @FormTemplateId;
+	INSERT INTO dbo.FormControlGroup
+	SELECT ControlType,OrderInForm,FormFieldMapKey,ControlGroupTemplateModel,@FormTemplateId
+	FROM @FormControlGroup;
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormInstance]    Script Date: 12/21/2014 15:31:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormInstance] 
+	@FormInstanceId BIGINT,
+	@FormDataFields NVARCHAR(MAX),
 	@FormTemplateId BIGINT
 AS
 BEGIN
-	SET NOCOUNT ON;
-	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @FormTemplateId;
-	SELECT * FROM dbo.FormControlGroup WHERE FormTemplateId = @FormTemplateId;
-	SELECT * FROM dbo.FormControlGroupProperty WHERE ControlGroupId IN (SELECT ControlGroupId FROM dbo.FormControlGroup WHERE FormTemplateId = @FormTemplateId)
+	IF (@FormInstanceId = -1) 
+	BEGIN 
+		INSERT INTO dbo.FormInstance
+		VALUES(@FormDataFields,@FormTemplateId)
+	END 
+	ELSE
+	BEGIN
+		UPDATE dbo.FormInstance
+		SET  FormDataFields = @FormDataFields
+			,FormTemplateId = @FormTemplateId
+		WHERE FormInstanceId = @FormInstanceId;
+	END
+END
+GO
+CREATE PROCEDURE [dbo].[SP_DeleteFormInstance] 
+	@FormInstanceId BIGINT
+AS
+BEGIN
+	DELETE dbo.FormInstance
+	WHERE FormInstanceId = @FormInstanceId
+END
+
+GO 
+CREATE PROCEDURE [dbo].[SP_DeleteFormTemplate] 
+	@FormTemplateId BIGINT
+AS
+BEGIN
+	DELETE dbo.FormControlGroup
+	WHERE FormTemplateId = @FormTemplateId
+	DELETE dbo.FormTemplate
+	WHERE FormTemplateId = @FormTemplateId
 END

@@ -7,14 +7,66 @@ namespace FormBuilder.DataAccess
 {
     public class FormInstanceDAL: DataAccessBase
     {
-        public static void InsertFormInstance(DataTable tb, DataTable registerEventDt)
+        public static void InsertOrUpdateFormInstance(Int64 formInstanceId, string formDataFields, Int64 formTemplateId)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
-                
+                var cmd = new SqlCommand("[dbo].[SP_AddOrUpdateFormInstance]", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                var param = new SqlParameter
+                {
+                    ParameterName = "@FormInstanceId",
+                    Value = formInstanceId,
+                    SqlDbType = SqlDbType.BigInt
+                };
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter
+                {
+                    ParameterName = "@FormDataFields",
+                    Value = formDataFields,
+                    SqlDbType = SqlDbType.NVarChar
+                };
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter
+                {
+                    ParameterName = "@FormTemplateId",
+                    Value = formTemplateId,
+                    SqlDbType = SqlDbType.BigInt
+                };
+                cmd.Parameters.Add(param);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
             }
         }
+        public static void DeleteFormInstance(Int64 formInstanceId)
+        {
+            using (var conn = new SqlConnection(ConnectionString))
+            {
+                var cmd = new SqlCommand("[dbo].[SP_DeleteFormInstance]", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
 
+                var param = new SqlParameter
+                {
+                    ParameterName = "@FormInstanceId",
+                    Value = formInstanceId,
+                    SqlDbType = SqlDbType.BigInt
+                };
+                cmd.Parameters.Add(param);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
         public static FormInstanceModel GetFormInstanceById(Int64 formInstanceId)
         {
             using (var conn = new SqlConnection(ConnectionString))
