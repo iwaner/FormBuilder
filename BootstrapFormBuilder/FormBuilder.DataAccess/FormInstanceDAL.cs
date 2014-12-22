@@ -7,7 +7,7 @@ namespace FormBuilder.DataAccess
 {
     public class FormInstanceDAL : DataAccessBase
     {
-        public static void InsertOrUpdateFormInstance(Int64 formInstanceId, string formDataFields, Int64 formTemplateId)
+        public void InsertOrUpdateFormInstance(Int64 formInstanceId, string formDataFields, Int64 formTemplateId)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
@@ -45,7 +45,7 @@ namespace FormBuilder.DataAccess
                 conn.Close();
             }
         }
-        public static void DeleteFormInstance(Int64 formInstanceId)
+        public void DeleteFormInstance(Int64 formInstanceId)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
@@ -67,7 +67,7 @@ namespace FormBuilder.DataAccess
                 conn.Close();
             }
         }
-        public static FormInstanceModel GetFormInstanceById(Int64 formInstanceId)
+        public FormInstanceModel GetFormInstanceById(Int64 formInstanceId)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {

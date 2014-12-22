@@ -7,7 +7,7 @@ namespace FormBuilder.DataAccess
 {
     public class FormTemplateDAL : DataAccessBase
     {
-        public static void InsertOrUpdateFormTemplate(Int64 formTemplateId, string formName, string formDescription, Int64 formHtmlTemplate, DataTable dt)
+        public void InsertOrUpdateFormTemplate(Int64 formTemplateId, string formName, string formDescription, Int64 formHtmlTemplate, DataTable dt)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
@@ -61,7 +61,7 @@ namespace FormBuilder.DataAccess
             }
         }
 
-        public static void DeleteFormTemplate(Int64 formTemplateId)
+        public void DeleteFormTemplate(Int64 formTemplateId)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
@@ -84,7 +84,7 @@ namespace FormBuilder.DataAccess
             }
         }
 
-        public static FormTemplateModel GetFormTemplateByTemplateId(Int64 templateId)
+        public FormTemplateModel GetFormTemplateByTemplateId(Int64 templateId)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {

@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ControlGroups>
-<ControlGroup Id="1" Key="TextInput" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\textinput.html"/>
-<ControlGroup Id="2" Key="PasswordInput" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\passwordinput.html"/>
-<ControlGroup Id="3" Key="SearchInput" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\searchinput.html"/>
-<ControlGroup Id="4" Key="PrependedText" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\prependedtext.html"/>
-<ControlGroup Id="5" Key="AppendedText" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\appendedtext.html"/>
-<ControlGroup Id="6" Key="PrependedCheckbox" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\prependedcheckbox.html"/>
-<ControlGroup Id="7" Key="AppendedCheckbox" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\appendedcheckbox.html"/>
-<ControlGroup Id="8" Key="ButtonDropdown" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\buttondropdown.html"/>
-<ControlGroup Id="9" Key="Textarea" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\textarea.html"/>
-<ControlGroup Id="10" Key="MultipleRadios" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\multipleradios.html"/>
-<ControlGroup Id="11" Key="MultipleRadiosInline" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\multipleradiosinline.html"/>
-<ControlGroup Id="12" Key="MultipleCheckboxes" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\multiplecheckboxes.html"/>
-<ControlGroup Id="13" Key="MultipleCheckboxesInline" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\multiplecheckboxesinline.html"/>
-<ControlGroup Id="14" Key="Filebutton" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\filebutton.html"/>
-<ControlGroup Id="15" Key="Singlebutton" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\singlebutton.html"/>
-<ControlGroup Id="16" Key="DoubleButton" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\doublebutton.html"/>
-<ControlGroup Id="17" Key="SelectBasic" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\selectbasic.html"/>
-<ControlGroup Id="18" Key="SelectMultiple" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\selectmultiple.html"/>
+  <ControlGroup Id="1" Key="TextInput" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\textinput.html"/>
+  <ControlGroup Id="2" Key="PasswordInput" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\passwordinput.html"/>
+  <ControlGroup Id="3" Key="SearchInput" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\searchinput.html"/>
+  <ControlGroup Id="4" Key="PrependedText" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\prependedtext.html"/>
+  <ControlGroup Id="5" Key="AppendedText" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\appendedtext.html"/>
+  <ControlGroup Id="6" Key="PrependedCheckbox" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\prependedcheckbox.html"/>
+  <ControlGroup Id="7" Key="AppendedCheckbox" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\appendedcheckbox.html"/>
+  <ControlGroup Id="8" Key="ButtonDropdown" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\buttondropdown.html"/>
+  <ControlGroup Id="9" Key="Textarea" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\textarea.html"/>
+  <ControlGroup Id="10" Key="MultipleRadios" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\multipleradios.html"/>
+  <ControlGroup Id="11" Key="MultipleRadiosInline" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\multipleradiosinline.html"/>
+  <ControlGroup Id="12" Key="MultipleCheckboxes" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\multiplecheckboxes.html"/>
+  <ControlGroup Id="13" Key="MultipleCheckboxesInline" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\multiplecheckboxesinline.html"/>
+  <ControlGroup Id="14" Key="Filebutton" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\filebutton.html"/>
+  <ControlGroup Id="15" Key="Singlebutton" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\singlebutton.html"/>
+  <ControlGroup Id="16" Key="DoubleButton" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\doublebutton.html"/>
+  <ControlGroup Id="17" Key="SelectBasic" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\selectbasic.html"/>
+  <ControlGroup Id="18" Key="SelectMultiple" Path="..\BootstrapFormBuilder\FormBuilder\Bootstrap-Form-Builder\assets\js\templates\snippet\selectmultiple.html"/>
 </ControlGroups>

@@ -72,7 +72,9 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="App_Data\FormControlResourceConfig.xml" />
+    <Content Include="App_Data\FormControlResourceConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bootstrap-Form-Builder\.gitignore" />
     <Content Include="Bootstrap-Form-Builder\assets\css\custom.css" />
     <Content Include="Bootstrap-Form-Builder\assets\css\lib\bootstrap-responsive.min.css" />
@@ -166,7 +168,9 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -229,6 +233,8 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FormBuilderHander\FormInstanceHandler.cs" />
+    <Compile Include="FormBuilderHander\FormTemplateHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,9 +281,17 @@
     <Content Include="Common\uploadFiles.ashx" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FormBuilder.BLL\FormBuilder.BLL.csproj">
+      <Project>{dd5093ae-573f-4c96-a239-413731f31482}</Project>
+      <Name>FormBuilder.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FormBuilder.DataModel\FormBuilder.DataModel.csproj">
       <Project>{0be5ea93-fd5f-4b40-8581-163963b00edb}</Project>
       <Name>FormBuilder.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormBuilder.Utility\FormBuilder.Utility.csproj">
+      <Project>{db1afb8f-d5ad-4c26-8731-555c7fa21b3d}</Project>
+      <Name>FormBuilder.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
