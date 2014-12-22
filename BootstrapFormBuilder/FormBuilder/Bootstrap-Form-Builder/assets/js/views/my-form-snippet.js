@@ -50,7 +50,7 @@ define([
     , saveHandler : function(boundContext) {
       return function(mouseEvent) {
         mouseEvent.preventDefault();
-        var fields = $(".popover .field");
+        var fields = $(".popover .field");//筛选出真正的业务字段
         _.each(fields, function(e){
 
           var $e = $(e)

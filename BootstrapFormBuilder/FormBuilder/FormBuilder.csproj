@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FormBuilder</RootNamespace>
     <AssemblyName>FormBuilder</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -147,6 +147,7 @@
     <Content Include="Bootstrap-Form-Builder\index-dev.html" />
     <Content Include="Bootstrap-Form-Builder\index.html" />
     <Content Include="Bootstrap-Form-Builder\LocalToDO.htm" />
+    <Content Include="LibResource\Newtonsoft.Json.4.5.dll" />
     <Content Include="LibResource\Newtonsoft.Json.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
