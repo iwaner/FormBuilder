@@ -25,6 +25,14 @@ define([
       console.log(testModel.constructor);
       console.log(testModel.prototype);
       */
+      //初始化话global变量
+      if(!g_globalModel.GlobalModelRef)
+      {
+        g_globalModel.GlobalModelRef=GlobalModel;
+
+        //将当前model加入全局变量
+      }
+
       //Bootstrap tabs from json.
       new TabView({
         title: "Input文本框"

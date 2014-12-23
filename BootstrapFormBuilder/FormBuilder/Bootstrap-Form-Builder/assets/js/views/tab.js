@@ -30,5 +30,10 @@ define([
         this.$el.appendTo(".tab-content");
         this.delegateEvents();
     }
+    ,initialGlobalVar:function(){
+        //初始化全局变量
+
+
+    }
     });
 });

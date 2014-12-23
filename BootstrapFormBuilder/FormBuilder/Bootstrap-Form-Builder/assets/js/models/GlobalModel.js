@@ -13,8 +13,11 @@ define([
     return {
     initialize: function() {
       g_globalModel={};
-      g_globalModel.GlobalModelRef=this;
-      g_globalModel.FormTemplate=JSON.parse(buildFormJSON);
+      //if(!g_globalModel.GlobalModelRef)
+      //{
+      //  g_globalModel.GlobalModelRef=this;//将当前model加入全局变量
+      //}
+      g_globalModel.FormTemplate=JSON.parse(buildFormJSON);//表单模板保存的结构（和数据库对应）
       this.FormTemplate=JSON.parse(buildFormJSON);
       this.saveFormControlGroups=new SaveFormSnippetCollection();
     }
@@ -27,14 +30,14 @@ define([
     //  g_globalModel.FormTemplate.FormTemplateData.ControlGroups=ctrGroups;
     //}
     ,addControlGroup:function (ctrGroup) {
-      this.saveFormControlGroups.push(ctrGroup);
+      this.saveFormControlGroups.add(ctrGroup);
       //g_globalModel.FormTemplate.FormTemplateData.ControlGroups.push(ctrGroup);
     }
     ,removeControlGroup:function (ctrGroup) {
-     
+      this.saveFormControlGroups.remove(ctrGroup);
     }
     ,saveFormControlGroups:{}
-    ,save: function (){
+    ,saveFormTempalte: function (){
       /**/
     	//保存model到全局变量
       //formTemplateData

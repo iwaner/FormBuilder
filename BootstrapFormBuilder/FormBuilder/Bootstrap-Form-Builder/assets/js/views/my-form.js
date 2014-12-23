@@ -24,9 +24,9 @@ define([
       PubSub.on("tempMove", this.handleTempMove, this);
       PubSub.on("tempDrop", this.handleTempDrop, this);
 
-      //////////保存表单
+      //////////保存表单(之后考虑已backcone的事件定义方式来实现)
       $("#saveForm").bind("click", function (argument) {
-            g_globalModel.GlobalModelRef.save();
+            g_globalModel.GlobalModelRef.saveFormTempalte();
         });
        //////////使用表单
       $("#btnUseForm").bind("click", function (argument) {
@@ -94,6 +94,7 @@ define([
     , handleSnippetDrag: function(mouseEvent, snippetModel) {//在目标表单中拖动组件时的event handler
       $("body").append(new TempSnippetView({model: snippetModel}).render());
       this.collection.remove(snippetModel);
+      g_globalModel.GlobalModelRef.removeControlGroup(snippetModel);//
       PubSub.trigger("newTempPostRender", mouseEvent);
     }
 
@@ -116,8 +117,8 @@ define([
          mouseEvent.pageY < (this.$build.height() + this.$build.position().top)) {
         var index = $(".target").index();
         $(".target").removeClass("target");
-        this.collection.add(model,{at: index+1});//将model添加进目标比偶单的collection，
-        g_globalModel.GlobalModelRef.addControlGroup(model);
+        this.collection.add(model,{at: index+1});//将model添加进目标表单的collection，
+        g_globalModel.GlobalModelRef.addControlGroup(model);//
       } else {
         $(".target").removeClass("target");
       }
