@@ -58,9 +58,15 @@ namespace FormBuilder.Model
     public class ControlGroupModelBak
     {
         /// <summary>
-        /// input/select ...
+        /// 业务字段对应控件的类型input/select ...
         /// </summary>
         public string ControlType { get; set; }
+
+
+        /// <summary>
+        /// textinput/passwordinput/textarea/prependedcheckbox/selectmultiple ...
+        /// </summary>
+        public ControlGroupTypeEnum ControlGroupType { get; set; }
 
         /// <summary>
         /// 在表单中的排序
@@ -73,6 +79,11 @@ namespace FormBuilder.Model
         /// 表单的数据将根据key还原到表单上（不同于控件的Id,这里的key是一个控件组的概念）
         /// </summary>
         public string FormFieldMapKey { get; set; }
+
+        /// <summary>
+        /// 该字段是否允许编辑
+        /// </summary>
+        public bool IsEditable { get; set; }
 
         /// <summary>
         /// 控件的属相，属性值，格式为json
@@ -112,6 +123,17 @@ namespace FormBuilder.Model
     public class FormFieldDataModelBak
     {
         public string ControlType { get; set; }
+
+        /// <summary>
+        /// textinput/passwordinput/textarea/prependedcheckbox/selectmultiple ...
+        /// </summary>
+        public ControlGroupTypeEnum ControlGroupType { get; set; }
+
+        /// <summary>
+        /// 对应表单的某个字段的key，用来和表单保存的数据做关联
+        /// 表单的数据将根据key还原到表单上（不同于控件的Id,这里的key是一个控件组的概念）
+        /// </summary>
+        public string FormFieldMapKey { get; set; }
 
         /// <summary>
         /// 每种控件的field value 不尽相同，例如input和select是不同的，input只需要保存单个值，

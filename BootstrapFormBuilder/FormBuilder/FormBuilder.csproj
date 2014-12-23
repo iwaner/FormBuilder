@@ -267,6 +267,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Bootstrap-Form-Builder\assets\js\data\buttons.yaml" />
+    <None Include="Bootstrap-Form-Builder\assets\js\data\forminstance.json" />
     <None Include="Bootstrap-Form-Builder\assets\js\data\input.json" />
     <None Include="Bootstrap-Form-Builder\assets\js\data\input.yaml" />
     <None Include="Bootstrap-Form-Builder\assets\js\data\parse.rb" />

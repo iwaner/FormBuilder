@@ -63,7 +63,11 @@
         "value": false
       }
     },
-    "title": "Text Input"
+    "title": "Text Input",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"textinput"
   },
   {
     "fields": {
@@ -129,7 +133,11 @@
         "value": false
       }
     },
-    "title": "Password Input"
+    "title": "Password Input",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"passwordinput"
   },
   {
     "fields": {
@@ -195,7 +203,11 @@
         "value": false
       }
     },
-    "title": "Search Input"
+    "title": "Search Input",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"searchinput"
   },
   {
     "fields": {
@@ -266,7 +278,11 @@
         "value": false
       }
     },
-    "title": "Prepended Text"
+    "title": "Prepended Text",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"prependedtext"
   },
   {
     "fields": {
@@ -337,7 +353,11 @@
         "value": false
       }
     },
-    "title": "Appended Text"
+    "title": "Appended Text",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"appendedtext"
   },
   {
     "fields": {
@@ -408,7 +428,11 @@
         "value": false
       }
     },
-    "title": "Prepended Checkbox"
+    "title": "Prepended Checkbox",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"prependedcheckbox"
   },
   {
     "fields": {
@@ -479,7 +503,11 @@
         "value": false
       }
     },
-    "title": "Appended Checkbox"
+    "title": "Appended Checkbox",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"appendedcheckbox"
   },
   {
     "fields": {
@@ -554,7 +582,11 @@
         "value": false
       }
     },
-    "title": "Button Drop Down"
+    "title": "Button Drop Down",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"buttondropdown"
   },
   {
     "fields": {
@@ -574,6 +606,10 @@
         "value": "default text"
       }
     },
-    "title": "Text Area"
+    "title": "Text Area",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"textarea"
   }
 ]

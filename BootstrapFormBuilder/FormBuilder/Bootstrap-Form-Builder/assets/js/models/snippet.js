@@ -6,6 +6,7 @@ define([
       this.set("fresh", true);
     }
     , getValues: function(){
+      //获取控件模板model中真正的数据部分（即fields字段的各个属性）
       return _.reduce(this.get("fields"), function(o, v, k){
         if (v["type"] == "select") {
           o[k] = _.find(v["value"], function(o){return o.selected})["value"];
@@ -15,7 +16,7 @@ define([
         return o;
       }, {});
     }
-    , idFriendlyTitle: function(){
+    , idFriendlyTitle: function(){//移除非单词字符后的title：字符数字之外的字符
       return this.get("title").replace(/\W/g,'').toLowerCase();
     }
     , setField: function(name, value) {
