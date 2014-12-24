@@ -16,8 +16,12 @@ namespace FormBuilder.FormBuilderHander
         public void ProcessRequest(HttpContext context)
         {
             string templateId = context.Request["TemplateId"];
-            var templateBll = new FormTemplateBLL();
-            var instanceMode = templateBll.GetFormInstance(templateId.ToInt64());
+            if (!string.IsNullOrEmpty(templateId))
+            {
+                var templateBll = new FormTemplateBLL();
+                var instanceMode = templateBll.GetFormInstance(templateId.ToInt64());
+            }
+            
         }
     }
 }
