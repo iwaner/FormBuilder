@@ -15,7 +15,8 @@ define([
         }
         return o;
       }, {});
-      //modelValues["iseditable"]=this.get("IsEditable");
+      //添加一些额外的字段给model用于模板绑定
+      modelValues["controltype"]=this.get("ControlType");
       modelValues["OrderInForm"]=this.get("OrderInForm");
       modelValues["FormFieldMapKey"]=this.get("FormFieldMapKey");
       modelValues["ControlGroupType"]=this.get("ControlGroupType");

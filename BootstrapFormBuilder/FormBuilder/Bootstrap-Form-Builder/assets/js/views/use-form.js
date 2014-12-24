@@ -34,9 +34,52 @@ define([
       this.delegateEvents();
  
     }
-    , saveFormData:function(){
-      //保存表单数据
-      
+    , saveFormData:function(){//保存表单数据
+      //hide all popovers
+      $(".popover").hide();
+      //获取表单中的业务数据控件
+      var dataControls=$("#useForm [data-isbizfield='true']");
+      var dataFields=_.map(dataControls, function(v,k){
+        var controlType=v.attr("data-controltype");
+        var fieldValue="";
+        switch(controlType) {
+            case "checkbox":
+              //boundContext.model.setField(name, $e.is(":checked"));
+              break;
+            case "input":
+              //boundContext.model.setField(name, $e.val());
+              break;
+            case "textarea":
+              //boundContext.model.setField(name, $e.val());
+              fieldValue=e.val();
+              break;
+            case "textarea-split":
+            /*
+              boundContext.model.setField(name,
+                _.chain($e.val().split("\n"))
+                  .map(function(t){return $.trim(t)})
+                  .filter(function(t){return t.length > 0})
+                  .value()
+                  );
+*/
+              break;
+            case "select":
+            /*
+              var valarr = _.map($e.find("option"), function(e){
+                return {value: e.value, selected: e.selected, label:$(e).text()};
+              });
+              boundContext.model.setField(name, valarr);
+              */
+              break;
+          }
+
+        return {
+        //"ControlType": "",
+        //"ControlGroupType":"",
+        "FormFieldMapKey":v.attr("data-formfieldmapkey"),
+        "FieldValue": fieldValue
+        };
+      });
       g_globalModel.GlobalModelRef.saveFormData(null);
     
     }

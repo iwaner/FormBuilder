@@ -1,8 +1,10 @@
 <!-- Text input-->
-<div class="control-group">
+<div class="control-group" data-FormFieldMapKey="<%- FormFieldMapKey %>">
   <label class="control-label" for="<%- id %>"><%- label %></label>
   <div class="controls">
-    <input id="<%- id %>" name="<%- id %>" type="text" placeholder="<%- placeholder %>" class="<%- inputsize %>" <% if(!iseditable) {%> readonly <% } %> <% if(required) {%> required <% } %> data-FormFieldMapKey="<%- FormFieldMapKey %>" />
+    <input id="<%- id %>" name="<%- id %>" type="text" placeholder="<%- placeholder %>" class="<%- inputsize %>" <% if(required) {%> required <% } %> 
+    <% if(!iseditable) {%> readonly <% } %> 
+    data-isbizfield="true" data-controltype="<%- controltype %>" data-FormFieldMapKey="<%- FormFieldMapKey %>"/>
     <% if (helptext.length > 0) { %><p class="help-block"><%- helptext %></p><% } %>
   </div>
 </div>

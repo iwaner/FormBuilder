@@ -26,19 +26,27 @@ define([
 
       //////////保存表单(之后考虑已backcone的事件定义方式来实现)
       $("#saveForm").bind("click", function (argument) {
-            g_globalModel.GlobalModelRef.saveFormTempalte();
+          //hide all popovers
+          $(".popover").hide();
+          var userFormTabIndex=$("#viewformtemplatedata").index();
+          $("#formtabs li").eq(userFormTabIndex).find("a").tab('show');
+
+          g_globalModel.GlobalModelRef.saveFormTempalte();
         });
        //////////使用表单
       $("#btnUseForm").bind("click", function (argument) {
-      //将保存的表单数据展示为form
-      var useformView=new UseFormView({
-          title: "Original"
-          , collection: new MyFormSnippetsCollection(JSON.parse($("#formTemplateData").val()))
-        });
-        $("#useForm").html(useformView.renderForm({
-            text: _.map(useformView.collection.renderAllClean(), function (e) { return e.html() }).join("\n")
-        }));
-        
+        //hide all popovers
+        $(".popover").hide();
+        var userFormTabIndex=$("#viewformtemplatedata").index();
+        $("#formtabs li").eq(userFormTabIndex).find("a").tab('show');
+        //将保存的表单数据展示为form
+        var useformView=new UseFormView({
+            title: "Original"
+            , collection: new MyFormSnippetsCollection(JSON.parse($("#formTemplateData").val()))
+          });
+          $("#useForm").html(useformView.renderForm({
+              text: _.map(useformView.collection.renderAllClean(), function (e) { return e.html() }).join("\n")
+          }));
         });
 
 
