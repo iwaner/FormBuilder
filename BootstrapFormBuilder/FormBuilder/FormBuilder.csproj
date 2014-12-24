@@ -142,6 +142,7 @@
     <Content Include="Bootstrap-Form-Builder\assets\js\views\tab-snippet.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\views\tab.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\views\temp-snippet.js" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\views\use-form.js" />
     <Content Include="Bootstrap-Form-Builder\DragForm.html" />
     <Content Include="Bootstrap-Form-Builder\DragForm2.html" />
     <Content Include="Bootstrap-Form-Builder\FormBuilderMain.aspx" />
