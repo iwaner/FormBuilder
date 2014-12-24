@@ -30,11 +30,7 @@ define([
         });
        //////////使用表单
       $("#btnUseForm").bind("click", function (argument) {
-        /*
-        var useformView=new UseFormView({
-          title: "Original"
-          , collection: new MyFormSnippetsCollection(JSON.parse(g_globalModel.FormTemplate.FormTemplateData.ControlGroups))
-        });*/
+      //将保存的表单数据展示为form
       var useformView=new UseFormView({
           title: "Original"
           , collection: new MyFormSnippetsCollection(JSON.parse($("#formTemplateData").val()))

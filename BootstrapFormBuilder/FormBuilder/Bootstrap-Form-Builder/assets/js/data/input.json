@@ -61,6 +61,11 @@
         "type": "checkbox",
         "label": "Required",
         "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
       }
     },
     "title": "Text Input",
@@ -131,6 +136,11 @@
         "type": "checkbox",
         "label": "Required",
         "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
       }
     },
     "title": "Password Input",
@@ -201,6 +211,11 @@
         "type": "checkbox",
         "label": "Required",
         "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
       }
     },
     "title": "Search Input",
@@ -276,6 +291,11 @@
         "type": "checkbox",
         "label": "Required",
         "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
       }
     },
     "title": "Prepended Text",
@@ -351,6 +371,11 @@
         "type": "checkbox",
         "label": "Required",
         "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
       }
     },
     "title": "Appended Text",
@@ -426,6 +451,11 @@
         "type": "checkbox",
         "label": "Required",
         "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
       }
     },
     "title": "Prepended Checkbox",
@@ -501,6 +531,11 @@
         "type": "checkbox",
         "label": "Required",
         "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
       }
     },
     "title": "Appended Checkbox",
@@ -580,6 +615,11 @@
         "type": "checkbox",
         "label": "Required",
         "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
       }
     },
     "title": "Button Drop Down",
@@ -604,6 +644,11 @@
         "type": "textarea",
         "label": "Starting Text",
         "value": "default text"
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
       }
     },
     "title": "Text Area",

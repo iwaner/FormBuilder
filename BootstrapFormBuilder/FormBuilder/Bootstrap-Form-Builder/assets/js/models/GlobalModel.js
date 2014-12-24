@@ -44,5 +44,9 @@ define([
       $("#formTemplateData").val(JSON.stringify(this.saveFormControlGroups.models));
       //console.log(JSON.stringify(g_globalModel.FormTemplate));
     }
+    ,saveFormData: function (formData){
+      //保存表单数据
+      g_globalModel.FormData = formData;
+    }
 };
 });

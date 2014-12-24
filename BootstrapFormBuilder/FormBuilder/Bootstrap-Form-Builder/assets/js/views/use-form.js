@@ -1,17 +1,19 @@
-//表单设计器的view
+/*
+表单instance填写的view
+*/
 define([
        "jquery", "underscore", "backbone"
       , "views/temp-snippet"
       , "helper/pubsub"
       , "text!templates/app/renderform.html"
-      ,"models/test","models/GlobalModel"
+      ,"models/test"
       ,"collections/my-form-snippets","views/my-form"
 ], function(
   $, _, Backbone
   , TempSnippetView
   , PubSub
   , _renderForm
-  ,testModel,GlobalModel
+  ,testModel
   ,MyFormSnippetsCollection,MyFormView
 ){
   return Backbone.View.extend({
@@ -32,6 +34,13 @@ define([
       this.delegateEvents();
  
     }
+    , saveFormData:function(){
+      //保存表单数据
+      
+      g_globalModel.GlobalModelRef.saveFormData(null);
+    
+    }
   })
+
 });
 
