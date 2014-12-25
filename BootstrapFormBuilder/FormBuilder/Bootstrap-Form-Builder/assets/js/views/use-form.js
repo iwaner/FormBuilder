@@ -21,6 +21,14 @@ define([
     , initialize: function(){
       this.collection.on("add", this.render, this);
       this.collection.on("remove", this.render, this);
+      var that=this;
+      $("#saveFormData").bind("click", function (argument) {
+          //保存表单数据
+          //hide all popovers
+          $(".popover").hide();
+          that.saveFormData();
+
+      });
       this.renderForm = _.template(_renderForm);
       this.render();
     }
@@ -35,12 +43,13 @@ define([
  
     }
     , saveFormData:function(){//保存表单数据
+      console.log("saveFormData");
       //hide all popovers
       $(".popover").hide();
       //获取表单中的业务数据控件
       var dataControls=$("#useForm [data-isbizfield='true']");
       var dataFields=_.map(dataControls, function(v,k){
-        var controlType=v.attr("data-controltype");
+        var controlType=$(v).attr("data-controltype");
         var fieldValue="";
         switch(controlType) {
             case "checkbox":
@@ -48,6 +57,7 @@ define([
               break;
             case "input":
               //boundContext.model.setField(name, $e.val());
+              fieldValue=e.val();
               break;
             case "textarea":
               //boundContext.model.setField(name, $e.val());
