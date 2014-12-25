@@ -44,9 +44,10 @@ define([
             title: "Original"
             , collection: new MyFormSnippetsCollection(JSON.parse($("#formTemplateData").val()))
           });
-          $("#useForm").html(useformView.renderForm({
-              text: _.map(useformView.collection.renderAllClean(), function (e) { return e.html() }).join("\n")
-          }));
+        $("#useForm").html(useformView.renderForm({
+            text: _.map(useformView.collection.renderAllClean(), function (e) { return e.html() }).join("\n")
+        }));
+
         });
 
 
