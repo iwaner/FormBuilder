@@ -7,7 +7,7 @@ using FormBuilder.Utility;
 
 namespace FormBuilder.FormBuilderHander
 {
-    public class FormInstanceHandler : IHttpHandler, IRequiresSessionState
+    public class FormInstanceHandler : IHttpHandler
     {
         public bool IsReusable
         {

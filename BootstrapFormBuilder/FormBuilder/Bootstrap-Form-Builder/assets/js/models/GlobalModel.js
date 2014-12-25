@@ -3,50 +3,60 @@
 */
 define([
       'jquery', 'underscore', 'backbone'
-      ,"text!data/buildform.json"
-      ,"collections/save-form-snippets"
-], function(
+      , "text!data/buildform.json"
+      , "collections/save-form-snippets"
+], function (
   $, _, Backbone
-  ,buildFormJSON
-  ,SaveFormSnippetCollection
+  , buildFormJSON
+  , SaveFormSnippetCollection
 ) {
     return {
-    initialize: function() {
-      g_globalModel={};
-      //if(!g_globalModel.GlobalModelRef)
-      //{
-      //  g_globalModel.GlobalModelRef=this;//将当前model加入全局变量
-      //}
-      g_globalModel.FormTemplate=JSON.parse(buildFormJSON);//表单模板保存的结构（和数据库对应）
-      this.FormTemplate=JSON.parse(buildFormJSON);
-      this.saveFormControlGroups=new SaveFormSnippetCollection();
-    }
-    //保存表单的数据，此数据将被传回服务器
+        initialize: function () {
+            g_globalModel = {};
+            //if(!g_globalModel.GlobalModelRef)
+            //{
+            //  g_globalModel.GlobalModelRef=this;//将当前model加入全局变量
+            //}
+            g_globalModel.FormTemplate = JSON.parse(buildFormJSON);//表单模板保存的结构（和数据库对应）
+            this.FormTemplate = JSON.parse(buildFormJSON);
+            this.saveFormControlGroups = new SaveFormSnippetCollection();
+        }
+        //保存表单的数据，此数据将被传回服务器
     , FormTemplate: {}
-    ,setFormName:function (formName) {
-      g_globalModel.FormTemplate.FormTemplateData.FormName=formName;
+    , setFormName: function (formName) {
+        g_globalModel.FormTemplate.FormTemplateData.FormName = formName;
     }
-    //,setControlGroups:function (ctrGroups) {
-    //  g_globalModel.FormTemplate.FormTemplateData.ControlGroups=ctrGroups;
-    //}
-    ,addControlGroup:function (ctrGroup) {
-      this.saveFormControlGroups.add(ctrGroup);
-      //g_globalModel.FormTemplate.FormTemplateData.ControlGroups.push(ctrGroup);
+        //,setControlGroups:function (ctrGroups) {
+        //  g_globalModel.FormTemplate.FormTemplateData.ControlGroups=ctrGroups;
+        //}
+    , addControlGroup: function (ctrGroup) {
+        this.saveFormControlGroups.add(ctrGroup);
+        //g_globalModel.FormTemplate.FormTemplateData.ControlGroups.push(ctrGroup);
     }
-    ,removeControlGroup:function (ctrGroup) {
-      this.saveFormControlGroups.remove(ctrGroup);
+    , removeControlGroup: function (ctrGroup) {
+        this.saveFormControlGroups.remove(ctrGroup);
     }
-    ,saveFormControlGroups:{}
-    ,saveFormTempalte: function (){
-      /**/
-    	//保存model到全局变量
-      //formTemplateData
-      $("#formTemplateData").val(JSON.stringify(this.saveFormControlGroups.models));
-      //console.log(JSON.stringify(g_globalModel.FormTemplate));
+    , saveFormControlGroups: {}
+    , saveFormTempalte: function () {
+        /**/
+        //保存model到全局变量
+        //formTemplateData
+        var jsonTemplate = JSON.stringify(this.saveFormControlGroups.models);
+        $("#formTemplateData").val(jsonTemplate);
+        $.ajax({
+            type: "get",
+            url: "../../../FormBuilderMain.aspx",
+            data: jsonTemplate,
+            contentType: "application/json; charset=GB2312",
+            traditional: true,
+            success: function () {
+                alert("s");
+            }
+        });
     }
-    ,saveFormData: function (formData){
-      //保存表单数据
-      g_globalModel.FormData = formData;
+    , saveFormData: function (formData) {
+        //保存表单数据
+        g_globalModel.FormData = formData;
     }
-};
+    };
 });

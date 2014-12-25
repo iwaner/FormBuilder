@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Web;
-using System.Web.SessionState;
 using FormBuilder.BLL;
 using FormBuilder.Utility;
 
 namespace FormBuilder.FormBuilderHander
 {
-    public class FormTemplateHandler : IHttpHandler, IRequiresSessionState
+    public class FormTemplateHandler : IHttpHandler
     {
         public bool IsReusable
         {
