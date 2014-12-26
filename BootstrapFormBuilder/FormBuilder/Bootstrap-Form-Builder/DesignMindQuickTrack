@@ -1,3 +1,6 @@
+2014-12-26
+1.现在load表单数据并重新绑定到表单上有些问题；
+
 2014-12-23
 1.表单控件的title属性目前既用作展示，又用做获得模板：this.template = _.template(_snippetTemplates[this.model.idFriendlyTitle()])，不方便，需要扩展一个属性分开，用来展示在页面上
 
