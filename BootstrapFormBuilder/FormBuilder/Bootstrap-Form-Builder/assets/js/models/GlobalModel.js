@@ -57,6 +57,8 @@ define([
     , saveFormData: function (formData) {
         //保存表单数据
         g_globalModel.FormData = formData;
+        $("#formDataJsonText").val(JSON.stringify(g_globalModel.FormData));;
     }
+   
     };
 });
