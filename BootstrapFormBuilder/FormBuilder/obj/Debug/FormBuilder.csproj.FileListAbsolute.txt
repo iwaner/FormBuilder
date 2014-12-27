@@ -60,3 +60,10 @@ H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataModel.pdb
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.Utility.pdb
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataAccess.pdb
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.csprojResolveAssemblyReference.cache
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.BLL.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.Utility.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataAccess.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.BLL.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.Utility.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataAccess.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.dll.config

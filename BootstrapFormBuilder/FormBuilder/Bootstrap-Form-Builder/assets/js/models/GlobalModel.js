@@ -44,11 +44,10 @@ define([
         var jsonTemplate = JSON.stringify(this.saveFormControlGroups.models);
         $("#formTemplateData").val(jsonTemplate);
         $.ajax({
-            type: "get",
-            url: "../../../FormBuilderMain.aspx",
+            type: "post",
+            url: "../FormBuilderMainajax.aspx",
             data: jsonTemplate,
-            contentType: "application/json; charset=GB2312",
-            traditional: true,
+            contentType: "text/json;",
             success: function () {
                 alert("s");
             }
