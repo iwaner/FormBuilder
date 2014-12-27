@@ -41,12 +41,13 @@ define([
         /**/
         //保存model到全局变量
         //formTemplateData
-        var jsonTemplate = JSON.stringify(this.saveFormControlGroups.models);
-        $("#formTemplateData").val(jsonTemplate);
+        var ctrGroups = JSON.stringify(this.saveFormControlGroups.models);
+        var postData=this.buildFormTemplateForPostJson(ctrGroups);
+        $("#formTemplateData").val(postData);
         $.ajax({
             type: "post",
             url: "../FormBuilderMainajax.aspx",
-            data: jsonTemplate,
+            data: postData,
             contentType: "text/json;",
             success: function () {
                 alert("s");
@@ -57,6 +58,10 @@ define([
         //保存表单数据
         g_globalModel.FormData = formData;
         $("#formDataJsonText").val(JSON.stringify(g_globalModel.FormData));;
+    }
+    , buildFormTemplateForPostJson: function (ctrGroups) {
+       g_globalModel.FormTemplate.FormTemplateData=ctrGroups;
+       return g_globalModel.FormTemplate.FormTemplateData;
     }
    
     };
