@@ -42,7 +42,7 @@ define([
         //将保存的表单数据展示为form
         var useformView=new UseFormView({
             title: "Original"
-            , collection: new MyFormSnippetsCollection(JSON.parse($("#formTemplateData").val()))
+            , collection: new MyFormSnippetsCollection(JSON.parse($("#formTemplateData").val()).FormTemplateData.ControlGroups)
           });
         $("#useForm").html(useformView.renderForm({
             text: _.map(useformView.collection.renderAllClean(), function (e) { return e.html() }).join("\n")

@@ -11,6 +11,6 @@ namespace FormBuilder.DataModel
         public string CreateUser { get; set; }
         public string ModifyTime { get; set; }
         public string ModifyUser { get; set; }
-        public FormTemplateModel FormTemplateModel { get; set; }
+        public string FormData { get; set; }
     }
 }

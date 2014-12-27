@@ -18,7 +18,7 @@ namespace FormBuilder.DataModel
                 CreateUser = formInstanceTb.Rows[0]["CreateUser"].ToString(),
                 ModifyTime = formInstanceTb.Rows[0]["CreateTime"].ToString().ToDateTime(),
                 ModifyUser = formInstanceTb.Rows[0]["ModifyUser"].ToString().ToDateTime(),
-                FormTemplateModel = FormTemplateModeMapping.MapDataTableToFormTemplateModel(formTemplateTb, formControlGroupTb)
+                FormData = formInstanceTb.Rows[0]["FormData"].ToString()
             };
             return formTemplateModel;
         }
