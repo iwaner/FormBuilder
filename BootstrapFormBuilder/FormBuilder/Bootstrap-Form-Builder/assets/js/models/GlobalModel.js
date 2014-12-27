@@ -3,11 +3,11 @@
 */
 define([
       'jquery', 'underscore', 'backbone'
-      , "text!data/buildform.json"
+      , "text!data/buildform.json", "text!data/forminstance.json"
       , "collections/save-form-snippets"
 ], function (
   $, _, Backbone
-  , buildFormJSON
+  , buildFormJSON,formInstanceJSON
   , SaveFormSnippetCollection
 ) {
     return {
@@ -18,6 +18,7 @@ define([
             //  g_globalModel.GlobalModelRef=this;//将当前model加入全局变量
             //}
             g_globalModel.FormTemplate = JSON.parse(buildFormJSON);//表单模板保存的结构（和数据库对应）
+            g_globalModel.FormData = JSON.parse(formInstanceJSON);//表单数据保存的结构（和数据库对应）
             this.FormTemplate = JSON.parse(buildFormJSON);
             this.saveFormControlGroups = new SaveFormSnippetCollection();
         }
@@ -41,28 +42,44 @@ define([
         /**/
         //保存model到全局变量
         //formTemplateData
-        var ctrGroups = JSON.stringify(this.saveFormControlGroups.models);
+        var ctrGroups = this.saveFormControlGroups.models;
         var postData=this.buildFormTemplateForPostJson(ctrGroups);
-        $("#formTemplateData").val(postData);
+        $("#formTemplateData").val(JSON.stringify(postData));
+        /*
         $.ajax({
             type: "post",
             url: "../FormBuilderMainajax.aspx",
             data: postData,
             contentType: "text/json;",
             success: function () {
-                alert("s");
+                alert("保存表单模板");
             }
         });
+*/
     }
     , saveFormData: function (formData) {
         //保存表单数据
-        g_globalModel.FormData = formData;
-        $("#formDataJsonText").val(JSON.stringify(g_globalModel.FormData));;
+        var postData=this.buildFormDataForPostJson(formData);
+        $("#formDataJsonText").val(JSON.stringify(postData));
+        $.ajax({
+            type: "post",
+            url: "../FormBuilderMainajax.aspx",
+            data: postData,
+            contentType: "text/json;",
+            success: function () {
+                alert("保存表单数据");
+            }
+        });
     }
     , buildFormTemplateForPostJson: function (ctrGroups) {
-       g_globalModel.FormTemplate.FormTemplateData=ctrGroups;
-       return g_globalModel.FormTemplate.FormTemplateData;
+       g_globalModel.FormTemplate.FormTemplateData.ControlGroups=ctrGroups;
+       return g_globalModel.FormTemplate;
+    }
+    , buildFormDataForPostJson: function (dataFields) {
+       g_globalModel.FormData.DataFields=dataFields;
+       return g_globalModel.FormData;
     }
    
     };
 });
+//postData.FormTemplateData.FormTemplateData.ControlGroups
