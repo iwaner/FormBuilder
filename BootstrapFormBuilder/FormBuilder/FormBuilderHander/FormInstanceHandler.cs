@@ -11,7 +11,7 @@ namespace FormBuilder.FormBuilderHander
     {
         public bool IsReusable
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
         public void ProcessRequest(HttpContext context)

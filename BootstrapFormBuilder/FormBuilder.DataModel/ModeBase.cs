@@ -5,10 +5,6 @@ namespace FormBuilder.DataModel
 {
     public abstract class ModeBase
     {
-        protected ModeBase()
-        {
-
-        }
     }
 
     public static class ModeBaseExtension
@@ -21,6 +17,22 @@ namespace FormBuilder.DataModel
             try
             {
                 result = JsonConvert.SerializeObject(oList, Formatting.None);
+            }
+            catch (Exception)
+            {
+                result = string.Empty;
+            }
+            return result;
+        }
+
+        public static string ToJason(this ModeBase modeBase)
+        {
+            string result;
+            if (modeBase == null)
+                return string.Empty;
+            try
+            {
+                result = JsonConvert.SerializeObject(modeBase, Formatting.None);
             }
             catch (Exception)
             {

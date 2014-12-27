@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Web;
 using FormBuilder.BLL;
 using FormBuilder.DataModel;
@@ -11,7 +10,7 @@ namespace FormBuilder.FormBuilderHander
     {
         public bool IsReusable
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
         public void ProcessRequest(HttpContext context)
@@ -33,7 +32,8 @@ namespace FormBuilder.FormBuilderHander
             else
             {
                 var formTemplateId = context.Request["formTemplateId"].ToInt64();
-                templateBll.GetFormTemplate(formTemplateId);
+                var templateMode = templateBll.GetFormTemplate(formTemplateId);
+                var result = templateMode.ToJason();
             }
             
         }

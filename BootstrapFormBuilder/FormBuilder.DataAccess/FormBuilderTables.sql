@@ -68,25 +68,15 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 /****** Object:  StoredProcedure [dbo].[SP_GETFormTemplateById]    Script Date: 12/21/2014 15:31:51 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[SP_GETFormTemplateById] 
 	@FormTemplateId BIGINT
 AS
 BEGIN
 	SET NOCOUNT ON;
 	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @FormTemplateId;
-	SELECT * FROM dbo.FormControlGroup WHERE FormTemplateId = @FormTemplateId;
-	SELECT * FROM dbo.FormControlGroupProperty WHERE ControlGroupId IN (SELECT ControlGroupId FROM dbo.FormControlGroup WHERE FormTemplateId = @FormTemplateId)
 END
 GO
 /****** Object:  StoredProcedure [dbo].[SP_GETFormInstanceById]    Script Date: 12/21/2014 15:31:51 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE PROCEDURE [dbo].[SP_GETFormInstanceById] 
 	@FormInstanceId BIGINT
 AS
@@ -95,27 +85,20 @@ BEGIN
 	DECLARE @templateId BIGINT = (SELECT FormTemplateId FROM dbo.FormInstance WHERE FormInstanceId = @FormInstanceId)
 	SELECT * FROM dbo.FormInstance WHERE FormInstanceId = @FormInstanceId;
 	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @templateId;
-	SELECT * FROM dbo.FormControlGroup WHERE FormTemplateId = @templateId;
-	SELECT * FROM dbo.FormControlGroupProperty WHERE ControlGroupId IN (SELECT ControlGroupId FROM dbo.FormControlGroup WHERE FormTemplateId = @templateId)
 END
-GO
 /****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormTemplate]    Script Date: 12/21/2014 15:31:51 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
 GO
 CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormTemplate] 
 	@FormTemplateId BIGINT,
 	@FormName NVARCHAR(50),
 	@FormDescription NVARCHAR(200),
-	@FormHtmlTemplate BIGINT,
-	@FormControlGroup [dbo].[FormControlGroupUDT] READONLY
+	@FormTemplateData NVARCHAR(MAX)
 AS
 BEGIN
 	IF (@FormTemplateId = -1) 
 	BEGIN
 		INSERT INTO dbo.FormTemplate
-		VALUES(@FormName,@FormDescription,@FormHtmlTemplate)
+		VALUES(@FormName,@FormDescription,@FormTemplateData)
 		SET @FormTemplateId = SCOPE_IDENTITY()
 	END 
 	ELSE
@@ -123,20 +106,14 @@ BEGIN
 		UPDATE dbo.FormTemplate
 		SET FormName = @FormName
 			,FormDescription = @FormDescription
-			,FormHtmlTemplate = @FormHtmlTemplate
+			,FormTemplateData = @FormTemplateData
 		WHERE FormTemplateId = @FormTemplateId;
 	END
-	DELETE dbo.FormControlGroup
-	WHERE FormTemplateId = @FormTemplateId;
-	INSERT INTO dbo.FormControlGroup
-	SELECT ControlType,OrderInForm,FormFieldMapKey,ControlGroupTemplateModel,@FormTemplateId
-	FROM @FormControlGroup;
+	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @FormTemplateId; 
 END
-GO
+
 /****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormInstance]    Script Date: 12/21/2014 15:31:51 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
+
 GO
 CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormInstance] 
 	@FormInstanceId BIGINT,
