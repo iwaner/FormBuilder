@@ -7,7 +7,7 @@ namespace FormBuilder.DataAccess
 {
     public class FormTemplateDAL : DataAccessBase
     {
-        public void InsertOrUpdateFormTemplate(Int64 formTemplateId, string formName, string formDescription, Int64 formHtmlTemplate, DataTable dt)
+        public void InsertOrUpdateFormTemplate(Int64 formTemplateId, string formName, string formDescription, string formTemplateData)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
@@ -42,19 +42,12 @@ namespace FormBuilder.DataAccess
 
                 param = new SqlParameter
                 {
-                    ParameterName = "@FormHtmlTemplate",
-                    Value = formDescription,
-                    SqlDbType = SqlDbType.BigInt
+                    ParameterName = "@FormTemplateData",
+                    Value = formTemplateData,
+                    SqlDbType = SqlDbType.NVarChar
                 };
                 cmd.Parameters.Add(param);
 
-                param = new SqlParameter
-                {
-                    ParameterName = "@FormControlGroup",
-                    Value = dt,
-                    SqlDbType = SqlDbType.Structured
-                };
-                cmd.Parameters.Add(param);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();

@@ -11,9 +11,8 @@ namespace FormBuilder.DataModel
             {
                 FormTemplateId = formTemplateTb.Rows[0]["FormTemplateId"].ToString().ToInt64(),
                 FormDescription = formTemplateTb.Rows[0]["FormDescription"].ToString(),
-                FormHtmlTemplate = formTemplateTb.Rows[0]["FormHtmlTemplate"].ToString().ToInt64(),
+                FormTemplateData = formTemplateTb.Rows[0]["FormTemplateData"].ToString(),
                 FormName = formTemplateTb.Rows[0]["FormName"].ToString(),
-                ControlGroups = FormControlGroupModelMapping.MapDataTableToFormGroupModel(controlGroupTb)
             };
             return formTemplateModel;
         }

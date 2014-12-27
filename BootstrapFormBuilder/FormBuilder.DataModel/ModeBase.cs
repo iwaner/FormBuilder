@@ -5,7 +5,10 @@ namespace FormBuilder.DataModel
 {
     public abstract class ModeBase
     {
-        
+        protected ModeBase()
+        {
+
+        }
     }
 
     public static class ModeBaseExtension
@@ -22,6 +25,24 @@ namespace FormBuilder.DataModel
             catch (Exception)
             {
                 result = string.Empty;
+            }
+            return result;
+        }
+
+        public static T ToModeBase<T>(this string data) where T : ModeBase, new()
+        {
+            T result;
+            if (string.IsNullOrEmpty(data))
+            {
+                return null;
+            }
+            try
+            {
+                result = JsonConvert.DeserializeObject<T>(data);
+            }
+            catch (Exception)
+            {
+                result = null;
             }
             return result;
         }
