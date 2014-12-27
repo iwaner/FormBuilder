@@ -43,28 +43,28 @@ define([
         //保存model到全局变量
         //formTemplateData
         var ctrGroups = this.saveFormControlGroups.models;
-        var postData=this.buildFormTemplateForPostJson(ctrGroups);
-        $("#formTemplateData").val(JSON.stringify(postData));
-        /*
+        var postData = this.buildFormTemplateForPostJson(ctrGroups);
+            var templateJson = JSON.stringify(postData);
+            $("#formTemplateData").val(templateJson);
         $.ajax({
             type: "post",
-            url: "../FormBuilderMainajax.aspx",
-            data: postData,
+            url: "../../FormBuilderMainajax.aspx",
+            data: templateJson,
             contentType: "text/json;",
             success: function () {
                 alert("保存表单模板");
             }
         });
-*/
     }
     , saveFormData: function (formData) {
         //保存表单数据
-        var postData=this.buildFormDataForPostJson(formData);
-        $("#formDataJsonText").val(JSON.stringify(postData));
+        var postData = this.buildFormDataForPostJson(formData);
+            var instanceJson = JSON.stringify(postData);
+            $("#formDataJsonText").val(instanceJson);
         $.ajax({
             type: "post",
             url: "../FormBuilderMainajax.aspx",
-            data: postData,
+            data: instanceJson,
             contentType: "text/json;",
             success: function () {
                 alert("保存表单数据");

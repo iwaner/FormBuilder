@@ -8,6 +8,6 @@ namespace FormBuilder.DataModel
         public Int64 FormTemplateId { get; set; }
         public string FormDescription { get; set; }
         public string FormName { get; set; }
-        public string FormTemplateData { get; set; }
+        public object FormTemplateData { get; set; }
     }
 }

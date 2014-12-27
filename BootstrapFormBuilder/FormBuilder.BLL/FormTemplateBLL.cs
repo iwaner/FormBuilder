@@ -18,7 +18,7 @@ namespace FormBuilder.BLL
             var templateDal = new FormTemplateDAL();
             templateDal.InsertOrUpdateFormTemplate(formTemplateModel.FormTemplateId,
                  formTemplateModel.FormName,
-                 formTemplateModel.FormDescription, formTemplateModel.FormTemplateData);
+                 formTemplateModel.FormDescription, formTemplateModel.FormTemplateData.ToString());
         }
     }
 }

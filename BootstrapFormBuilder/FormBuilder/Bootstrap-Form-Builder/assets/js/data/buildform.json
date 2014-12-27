@@ -1,9 +1,9 @@
   {
-    "FormId":"0",
+    "FormTemplateId":"0",
     "FormName":"表单名称",
     "FormDescription":"表单描述",
     "FormTemplateData":{
-        "FormId":"0",
+        "FormTemplateId":"0",
         "FormName":"",
         "ControlGroups": [{
           "title":"formname",

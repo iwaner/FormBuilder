@@ -264,6 +264,7 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bootstrap-Form-Builder\assets\js\data\buildform.json" />
     <None Include="Bootstrap-Form-Builder\assets\js\data\buttons.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
