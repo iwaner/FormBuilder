@@ -85,6 +85,7 @@
     <Content Include="Bootstrap-Form-Builder\assets\js\app.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\collections\my-form-snippets.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\collections\snippets.js" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\formtemplatelist.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\HelloTestApp.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\HelloTestMain.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\helper\pubsub.js" />
@@ -103,12 +104,15 @@
     <Content Include="Bootstrap-Form-Builder\assets\js\models\snippet.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\models\test.js" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\about.html" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\FormTemplateViewRow.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\preview.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\render.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\renderform.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\tab-nav.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\temp.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\user-doc.html" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\viewFormTemplateData.html" />
+    <Content Include="Bootstrap-Form-Builder\assets\js\templates\app\ViewTemplateList.htm" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\popover\popover-checkbox.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\popover\popover-input.html" />
     <Content Include="Bootstrap-Form-Builder\assets\js\templates\popover\popover-main.html" />
