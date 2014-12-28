@@ -29,6 +29,14 @@ define([
           that.saveFormData();
 
       });
+      $("#loadFormData").bind("click", function (argument) {
+          //加载表单数据
+          //hide all popovers
+          $(".popover").hide();
+          var formData=JSON.parse($("#formDataJsonText").val()).FormData;
+          that.loadFormData(formData);
+
+      });
       this.renderForm = _.template(_renderForm);
       this.render();
     }
@@ -97,6 +105,9 @@ define([
     , loadFormData: function (formData) {//加载表单数据
         //hide all popovers
       $(".popover").hide();
+      var formTemplateStr="";
+      var formTemplateModel =JSON.parse($("#formTemplateData").val());
+
       //获取表单中的业务数据控件
       var dataControls=$("#useForm [data-isbizfield='true']");
       _.each(dataControls,function(dataCtr){
@@ -105,7 +116,7 @@ define([
         var controlType=$(dataCtr).attr("data-controltype");
         switch(controlType) {
             case "checkbox":
-              dataCtr.model.setField(name, $e.is(":checked"));
+              //dataCtr.model.setField(name, $e.is(":checked"));
               break;
             case "input":
               dataCtr.val(fieldVal);
@@ -117,6 +128,7 @@ define([
               dataCtr.val(fieldVal);
               break;
             case "select":
+            /*
               var valArr=JSON.parse(fieldVal);
               _.map($(dataCtr).find("option"), function(e){
                 return {value: e.value, selected: e.selected, label:$(e).text()};
@@ -130,10 +142,11 @@ define([
                 }
               });
               dataCtr.model.setField(name, valarr);
+              */
               break;
           }
       }); 
-      $("#formDataJsonText").val(JSON.stringify(g_globalModel.FormData));
+      
     }
   })
 

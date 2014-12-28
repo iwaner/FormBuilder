@@ -57,6 +57,11 @@
         "label": "Placeholder",
         "value": "placeholder"
       },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
       "required": {
         "type": "checkbox",
         "label": "Required",
@@ -132,6 +137,11 @@
         "label": "Placeholder",
         "value": "placeholder"
       },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
       "required": {
         "type": "checkbox",
         "label": "Required",
@@ -206,6 +216,11 @@
         "type": "input",
         "label": "Placeholder",
         "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
       },
       "required": {
         "type": "checkbox",
@@ -287,6 +302,11 @@
         "label": "Placeholder",
         "value": "placeholder"
       },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
       "required": {
         "type": "checkbox",
         "label": "Required",
@@ -367,6 +387,11 @@
         "label": "Placeholder",
         "value": "placeholder"
       },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
       "required": {
         "type": "checkbox",
         "label": "Required",
@@ -441,6 +466,11 @@
         "type": "input",
         "label": "Placeholder",
         "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
       },
       "checked": {
         "type": "checkbox",
@@ -521,6 +551,11 @@
         "type": "input",
         "label": "Placeholder",
         "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
       },
       "checked": {
         "type": "checkbox",
