@@ -56,7 +56,11 @@
         "value": "Select Basic"
       }
     },
-    "title": "Select Basic"
+    "title": "Select Basic",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"selectbasic"
   },
   {
     "fields": {
@@ -115,6 +119,10 @@
         "value": "Select Multiple"
       }
     },
-    "title": "Select Multiple"
+    "title": "Select Multiple",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"selectmultiple"
   }
 ]
