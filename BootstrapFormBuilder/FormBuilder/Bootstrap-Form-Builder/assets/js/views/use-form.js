@@ -54,7 +54,7 @@ define([
         var fieldValue="";
         switch(controlType) {
             case "checkbox":
-              //boundContext.model.setField(name, $e.is(":checked"));
+             fieldValue= $(v).is(":checked");
               break;
             case "input":
               //boundContext.model.setField(name, $e.val());
@@ -75,12 +75,12 @@ define([
 */
               break;
             case "select":
-            /*
-              var valarr = _.map($e.find("option"), function(e){
-                return {value: e.value, selected: e.selected, label:$(e).text()};
+            /**/
+              var valarr = _.map($(v).find("option"), function(e){
+                return {value: e.value, selected: e.selected};
               });
-              boundContext.model.setField(name, valarr);
-              */
+              fieldValue=valarr;
+              
               break;
           }
 
