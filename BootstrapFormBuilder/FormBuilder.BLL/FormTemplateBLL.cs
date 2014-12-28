@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FormBuilder.DataAccess;
 using FormBuilder.DataModel;
 
@@ -19,6 +20,13 @@ namespace FormBuilder.BLL
             templateDal.InsertOrUpdateFormTemplate(formTemplateModel.FormTemplateId,
                  formTemplateModel.FormName,
                  formTemplateModel.FormDescription, formTemplateModel.FormTemplateData.ToString());
+        }
+
+        public List<FormTemplateModel> GetFormTemplates()
+        {
+            var templateDal = new FormTemplateDAL();
+            var templateMode = templateDal.GetFormTemplates();
+            return templateMode;
         }
     }
 }

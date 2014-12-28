@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 namespace FormBuilder.DataModel
@@ -10,6 +11,22 @@ namespace FormBuilder.DataModel
     public static class ModeBaseExtension
     {
         public static string ToJason<T>(this ModeBase modeBase, List<T> oList)
+        {
+            string result;
+            if (oList == null || oList.Count == 0)
+                return string.Empty;
+            try
+            {
+                result = JsonConvert.SerializeObject(oList, Formatting.None);
+            }
+            catch (Exception)
+            {
+                result = string.Empty;
+            }
+            return result;
+        }
+
+        public static string ToJason<T>(this List<T> oList) where T : ModeBase
         {
             string result;
             if (oList == null || oList.Count == 0)

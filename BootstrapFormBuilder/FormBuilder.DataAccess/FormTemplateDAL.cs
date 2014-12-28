@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using FormBuilder.DataModel;
@@ -100,6 +101,25 @@ namespace FormBuilder.DataAccess
                 da.Fill(ds, "FormTemplate");
                 conn.Close();
                 var tempData = FormTemplateModeMapping.MapDataTableToFormTemplateModel(ds.Tables[0], ds.Tables[1]);
+                return tempData;
+            }
+        }
+
+        public List<FormTemplateModel> GetFormTemplates()
+        {
+            using (var conn = new SqlConnection(ConnectionString))
+            {
+                var cmd = new SqlCommand("[dbo].[SP_GETFormTemplates]", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                conn.Open();
+                var da = new SqlDataAdapter(cmd);
+                var ds = new DataSet();
+                da.Fill(ds, "FormTemplates");
+                conn.Close();
+                var tempData = FormTemplateModeMapping.MapDataTableToFormTemplateModels(ds.Tables[0]);
                 return tempData;
             }
         }

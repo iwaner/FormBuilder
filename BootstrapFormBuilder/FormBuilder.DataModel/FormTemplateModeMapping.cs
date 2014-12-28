@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using FormBuilder.Utility;
 
 namespace FormBuilder.DataModel
@@ -15,6 +16,24 @@ namespace FormBuilder.DataModel
                 FormName = formTemplateTb.Rows[0]["FormName"].ToString(),
             };
             return formTemplateModel;
+        }
+
+        static public List<FormTemplateModel> MapDataTableToFormTemplateModels(DataTable formTemplateTb)
+        {
+            var templateModels = new List<FormTemplateModel>();
+            foreach (DataRow row in formTemplateTb.Rows)
+            {
+                var formTemplateModel = new FormTemplateModel
+                {
+                    FormTemplateId = row["FormTemplateId"].ToString().ToInt64(),
+                    FormDescription = row["FormDescription"].ToString(),
+                    FormTemplateData = row["FormTemplateData"].ToString(),
+                    FormName = row["FormName"].ToString(),
+                };
+                templateModels.Add(formTemplateModel);
+            }
+
+            return templateModels;
         }
     }
 }

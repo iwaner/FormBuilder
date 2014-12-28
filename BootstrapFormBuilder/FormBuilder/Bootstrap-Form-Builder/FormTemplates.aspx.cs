@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using FormBuilder.BLL;
+using FormBuilder.DataModel;
 
 namespace FormBuilder.Bootstrap_Form_Builder
 {
@@ -11,7 +8,12 @@ namespace FormBuilder.Bootstrap_Form_Builder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                var templateBll = new FormTemplateBLL();
+                var templateModes = templateBll.GetFormTemplates();
+                string result = templateModes.ToJason();
+            }
         }
     }
 }

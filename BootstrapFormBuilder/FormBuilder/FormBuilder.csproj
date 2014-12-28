@@ -363,6 +363,7 @@
     </Compile>
     <Compile Include="FormBuilderHander\FormInstanceHandler.cs" />
     <Compile Include="FormBuilderHander\FormTemplateHandler.cs" />
+    <Compile Include="FormBuilderHander\FormTemplatesHanlder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
