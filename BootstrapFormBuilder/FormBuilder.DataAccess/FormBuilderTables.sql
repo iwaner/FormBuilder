@@ -88,6 +88,7 @@ BEGIN
 END
 /****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormTemplate]    Script Date: 12/21/2014 15:31:51 ******/
 GO
+GO
 CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormTemplate] 
 	@FormTemplateId BIGINT,
 	@FormName NVARCHAR(50),
@@ -95,7 +96,7 @@ CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormTemplate]
 	@FormTemplateData NVARCHAR(MAX)
 AS
 BEGIN
-	IF (@FormTemplateId = -1) 
+	IF (@FormTemplateId = 0) 
 	BEGIN
 		INSERT INTO dbo.FormTemplate
 		VALUES(@FormName,@FormDescription,@FormTemplateData)
