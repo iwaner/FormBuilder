@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Services;
 using FormBuilder.BLL;
 using FormBuilder.DataModel;
 
@@ -10,10 +11,16 @@ namespace FormBuilder.Bootstrap_Form_Builder
         {
             if (!Page.IsPostBack)
             {
-                var templateBll = new FormTemplateBLL();
-                var templateModes = templateBll.GetFormTemplates();
-                string result = templateModes.ToJason();
+                
             }
+        }
+        [WebMethod]
+        public static string ShowAllTemplates()
+        {
+            var templateBll = new FormTemplateBLL();
+            var templateModes = templateBll.GetFormTemplates();
+            string result = templateModes.ToJason();
+            return result;
         }
     }
 }
