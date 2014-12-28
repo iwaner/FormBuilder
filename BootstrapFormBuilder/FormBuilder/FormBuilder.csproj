@@ -146,7 +146,7 @@
     <Content Include="Bootstrap-Form-Builder\DragForm.html" />
     <Content Include="Bootstrap-Form-Builder\DragForm2.html" />
     <Content Include="Bootstrap-Form-Builder\FormBuilderMain.aspx" />
-    <Content Include="Bootstrap-Form-Builder\FormTemplates.aspx" />
+    <Content Include="Bootstrap-Form-Builder\FormTemplateList.aspx" />
     <Content Include="Bootstrap-Form-Builder\HelloTest.htm" />
     <Content Include="Bootstrap-Form-Builder\index-dev.html" />
     <Content Include="Bootstrap-Form-Builder\index.html" />
@@ -342,12 +342,12 @@
     <Compile Include="Bootstrap-Form-Builder\FormBuilderMain.aspx.designer.cs">
       <DependentUpon>FormBuilderMain.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Bootstrap-Form-Builder\FormTemplates.aspx.cs">
-      <DependentUpon>FormTemplates.aspx</DependentUpon>
+    <Compile Include="Bootstrap-Form-Builder\FormTemplateList.aspx.cs">
+      <DependentUpon>FormTemplateList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Bootstrap-Form-Builder\FormTemplates.aspx.designer.cs">
-      <DependentUpon>FormTemplates.aspx</DependentUpon>
+    <Compile Include="Bootstrap-Form-Builder\FormTemplateList.aspx.designer.cs">
+      <DependentUpon>FormTemplateList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\ControlGroupResourceConfig.cs" />
     <Compile Include="Common\FileHelper.cs" />
@@ -363,7 +363,7 @@
     </Compile>
     <Compile Include="FormBuilderHander\FormInstanceHandler.cs" />
     <Compile Include="FormBuilderHander\FormTemplateHandler.cs" />
-    <Compile Include="FormBuilderHander\FormTemplatesHanlder.cs" />
+    <Compile Include="FormBuilderHander\FormTemplateListHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

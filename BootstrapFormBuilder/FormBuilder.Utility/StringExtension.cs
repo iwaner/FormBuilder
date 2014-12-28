@@ -18,11 +18,11 @@ namespace FormBuilder.Utility
             return result;
         }
 
-        public static string ToDateTime(this string convertString)
+        public static DateTime ToDateTime(this string convertString)
         {
             DateTime result;
             DateTime.TryParse(convertString, out result);
-            return result.ToString("yyyy-MM-dd");
+            return DateTime.Parse(result.ToString("yyyy-MM-dd"));
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters;
 using Newtonsoft.Json;
 namespace FormBuilder.DataModel
 {
@@ -33,7 +33,7 @@ namespace FormBuilder.DataModel
                 return string.Empty;
             try
             {
-                result = JsonConvert.SerializeObject(oList, Formatting.None);
+                result = JsonConvert.SerializeObject(oList, Formatting.Indented);
             }
             catch (Exception)
             {
@@ -67,7 +67,11 @@ namespace FormBuilder.DataModel
             }
             try
             {
-                result = JsonConvert.DeserializeObject<T>(data);
+                result = JsonConvert.DeserializeObject<T>(data, new JsonSerializerSettings
+                    {
+                        TypeNameHandling = TypeNameHandling.None,
+                        TypeNameAssemblyFormat = FormatterAssemblyStyle.Simple
+                    });
             }
             catch (Exception)
             {

@@ -8,7 +8,7 @@ namespace FormBuilder.DataAccess
 {
     public class FormTemplateDAL : DataAccessBase
     {
-        public void InsertOrUpdateFormTemplate(Int64 formTemplateId, string formName, string formDescription, string formTemplateData)
+        public FormTemplateModel InsertOrUpdateFormTemplate(Int64 formTemplateId, string formName, string formDescription, string formTemplateData)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
@@ -50,8 +50,13 @@ namespace FormBuilder.DataAccess
                 cmd.Parameters.Add(param);
 
                 conn.Open();
-                cmd.ExecuteNonQuery();
+                var da = new SqlDataAdapter(cmd);
+                var ds = new DataSet();
+                da.Fill(ds, "FormTemplate");
                 conn.Close();
+                var tempData = FormTemplateModeMapping.MapDataTableToFormTemplateModel(ds.Tables[0]);
+                conn.Close();
+                return tempData;
             }
         }
 
@@ -100,7 +105,7 @@ namespace FormBuilder.DataAccess
                 var ds = new DataSet();
                 da.Fill(ds, "FormTemplate");
                 conn.Close();
-                var tempData = FormTemplateModeMapping.MapDataTableToFormTemplateModel(ds.Tables[0], ds.Tables[1]);
+                var tempData = FormTemplateModeMapping.MapDataTableToFormTemplateModel(ds.Tables[0]);
                 return tempData;
             }
         }

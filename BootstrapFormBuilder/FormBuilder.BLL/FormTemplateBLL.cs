@@ -14,10 +14,10 @@ namespace FormBuilder.BLL
             var templateMode = templateDal.GetFormTemplateByTemplateId(formTemplateId);
             return templateMode;
         }
-        public void AddOrUpdateFormTemplateModel(FormTemplateModel formTemplateModel)
+        public FormTemplateModel AddOrUpdateFormTemplateModel(FormTemplateModel formTemplateModel)
         {
             var templateDal = new FormTemplateDAL();
-            templateDal.InsertOrUpdateFormTemplate(formTemplateModel.FormTemplateId,
+           return  templateDal.InsertOrUpdateFormTemplate(formTemplateModel.FormTemplateId,
                  formTemplateModel.FormName,
                  formTemplateModel.FormDescription, formTemplateModel.FormTemplateData.ToString());
         }

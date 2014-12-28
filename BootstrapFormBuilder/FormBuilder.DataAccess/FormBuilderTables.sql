@@ -4,6 +4,11 @@ CREATE TABLE [dbo].[FormTemplate](
 	[FormName] [nvarchar](50) NULL,
 	[FormDescription] [nvarchar](200) NULL,
 	[FormTemplateData] [nvarchar](max) NULL,
+	[WorkFlowId] [Bigint] NULL,
+	[CeateDate] DateTime NULL,
+	[CeateUser] [nvarchar](50) NULL,
+	[UpdateDate] DateTime NULL,
+	[UpdateUser] [nvarchar](50) NULL,
 
 PRIMARY KEY CLUSTERED 
 (
@@ -21,6 +26,10 @@ CREATE TABLE [dbo].[FormInstance](
 	[FormInstanceId] [bigint] IDENTITY(1,1) NOT NULL,
 	[FormDataFields] [nvarchar](max) NULL,
 	[FormTemplateId] [bigint] NULL,
+	[CeateDate] DateTime NULL,
+	[CeateUser] [nvarchar](50) NULL,
+	[UpdateDate] DateTime NULL,
+	[UpdateUser] [nvarchar](50) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[FormInstanceId] ASC
@@ -89,17 +98,19 @@ END
 /****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormTemplate]    Script Date: 12/21/2014 15:31:51 ******/
 GO
 GO
-CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormTemplate] 
+ALTER PROCEDURE [dbo].[SP_AddOrUpdateFormTemplate] 
 	@FormTemplateId BIGINT,
 	@FormName NVARCHAR(50),
 	@FormDescription NVARCHAR(200),
-	@FormTemplateData NVARCHAR(MAX)
+	@FormTemplateData NVARCHAR(MAX),
+	@WorkFlowId Bigint,
+	@UpdateUser NVARCHAR(50) = NULL
 AS
 BEGIN
 	IF (@FormTemplateId = 0) 
 	BEGIN
 		INSERT INTO dbo.FormTemplate
-		VALUES(@FormName,@FormDescription,@FormTemplateData)
+		VALUES(@FormName,@FormDescription,@FormTemplateData,@WorkFlowId,getdate(),@UpdateUser,getdate(),@UpdateUser)
 		SET @FormTemplateId = SCOPE_IDENTITY()
 	END 
 	ELSE
@@ -108,6 +119,9 @@ BEGIN
 		SET FormName = @FormName
 			,FormDescription = @FormDescription
 			,FormTemplateData = @FormTemplateData
+			,WorkFlowId = @WorkFlowId
+			,UpdateDate = getdate()
+			,UpdateUser = @UpdateUser
 		WHERE FormTemplateId = @FormTemplateId;
 	END
 	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @FormTemplateId; 
@@ -116,22 +130,25 @@ END
 /****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormInstance]    Script Date: 12/21/2014 15:31:51 ******/
 
 GO
-CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormInstance] 
+ALTER PROCEDURE [dbo].[SP_AddOrUpdateFormInstance] 
 	@FormInstanceId BIGINT,
 	@FormDataFields NVARCHAR(MAX),
-	@FormTemplateId BIGINT
+	@FormTemplateId BIGINT,
+	@UpdateUser NVARCHAR(50)
 AS
 BEGIN
 	IF (@FormInstanceId = -1) 
 	BEGIN 
 		INSERT INTO dbo.FormInstance
-		VALUES(@FormDataFields,@FormTemplateId)
+		VALUES(@FormDataFields,@FormTemplateId,getdate(),@UpdateUser,getdate(),@UpdateUser)
 	END 
 	ELSE
 	BEGIN
 		UPDATE dbo.FormInstance
 		SET  FormDataFields = @FormDataFields
 			,FormTemplateId = @FormTemplateId
+			,UpdateDate = getdate()
+			,UpdateUser = @UpdateUser
 		WHERE FormInstanceId = @FormInstanceId;
 	END
 END
@@ -153,4 +170,10 @@ BEGIN
 	WHERE FormTemplateId = @FormTemplateId
 	DELETE dbo.FormTemplate
 	WHERE FormTemplateId = @FormTemplateId
+END
+GO
+CREATE PROCEDURE [dbo].[SP_GETFormTemplates] 
+AS
+BEGIN
+	SELECT * FROM dbo.FormTemplate
 END

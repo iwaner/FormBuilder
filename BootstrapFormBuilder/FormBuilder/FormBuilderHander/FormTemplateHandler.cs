@@ -25,7 +25,7 @@ namespace FormBuilder.FormBuilderHander
                     {
                         var templateMode = templateJson.ToModeBase<FormTemplateModel>();
                         if (templateMode == null) return;
-                        templateBll.AddOrUpdateFormTemplateModel(templateMode);
+                        templateMode = templateBll.AddOrUpdateFormTemplateModel(templateMode);
                     }
                 }
             }
