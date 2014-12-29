@@ -11,7 +11,7 @@
     <link href="../Styles/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
     <link href="../Styles/css/animate.css" rel="stylesheet" />
     <link href="../Styles/css/style.css" rel="stylesheet" />
-     <!-- Mainly scripts -->
+    <!-- Mainly scripts -->
     <script src="../Scripts/jquery-1.10.2.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
     <script src="../Scripts/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -66,11 +66,11 @@
         }
         var AppendTemplateTable = function (template) {
             $("#tbTemplates tbody").append("<tr class='gradeA'>" +
-                           "<td>" + template.FormTemplateId + "</td>" +
-                           "<td>" + template.FormName + "</td>" +
+                           "<td><a href='FormBuilderMain.aspx?templateId=" + template.FormTemplateId + "'>" + template.FormName + "</a></td>" +
                            "<td>" + template.WorkflowId + "</td>" +
                            "<td class='center'>" + template.UpdateDate + "</td>" +
                            "<td class='center'>" + template.UpdateUser + "</td>" +
+                           "<td class='center'><a href='FormInstance.aspx?templateId=" + template.FormTemplateId + "'>" + template.FormName + "</a></td>" +
                        "</tr>");
         }
     </script>
@@ -127,22 +127,22 @@
                                     <table id="tbTemplates" class="table table-striped table-bordered table-hover dataTables-example">
                                         <thead>
                                             <tr>
-                                                <th>模板编号</th>
-                                                <th>模板名称</th>
+                                                <th>表单名称</th>
                                                 <th>工作流名称</th>
                                                 <th>更新时间</th>
-                                                <th>更新用户</th>
+                                                <th>更新用户<</th>
+                                                <th>使用表单</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>模板编号</th>
-                                                <th>模板名称</th>
+                                                <th>表单名称</th>
                                                 <th>工作流名称</th>
                                                 <th>更新时间</th>
-                                                <th>更新用户</th>
+                                                <th>更新用户<</th>
+                                                <th>使用表单</th>
                                             </tr>
                                         </tfoot>
                                     </table>

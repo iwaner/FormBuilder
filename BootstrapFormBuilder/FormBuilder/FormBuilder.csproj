@@ -146,6 +146,7 @@
     <Content Include="Bootstrap-Form-Builder\DragForm.html" />
     <Content Include="Bootstrap-Form-Builder\DragForm2.html" />
     <Content Include="Bootstrap-Form-Builder\FormBuilderMain.aspx" />
+    <Content Include="Bootstrap-Form-Builder\FormInstance.aspx" />
     <Content Include="Bootstrap-Form-Builder\FormTemplateList.aspx" />
     <Content Include="Bootstrap-Form-Builder\HelloTest.htm" />
     <Content Include="Bootstrap-Form-Builder\index-dev.html" />
@@ -341,6 +342,13 @@
     </Compile>
     <Compile Include="Bootstrap-Form-Builder\FormBuilderMain.aspx.designer.cs">
       <DependentUpon>FormBuilderMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap-Form-Builder\FormInstance.aspx.cs">
+      <DependentUpon>FormInstance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap-Form-Builder\FormInstance.aspx.designer.cs">
+      <DependentUpon>FormInstance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap-Form-Builder\FormTemplateList.aspx.cs">
       <DependentUpon>FormTemplateList.aspx</DependentUpon>
