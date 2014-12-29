@@ -4,20 +4,18 @@ CREATE TABLE [dbo].[FormTemplate](
 	[FormName] [nvarchar](50) NULL,
 	[FormDescription] [nvarchar](200) NULL,
 	[FormTemplateData] [nvarchar](max) NULL,
-	[WorkFlowId] [Bigint] NULL,
-	[CeateDate] DateTime NULL,
-	[CeateUser] [nvarchar](50) NULL,
-	[UpdateDate] DateTime NULL,
+	[WorkFlowId] [bigint] NULL,
+	[CreateDate] [datetime] NULL,
+	[CreateUser] [nvarchar](50) NULL,
+	[UpdateDate] [datetime] NULL,
 	[UpdateUser] [nvarchar](50) NULL,
-
 PRIMARY KEY CLUSTERED 
 (
 	[FormTemplateId] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[FormInstance]    Script Date: 12/21/2014 15:31:45 ******/
+/****** Object:  Table [dbo].[FormInstance]    Script Date: 12/29/2014 21:43:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -26,9 +24,9 @@ CREATE TABLE [dbo].[FormInstance](
 	[FormInstanceId] [bigint] IDENTITY(1,1) NOT NULL,
 	[FormDataFields] [nvarchar](max) NULL,
 	[FormTemplateId] [bigint] NULL,
-	[CeateDate] DateTime NULL,
+	[CeateDate] [datetime] NULL,
 	[CeateUser] [nvarchar](50) NULL,
-	[UpdateDate] DateTime NULL,
+	[UpdateDate] [datetime] NULL,
 	[UpdateUser] [nvarchar](50) NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -36,7 +34,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedTableType [dbo].[FormControlGroupUDT]    Script Date: 12/21/2014 15:31:46 ******/
+/****** Object:  UserDefinedTableType [dbo].[FormControlGroupUDT]    Script Date: 12/29/2014 21:43:06 ******/
 CREATE TYPE [dbo].[FormControlGroupUDT] AS TABLE(
 	[ControlType] [nvarchar](20) NOT NULL,
 	[OrderInForm] [int] NOT NULL,
@@ -46,7 +44,7 @@ CREATE TYPE [dbo].[FormControlGroupUDT] AS TABLE(
 	[FormControlGroupPropertys] [nvarchar](max) NULL
 )
 GO
-/****** Object:  Table [dbo].[FormControlGroupProperty]    Script Date: 12/21/2014 15:31:46 ******/
+/****** Object:  Table [dbo].[FormControlGroupProperty]    Script Date: 12/29/2014 21:43:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -58,7 +56,7 @@ CREATE TABLE [dbo].[FormControlGroupProperty](
 	[ControlGroupId] [bigint] NOT NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FormControlGroup]    Script Date: 12/21/2014 15:31:46 ******/
+/****** Object:  Table [dbo].[FormControlGroup]    Script Date: 12/29/2014 21:43:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -76,7 +74,22 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_GETFormTemplateById]    Script Date: 12/21/2014 15:31:51 ******/
+/****** Object:  StoredProcedure [dbo].[SP_GETFormTemplates]    Script Date: 12/29/2014 21:43:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_GETFormTemplates] 
+AS
+BEGIN
+	SELECT * FROM dbo.FormTemplate
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GETFormTemplateById]    Script Date: 12/29/2014 21:43:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE PROCEDURE [dbo].[SP_GETFormTemplateById] 
 	@FormTemplateId BIGINT
 AS
@@ -85,7 +98,11 @@ BEGIN
 	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @FormTemplateId;
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_GETFormInstanceById]    Script Date: 12/21/2014 15:31:51 ******/
+/****** Object:  StoredProcedure [dbo].[SP_GETFormInstanceById]    Script Date: 12/29/2014 21:43:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE PROCEDURE [dbo].[SP_GETFormInstanceById] 
 	@FormInstanceId BIGINT
 AS
@@ -95,10 +112,41 @@ BEGIN
 	SELECT * FROM dbo.FormInstance WHERE FormInstanceId = @FormInstanceId;
 	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @templateId;
 END
-/****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormTemplate]    Script Date: 12/21/2014 15:31:51 ******/
 GO
+/****** Object:  StoredProcedure [dbo].[SP_DeleteFormTemplate]    Script Date: 12/29/2014 21:43:11 ******/
+SET ANSI_NULLS ON
 GO
-ALTER PROCEDURE [dbo].[SP_AddOrUpdateFormTemplate] 
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_DeleteFormTemplate] 
+	@FormTemplateId BIGINT
+AS
+BEGIN
+	DELETE dbo.FormControlGroup
+	WHERE FormTemplateId = @FormTemplateId
+	DELETE dbo.FormTemplate
+	WHERE FormTemplateId = @FormTemplateId
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_DeleteFormInstance]    Script Date: 12/29/2014 21:43:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_DeleteFormInstance] 
+	@FormInstanceId BIGINT
+AS
+BEGIN
+	DELETE dbo.FormInstance
+	WHERE FormInstanceId = @FormInstanceId
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormTemplate]    Script Date: 12/29/2014 21:43:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormTemplate] 
 	@FormTemplateId BIGINT,
 	@FormName NVARCHAR(50),
 	@FormDescription NVARCHAR(200),
@@ -126,11 +174,13 @@ BEGIN
 	END
 	SELECT * FROM dbo.FormTemplate WHERE FormTemplateId = @FormTemplateId; 
 END
-
-/****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormInstance]    Script Date: 12/21/2014 15:31:51 ******/
-
 GO
-ALTER PROCEDURE [dbo].[SP_AddOrUpdateFormInstance] 
+/****** Object:  StoredProcedure [dbo].[SP_AddOrUpdateFormInstance]    Script Date: 12/29/2014 21:43:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_AddOrUpdateFormInstance] 
 	@FormInstanceId BIGINT,
 	@FormDataFields NVARCHAR(MAX),
 	@FormTemplateId BIGINT,
@@ -153,27 +203,3 @@ BEGIN
 	END
 END
 GO
-CREATE PROCEDURE [dbo].[SP_DeleteFormInstance] 
-	@FormInstanceId BIGINT
-AS
-BEGIN
-	DELETE dbo.FormInstance
-	WHERE FormInstanceId = @FormInstanceId
-END
-
-GO 
-CREATE PROCEDURE [dbo].[SP_DeleteFormTemplate] 
-	@FormTemplateId BIGINT
-AS
-BEGIN
-	DELETE dbo.FormControlGroup
-	WHERE FormTemplateId = @FormTemplateId
-	DELETE dbo.FormTemplate
-	WHERE FormTemplateId = @FormTemplateId
-END
-GO
-CREATE PROCEDURE [dbo].[SP_GETFormTemplates] 
-AS
-BEGIN
-	SELECT * FROM dbo.FormTemplate
-END

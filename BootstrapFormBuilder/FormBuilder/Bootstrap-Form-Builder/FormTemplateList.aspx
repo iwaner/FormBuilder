@@ -11,6 +11,69 @@
     <link href="../Styles/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
     <link href="../Styles/css/animate.css" rel="stylesheet" />
     <link href="../Styles/css/style.css" rel="stylesheet" />
+     <!-- Mainly scripts -->
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../Scripts/plugins/jeditable/jquery.jeditable.js"></script>
+    <!-- Data Tables -->
+    <script src="../Scripts/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="../Scripts/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="../Scripts/inspinia.js"></script>
+    <script src="../Scripts/plugins/pace/pace.min.js"></script>
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function () {
+            ShowFormTemplates();
+            $('.dataTables-example').dataTable();
+            var oTable = $('#editable').dataTable();
+            oTable.$('td').editable('../example_ajax.php', {
+                "callback": function (sValue, y) {
+                    var aPos = oTable.fnGetPosition(this);
+                    oTable.fnUpdate(sValue, aPos[0], aPos[1]);
+                },
+                "submitdata": function (value, settings) {
+                    return {
+                        "row_id": this.parentNode.getAttribute('id'),
+                        "column": oTable.fnGetPosition(this)[2]
+                    };
+                },
+                "width": "90%",
+                "height": "100%"
+            });
+        });
+
+        var ShowFormTemplates = function () {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "FormTemplateList.aspx/ShowAllTemplates",
+                data: null,
+                dataType: 'json',
+                success: function (result) {
+                    if (result != null && result.d != null) {
+                        $("#tbTemplates tbody").empty();
+                        var templateList = JSON.parse(result.d);
+                        $(templateList).each(function (index, template) {
+                            if (template != null) {
+                                AppendTemplateTable(template);
+                            }
+                        });
+                    }
+                }
+            });
+        }
+        var AppendTemplateTable = function (template) {
+            $("#tbTemplates tbody").append("<tr class='gradeA'>" +
+                           "<td>" + template.FormTemplateId + "</td>" +
+                           "<td>" + template.FormName + "</td>" +
+                           "<td>" + template.WorkflowId + "</td>" +
+                           "<td class='center'>" + template.UpdateDate + "</td>" +
+                           "<td class='center'>" + template.UpdateUser + "</td>" +
+                       "</tr>");
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -99,85 +162,5 @@
             </div>
         </div>
     </form>
-    <!-- Mainly scripts -->
-    <script src="../Scripts/jquery-1.10.2.js"></script>
-    <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../Scripts/plugins/jeditable/jquery.jeditable.js"></script>
-    <!-- Data Tables -->
-    <script src="../Scripts/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="../Scripts/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <!-- Custom and plugin javascript -->
-    <script src="../Scripts/inspinia.js"></script>
-    <script src="../Scripts/plugins/pace/pace.min.js"></script>
-    <!-- Page-Level Scripts -->
-    <script>
-        $(document).ready(function () {
-            ShowFormTemplates();
-            $('.dataTables-example').dataTable();
-
-            /* Init DataTables */
-            var oTable = $('#editable').dataTable();
-
-            /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable('../example_ajax.php', {
-                "callback": function (sValue, y) {
-                    var aPos = oTable.fnGetPosition(this);
-                    oTable.fnUpdate(sValue, aPos[0], aPos[1]);
-                },
-                "submitdata": function (value, settings) {
-                    return {
-                        "row_id": this.parentNode.getAttribute('id'),
-                        "column": oTable.fnGetPosition(this)[2]
-                    };
-                },
-
-                "width": "90%",
-                "height": "100%"
-            });
-
-
-        });
-
-        var ShowFormTemplates = function () {
-            $.ajax({
-                type: "POST",
-                url: "FormTemplateList.aspx/ShowAllTemplates",
-                data: null,
-                contentType: "text/json;",
-                success: function (result) {
-                    if (result != null && result.d != null) {
-                        $("#tbTemplates tbody").empty();
-                        var templateList = JSON.parse(result.d);
-                        $(templateList).each(function (index, template) {
-                            if (template != null) {
-                                AppendTemplateTable(template);
-                            }
-                        });
-                    }
-                }
-            });
-        }
-        var AppendTemplateTable = function (template) {
-            $("#tbTemplates tbody").append("<tr class='gradeA'>" +
-                           "<td>" + template.FormTemplateId + "</td>" +
-                           "<td>" + template.FormName + "</td>" +
-                           "<td>" + template.WorkflowId + "</td>" +
-                           "<td class='center'>" + template.UpdateDate + "</td>" +
-                           "<td class='center'>" + template.UpdateUser + "</td>" +
-                       "</tr>");
-        }
-
-        function fnClickAddRow() {
-            $('#editable').dataTable().fnAddData([
-                "Custom row",
-                "New row",
-                "New row",
-                "New row",
-                "New row"]);
-
-        }
-    </script>
-    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 </body>
 </html>
