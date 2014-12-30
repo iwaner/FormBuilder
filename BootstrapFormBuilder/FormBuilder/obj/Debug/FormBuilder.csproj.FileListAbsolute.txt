@@ -23,16 +23,6 @@ H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.pdb
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Newtonsoft.Json.dll
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Bootstrap-Form-Builder\assets\js\data\buttons.json
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.dll
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.pdb
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Newtonsoft.Json.dll
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.csprojResolveAssemblyReference.cache
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\LibResource\Newtonsoft.Json.dll
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataModel.dll
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataModel.pdb
 C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\LibResource\Newtonsoft.Json.dll
 C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Bootstrap-Form-Builder\assets\js\data\buttons.json
 C:\Users\Baron Chen\Documents\GitHub\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.dll.config
@@ -60,10 +50,19 @@ H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataModel.pdb
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.Utility.pdb
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataAccess.pdb
 H:\OA\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.csprojResolveAssemblyReference.cache
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\LibResource\Newtonsoft.Json.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Bootstrap-Form-Builder\assets\js\data\buttons.json
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.pdb
 D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.BLL.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataModel.dll
 D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.Utility.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\Newtonsoft.Json.dll
 D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataAccess.dll
 D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.BLL.pdb
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataModel.pdb
 D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.Utility.pdb
 D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataAccess.pdb
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.dll.config
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.csprojResolveAssemblyReference.cache
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
+D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
