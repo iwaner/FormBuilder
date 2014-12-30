@@ -17,9 +17,7 @@ namespace FormBuilder.BLL
         public FormTemplateModel AddOrUpdateFormTemplateModel(FormTemplateModel formTemplateModel)
         {
             var templateDal = new FormTemplateDAL();
-           return  templateDal.InsertOrUpdateFormTemplate(formTemplateModel.FormTemplateId,
-                 formTemplateModel.FormName,
-                 formTemplateModel.FormDescription, formTemplateModel.FormTemplateData.ToString());
+            return templateDal.InsertOrUpdateFormTemplate(formTemplateModel);
         }
 
         public List<FormTemplateModel> GetFormTemplates()

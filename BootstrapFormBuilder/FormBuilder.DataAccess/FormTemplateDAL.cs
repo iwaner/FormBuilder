@@ -8,7 +8,7 @@ namespace FormBuilder.DataAccess
 {
     public class FormTemplateDAL : DataAccessBase
     {
-        public FormTemplateModel InsertOrUpdateFormTemplate(Int64 formTemplateId, string formName, string formDescription, string formTemplateData)
+        public FormTemplateModel InsertOrUpdateFormTemplate(FormTemplateModel formTemplateModel)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
@@ -20,7 +20,7 @@ namespace FormBuilder.DataAccess
                 var param = new SqlParameter
                 {
                     ParameterName = "@FormTemplateId",
-                    Value = formTemplateId,
+                    Value = formTemplateModel.FormTemplateId,
                     SqlDbType = SqlDbType.BigInt
                 };
                 cmd.Parameters.Add(param);
@@ -28,7 +28,7 @@ namespace FormBuilder.DataAccess
                 param = new SqlParameter
                 {
                     ParameterName = "@FormName",
-                    Value = formName,
+                    Value = formTemplateModel.FormName,
                     SqlDbType = SqlDbType.NVarChar
                 };
                 cmd.Parameters.Add(param);
@@ -36,7 +36,7 @@ namespace FormBuilder.DataAccess
                 param = new SqlParameter
                 {
                     ParameterName = "@FormDescription",
-                    Value = formDescription,
+                    Value = formTemplateModel.FormDescription,
                     SqlDbType = SqlDbType.NVarChar
                 };
                 cmd.Parameters.Add(param);
@@ -44,7 +44,23 @@ namespace FormBuilder.DataAccess
                 param = new SqlParameter
                 {
                     ParameterName = "@FormTemplateData",
-                    Value = formTemplateData,
+                    Value = formTemplateModel.FormTemplateData.ToString(),
+                    SqlDbType = SqlDbType.NVarChar
+                };
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter
+                {
+                    ParameterName = "@WorkFlowId",
+                    Value = formTemplateModel.WorkflowId,
+                    SqlDbType = SqlDbType.BigInt
+                };
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter
+                {
+                    ParameterName = "@UpdateUser",
+                    Value = formTemplateModel.UpdateUser,
                     SqlDbType = SqlDbType.NVarChar
                 };
                 cmd.Parameters.Add(param);
