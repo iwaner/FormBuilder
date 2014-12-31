@@ -4,14 +4,14 @@ define([
       , "views/temp-snippet"
       , "helper/pubsub"
       , "text!templates/app/renderform.html"
-      ,"models/test","models/GlobalModel"
+      ,"models/test"
       ,"collections/my-form-snippets","views/my-form","views/use-form"
 ], function(
   $, _, Backbone
   , TempSnippetView
   , PubSub
   , _renderForm
-  ,testModel,GlobalModel
+  ,testModel
   ,MyFormSnippetsCollection,MyFormView,UseFormView
 ){
   return Backbone.View.extend({

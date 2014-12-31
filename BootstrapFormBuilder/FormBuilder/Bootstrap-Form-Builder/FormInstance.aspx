@@ -39,6 +39,9 @@
 	    <button id="loadFormData" class="btn btn-info" type="button">加载表单数据</button>
     </div>
     <input type="hidden" id="formId" />
+    <script type="text/javascript" >
+        var g_globalModel = {};
+    </script>
     <script data-main="assets/js/form-instance-main.js" src="assets/js/lib/require.js" ></script>
 </body>
 </html>
