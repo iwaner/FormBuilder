@@ -23,6 +23,8 @@
     , views: "../views"
   }
 });
-require(['app/form-instance', 'models/GlobalModel'], function (formInstance) {
+require(['models/GlobalModel','app/form-instance'], function (globalModual,formInstance) {
+    globalModual.initialize();//需要比formInstance先初始化
     formInstance.initialize();
+
 });
