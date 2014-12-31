@@ -24,17 +24,11 @@ define([
         }
         //保存表单的数据，此数据将被传回服务器
     , FormTemplate: {}
-    , setFormName: function (formName) {
-        g_globalModel.FormTemplate.FormTemplateData.FormName = formName;
-    }
-        //,setControlGroups:function (ctrGroups) {
-        //  g_globalModel.FormTemplate.FormTemplateData.ControlGroups=ctrGroups;
-        //}
-    , addControlGroup: function (ctrGroup) {
-        this.saveFormControlGroups.add(ctrGroup);
+    , addControlGroup: function (ctrGroup,options) {
+         this.saveFormControlGroups.add(ctrGroup,options);
         //g_globalModel.FormTemplate.FormTemplateData.ControlGroups.push(ctrGroup);
     }
-    , removeControlGroup: function (ctrGroup) {
+    , removeControlGroup: function (ctrGroup,options) {
         this.saveFormControlGroups.remove(ctrGroup);
     }
     , saveFormControlGroups: {}
@@ -44,8 +38,8 @@ define([
         //formTemplateData
         var ctrGroups = this.saveFormControlGroups.models;
         var postData = this.buildFormTemplateForPostJson(ctrGroups);
-            var templateJson = JSON.stringify(postData);
-            $("#formTemplateData").val(templateJson);
+        var templateJson = JSON.stringify(postData);
+        $("#formTemplateData").val(templateJson);
         $.ajax({
             type: "post",
             url: "../../FormBuilderMainajax.aspx",
@@ -73,6 +67,20 @@ define([
     }
     , buildFormTemplateForPostJson: function (ctrGroups) {
        g_globalModel.FormTemplate.FormTemplateData.ControlGroups=ctrGroups;
+       if(ctrGroups&&ctrGroups.length>0)
+       {
+            if(ctrGroups[0].get("title")=="Form Name")
+            {
+                var formName=ctrGroups[0].get("fields").name.value;
+                var formDesc=ctrGroups[0].get("fields").description.value;
+                g_globalModel.FormTemplate.FormName=formName;
+                g_globalModel.FormTemplate.FormDescription=formDesc;
+                g_globalModel.FormTemplate.FormTemplateData.FormName=formName;
+                g_globalModel.FormTemplate.FormTemplateData.FormDescription=formDesc;
+            }
+       }
+       var formSnippet=ctrGroups[0];
+
        return g_globalModel.FormTemplate;
     }
     , buildFormDataForPostJson: function (dataFields) {

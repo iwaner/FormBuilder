@@ -75,8 +75,14 @@ define([
               "name" : {
                 "label"   : "Form Name"
                 , "type"  : "input"
-                , "value" : "Form Name"
+                , "value" : "表单名称"
+              },
+              "description" : {
+                "label"   : "Form Description"
+                , "type"  : "input"
+                , "value" : "表单描述"
               }
+              
             }
           }
         ])

@@ -123,6 +123,11 @@ define([
         var index = $(".target").index();
         $(".target").removeClass("target");
         this.collection.add(model,{at: index+1});//将model添加进目标表单的collection，
+        //第一次时，插入表单本身的snippet对象
+        if(!g_globalModel.GlobalModelRef.saveFormControlGroups||g_globalModel.GlobalModelRef.saveFormControlGroups.length==0)
+        {
+          g_globalModel.GlobalModelRef.addControlGroup(this.collection.at(0),{at:0});
+        }
         g_globalModel.GlobalModelRef.addControlGroup(model);//
       } else {
         $(".target").removeClass("target");
