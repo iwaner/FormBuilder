@@ -26,31 +26,6 @@
     <script data-main="assets/js/form-instance-main.js" src="assets/js/lib/require.js"></script>
     <script type="text/javascript">
         var g_globalModel = {};
-        $(document).ready(function () {
-            showInstance();
-        });
-        var showInstance = function () {
-            var templateId = getQueryStringByName("templateId");
-            var instanceId = getQueryStringByName("instanceId");
-            $.ajax({
-                type: "get",
-                url: "FormInstance.aspx/ShowInstance",
-                data: "{instanceId:'" + instanceId + "',templateId:'" + templateId + "}",
-                contentType: "text/json;",
-                success: function (result) {
-                    if (result != null && result.d != null && result.d != "") {
-                        $("#formTemplateData").val(result.d[1]);
-                    }
-                }
-            });
-        }
-        function getQueryStringByName(name) {
-            var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
-            if (result == null || result.length < 1) {
-                return "";
-            }
-            return decodeURIComponent(result[1]);
-        }
     </script>
 
 </head>
