@@ -17,8 +17,12 @@ namespace FormBuilder.DataModel
                 UpdateDate = formInstanceTb.Rows[0]["UpdateDate"].ToString().ToDateTime(),
                 UpdateUser = formInstanceTb.Rows[0]["UpdateUser"].ToString(),
                 FormData = formInstanceTb.Rows[0]["FormData"].ToString(),
-                FormTemplateModel = FormTemplateModeMapping.MapDataTableToFormTemplateModel(formTemplateTb),
             };
+            if (formTemplateTb != null)
+            {
+                formTemplateModel.FormTemplateModel =
+                    FormTemplateModeMapping.MapDataTableToFormTemplateModel(formTemplateTb);
+            }
             return formTemplateModel;
         }
     }

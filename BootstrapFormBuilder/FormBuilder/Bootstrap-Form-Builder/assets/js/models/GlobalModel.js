@@ -57,7 +57,7 @@ define([
             $("#formDataJsonText").val(instanceJson);
         $.ajax({
             type: "post",
-            url: "../FormBuilderMainajax.aspx",
+            url: "../../FormInstanceajax.aspx",
             data: instanceJson,
             contentType: "text/json;",
             success: function () {

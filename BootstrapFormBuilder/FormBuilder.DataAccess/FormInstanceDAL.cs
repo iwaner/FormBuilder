@@ -7,7 +7,7 @@ namespace FormBuilder.DataAccess
 {
     public class FormInstanceDAL : DataAccessBase
     {
-        public void InsertOrUpdateFormInstance(Int64 formInstanceId, string formDataFields, Int64 formTemplateId)
+        public FormInstanceModel InsertOrUpdateFormInstance(FormInstanceModel instanceModel)
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
@@ -19,7 +19,7 @@ namespace FormBuilder.DataAccess
                 var param = new SqlParameter
                 {
                     ParameterName = "@FormInstanceId",
-                    Value = formInstanceId,
+                    Value = instanceModel.FormInstanceId,
                     SqlDbType = SqlDbType.BigInt
                 };
                 cmd.Parameters.Add(param);
@@ -27,7 +27,7 @@ namespace FormBuilder.DataAccess
                 param = new SqlParameter
                 {
                     ParameterName = "@FormDataFields",
-                    Value = formDataFields,
+                    Value = instanceModel.FormData,
                     SqlDbType = SqlDbType.NVarChar
                 };
                 cmd.Parameters.Add(param);
@@ -35,14 +35,19 @@ namespace FormBuilder.DataAccess
                 param = new SqlParameter
                 {
                     ParameterName = "@FormTemplateId",
-                    Value = formTemplateId,
+                    Value = instanceModel.FormTemplateId,
                     SqlDbType = SqlDbType.BigInt
                 };
                 cmd.Parameters.Add(param);
 
                 conn.Open();
-                cmd.ExecuteNonQuery();
+                var da = new SqlDataAdapter(cmd);
+                var ds = new DataSet();
+                da.Fill(ds, "FormTemplate");
                 conn.Close();
+                var tempData = FormInstanceModeMapping.MapDataTableToFormTemplateModel(ds);
+                conn.Close();
+                return tempData;
             }
         }
         public void DeleteFormInstance(Int64 formInstanceId)

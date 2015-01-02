@@ -1,5 +1,7 @@
-﻿using System.Web;
+﻿using System.IO;
+using System.Web;
 using FormBuilder.BLL;
+using FormBuilder.DataModel;
 using FormBuilder.Utility;
 
 namespace FormBuilder.FormBuilderHander
@@ -13,18 +15,20 @@ namespace FormBuilder.FormBuilderHander
 
         public void ProcessRequest(HttpContext context)
         {
-            string templateId = context.Request["templateId"];
-            string instanceId = context.Request["InstanceId"];
-            if (!string.IsNullOrEmpty(instanceId))
+            if ("post".Equals(context.Request.HttpMethod.ToLower()))
             {
-                var instanceBll = new FormInstanceBLL();
-                var instanceMode = instanceBll.GetFormInstance(instanceId.ToInt64());
+                using (var reader = new StreamReader(context.Request.InputStream))
+                {
+                    string instanceJson = HttpUtility.UrlDecode(reader.ReadToEnd());
+                    if (!string.IsNullOrEmpty(instanceJson))
+                    {
+                        var instanceMode = instanceJson.ToModeBase<FormInstanceModel>();
+                        if (instanceMode == null) return;
+                        var instanceBll = new FormInstanceBLL();
+                        instanceMode = instanceBll.InsertOrUpdateFormInstance(instanceMode);
+                    }
+                }
             }
-            else
-            {
-                var instanceBll = new FormTemplateBLL();
-                var instanceMode = instanceBll.GetFormTemplate(templateId.ToInt64());
-            }          
         }
     }
 }
