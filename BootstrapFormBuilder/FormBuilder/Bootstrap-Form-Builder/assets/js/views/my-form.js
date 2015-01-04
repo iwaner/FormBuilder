@@ -49,7 +49,7 @@ define([
         }));
 
         });
-
+      
 
       this.$build = $("#build");//待build的目标表单
       this.renderForm = _.template(_renderForm);
@@ -66,11 +66,11 @@ define([
       //展示比较干净的html(移除了某些html元素的自定义属性)
       $("#render").val(that.renderForm({
         text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
-    }));
-    //表单预览
-    $("#previewContent").html(that.renderForm({
-        text: _.map(this.collection.renderAllClean(), function (e) { return e.html() }).join("\n")
-    }));
+      }));
+      //表单预览
+      $("#previewContent").html(that.renderForm({
+          text: _.map(this.collection.renderAllClean(), function (e) { return e.html() }).join("\n")
+      }));
       this.$el.appendTo("#build form");
       this.delegateEvents();
       //保存表单数据
@@ -99,7 +99,7 @@ define([
     , handleSnippetDrag: function(mouseEvent, snippetModel) {//在目标表单中拖动组件时的event handler
       $("body").append(new TempSnippetView({model: snippetModel}).render());
       this.collection.remove(snippetModel);
-      g_globalModel.GlobalModelRef.removeControlGroup(snippetModel);//
+      //g_globalModel.GlobalModelRef.removeControlGroup(snippetModel);//
       PubSub.trigger("newTempPostRender", mouseEvent);
     }
 
@@ -123,15 +123,29 @@ define([
         var index = $(".target").index();
         $(".target").removeClass("target");
         this.collection.add(model,{at: index+1});//将model添加进目标表单的collection，
+        /*
         //第一次时，插入表单本身的snippet对象
         if(!g_globalModel.GlobalModelRef.saveFormControlGroups||g_globalModel.GlobalModelRef.saveFormControlGroups.length==0)
         {
           g_globalModel.GlobalModelRef.addControlGroup(this.collection.at(0),{at:0});
         }
         g_globalModel.GlobalModelRef.addControlGroup(model);//
+        */
       } else {
         $(".target").removeClass("target");
       }
+    }
+    ,cleanForm:function(){//清除掉表单及其事件
+      this.remove();
+      this.$el.empty();
+      this.undelegateEvents();
+      this.collection.off("add");
+      this.collection.off("remove");
+      this.off("change");
+      PubSub.off("mySnippetDrag", this.handleSnippetDrag, this);
+      PubSub.off("tempMove", this.handleTempMove, this);
+      PubSub.off("tempDrop", this.handleTempDrop, this);
+
     }
     ,useExistingForm:function(formTemplateData){
       //根据保存的表单数据查看和使用表单

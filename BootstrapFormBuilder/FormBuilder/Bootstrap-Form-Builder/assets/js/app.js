@@ -18,10 +18,23 @@ define([
       //初始化话global变量
       if(!g_globalModel.GlobalModelRef)
       {
-        g_globalModel.GlobalModelRef=GlobalModel;
-        //将当前model加入全局变量
+        g_globalModel.GlobalModelRef=GlobalModel;//将当前model加入全局变量
       }
+      //绑定加载表单模板
+      $("#loadFormTemplate").bind("click", function (argument) {
+          //hide all popovers
+          $(".popover").hide();
+          g_globalModel.MyFormViewRef.cleanForm();//清除form
 
+          //展示保存的表单模板
+          //g_globalModel.MyFormViewRef.collection=new MyFormSnippetsCollection(JSON.parse($("#formTemplateData").val()).FormTemplateData.ControlGroups);
+          //g_globalModel.MyFormViewRef.render();
+          /**/
+          g_globalModel.MyFormViewRef=new MyFormView({
+              title: "Original"
+              , collection: new MyFormSnippetsCollection(JSON.parse($("#formTemplateData").val()).FormTemplateData.ControlGroups)
+          });
+      });
       //Bootstrap tabs from json.
       new TabView({
         title: "Input文本框"
@@ -66,8 +79,8 @@ define([
       //Make the first tab active!
       $("#components .tab-pane").first().addClass("active");
       $("#formtabs li").first().addClass("active");
-      // Bootstrap "My Form" with 'Form Name' snippet.
-      new MyFormView({
+      // Bootstrap "My Form" with 'Form Name' snippet.并使用页面的全局变量保存myformview的引用
+      g_globalModel.MyFormViewRef =new MyFormView({
         title: "Original"
         , collection: new MyFormSnippetsCollection([
           { "title" : "Form Name"

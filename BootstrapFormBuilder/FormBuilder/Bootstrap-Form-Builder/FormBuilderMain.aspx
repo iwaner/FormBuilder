@@ -43,6 +43,7 @@
               </form>
                <button id="saveForm" class="btn btn-info">保存表单</button>
                <button id="btnUseForm" class="btn btn-info">使用表单</button>
+               <button id="loadFormTemplate" class="btn btn-info" type="button">加载可编辑表单模板</button>
             </div>
            
           </div>
