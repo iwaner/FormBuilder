@@ -44,6 +44,9 @@
         <textarea id="formDataJsonText" class="span6"></textarea>
         <br />
         <button id="loadFormData" class="btn btn-info" type="button">加载表单数据</button>
+        <button id="renderFormWithData" class="btn btn-info" type="button">展示表单和表单数据</button>
+        <br />
+        <textarea id="loadFormDataJsonText" class="span6"></textarea>
     </div>
     <input type="hidden" id="formId" />
 </body>

@@ -18,7 +18,7 @@ define([
             //  g_globalModel.GlobalModelRef=this;//将当前model加入全局变量
             //}
             g_globalModel.FormTemplate = JSON.parse(buildFormJSON);//表单模板保存的结构（和数据库对应）
-            g_globalModel.FormData = JSON.parse(formInstanceJSON);//表单数据保存的结构（和数据库对应）
+            g_globalModel.FormDataPost = JSON.parse(formInstanceJSON);//表单数据保存的结构（和数据库对应）
             this.FormTemplate = JSON.parse(buildFormJSON);
             this.formControlGroupsToSave = new SaveFormSnippetCollection();
         }
@@ -71,7 +71,7 @@ define([
                 }
             });
         }
-        , buildFormTemplateForPostJson: function (ctrGroups) {
+        , buildFormTemplateForPostJson: function (ctrGroups) {//构建表结构对应的post数据
            g_globalModel.FormTemplate.FormTemplateData.ControlGroups=ctrGroups;
            if(ctrGroups&&ctrGroups.length>0)
            {
@@ -89,9 +89,25 @@ define([
 
            return g_globalModel.FormTemplate;
         }
-        , buildFormDataForPostJson: function (dataFields) {
-           g_globalModel.FormData.DataFields=dataFields;
-           return g_globalModel.FormData;
+        , buildFormDataForPostJson: function (formData) {//构建表结构对应的post数据
+           g_globalModel.FormDataPost.FormData = formData;
+           return g_globalModel.FormDataPost;
+           /*
+             {
+    "FormInstanceId":"0",
+    "FormTemplateId":"0",
+    "WorkflowId":"0",
+    "FormData":{
+      "DataFields": [{
+        "ControlType": "",
+        "ControlGroupType":"",
+        "FormFieldMapKey":"",
+        "FieldValue": ""
+        }
+      ]
+    }
+  }
+           */
         }
    
     };
