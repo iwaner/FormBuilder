@@ -51,101 +51,10 @@ define([
  
     }
     , saveFormData:function(){//保存表单数据
-      //hide all popovers
-      $(".popover").hide();
-      //获取表单中的业务数据控件
-      var dataControls=$("#useForm [data-isbizfield='true']");
-      //取出表单数据
-      var dataFields=_.map(dataControls, function(v,k){
-        var controlType=$(v).attr("data-controltype");
-        var formfieldmapkey=$(v).attr("data-formfieldmapkey");
-        var fieldValue="";
-        switch(controlType) {
-            case "checkbox":
-             fieldValue= $(v).is(":checked");
-              break;
-            case "input":
-              //boundContext.model.setField(name, $e.val());
-              fieldValue=$(v).val();
-              break;
-            case "textarea":
-              //boundContext.model.setField(name, $e.val());
-              fieldValue=$(v).val();
-              break;
-            case "textarea-split":
-            /*
-              boundContext.model.setField(name,
-                _.chain($e.val().split("\n"))
-                  .map(function(t){return $.trim(t)})
-                  .filter(function(t){return t.length > 0})
-                  .value()
-                  );
-*/
-              break;
-            case "select":
-            /**/
-              var valarr = _.map($(v).find("option"), function(e){
-                return {value: e.value, selected: e.selected};
-              });
-              fieldValue=valarr;
-              
-              break;
-          }
-
-        return {
-        //"ControlType": "",
-        //"ControlGroupType":"",
-        "FormFieldMapKey":formfieldmapkey,
-        "FieldValue": fieldValue
-        };
-      });
-      g_globalModel.GlobalModelRef.saveFormData({"DataFields":dataFields,"FormInstanceId":0,"FormTemplateId":0});
+      
       
     }
     , loadFormData: function (formData) {//加载表单数据
-        //hide all popovers
-      $(".popover").hide();
-      var formTemplateStr="";
-      var formTemplateModel =JSON.parse($("#formTemplateData").val());
-
-      //获取表单中的业务数据控件
-      var dataControls=$("#useForm [data-isbizfield='true']");
-      _.each(dataControls,function(dataCtr){
-        var fieldKey=$(dataCtr).attr("data-formfieldmapkey");
-        var fieldVal=_.findWhere(formData.DataFields,{"FormFieldMapKey":fieldKey});
-        var controlType=$(dataCtr).attr("data-controltype");
-        switch(controlType) {
-            case "checkbox":
-              //dataCtr.model.setField(name, $e.is(":checked"));
-              break;
-            case "input":
-              dataCtr.val(fieldVal);
-              break;
-            case "textarea":
-              dataCtr.val(fieldVal);
-              break;
-            case "textarea-split":
-              dataCtr.val(fieldVal);
-              break;
-            case "select":
-            /*
-              var valArr=JSON.parse(fieldVal);
-              _.map($(dataCtr).find("option"), function(e){
-                return {value: e.value, selected: e.selected, label:$(e).text()};
-                if(e.value==fieldKey)
-                {
-                  e.selected=true;
-                }
-                else
-                {
-                  e.selected=false;
-                }
-              });
-              dataCtr.model.setField(name, valarr);
-              */
-              break;
-          }
-      }); 
       
     }
   })

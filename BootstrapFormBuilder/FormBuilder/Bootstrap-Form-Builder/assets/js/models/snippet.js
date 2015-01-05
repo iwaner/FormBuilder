@@ -20,7 +20,7 @@ define([
       modelValues["OrderInForm"]=this.get("OrderInForm");
       modelValues["FormFieldMapKey"]=this.get("FormFieldMapKey");
       modelValues["ControlGroupType"]=this.get("ControlGroupType");
-
+      modelValues["fieldvalue"]=this.get("fieldvalue");
       return modelValues;
     }
     , idFriendlyTitle: function(){//移除非单词字符后的title：字符数字之外的字符
@@ -30,6 +30,9 @@ define([
       var fields = this.get("fields")
       fields[name]["value"] = value;
       this.set("fields", fields);
+    }
+    , setFieldMapKey: function(value) {
+      this.set("FormFieldMapKey", value);
     }
   });
 });

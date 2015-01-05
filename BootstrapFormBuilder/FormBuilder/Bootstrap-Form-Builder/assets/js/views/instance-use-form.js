@@ -22,22 +22,7 @@ define([
     , initialize: function () {
         this.collection.on("add", this.render, this);
         this.collection.on("remove", this.render, this);
-        var that = this;
-        $("#saveFormData").bind("click", function (argument) {
-            //保存表单数据
-            //hide all popovers
-            $(".popover").hide();
-            that.saveFormData();
 
-        });
-        $("#loadFormData").bind("click", function (argument) {
-            //加载表单数据
-            //hide all popovers
-            $(".popover").hide();
-            var formData = JSON.parse($("#formDataJsonText").val()).FormData;
-            that.loadFormData(formData);
-
-        });
         this.renderForm = _.template(_renderForm);
         this.render();
     }
@@ -63,7 +48,11 @@ define([
             var fieldValue = "";
             switch (controlType) {
                 case "checkbox":
-                    fieldValue = $(v).is(":checked");
+                    var checkboxItems=$(v).find(":checkbox");
+                    var valarr = _.map($(v).find(":checkbox"), function (e) {
+                        return { value: e.value, selected: $(e).is(":checked") };
+                    });
+                    fieldValue = valarr;
                     break;
                 case "input":
                     //boundContext.model.setField(name, $e.val());

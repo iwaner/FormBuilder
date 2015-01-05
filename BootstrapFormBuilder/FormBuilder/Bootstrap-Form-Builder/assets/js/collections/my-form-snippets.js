@@ -13,6 +13,7 @@ define([
     model: SnippetModel
     , initialize: function() {
       this.counter = {};
+      this.fieldkeyCounter = {};
       this.on("add", this.giveUniqueId);
     }
 
@@ -30,9 +31,9 @@ define([
       }
 
       snippet.setField("id", snippetType + "-" + this.counter[snippetType]);
-
+      //给控件赋予唯一的业务数据字段key
+      snippet.setFieldMapKey(snippetType + "-" + this.counter[snippetType]);
     }
-
     , renderAll: function(){
       return this.map(function(snippet){
         return new MyFormSnippetView({model: snippet}).render(true);

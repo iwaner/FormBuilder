@@ -38,9 +38,17 @@
                 $(".popover").hide();
                 var formData = JSON.parse($("#formDataJsonText").val()).FormData;
                 that.loadFormData(formData);
-
             });
-
+            $("#renderFormWithData").bind("click", function (argument) {
+                var ctrGroups=that.getFormViewCollection();
+                var useformView = new UseFormView({
+                    title: "Original"
+                , collection: new MyFormSnippetsCollection(ctrGroups)
+                });
+                $("#useForm").html(useformView.renderForm({
+                    text: _.map(useformView.collection.renderAllClean(), function (e) { return e.html() }).join("\n")
+                }));
+            });
             //////////使用表单
             $("#btnUseForm").bind("click", function (argument) {
                 //hide all popovers
@@ -87,8 +95,6 @@
             }
         }
         , saveFormData: function () {//保存表单数据
-            //hide all popovers
-            $(".popover").hide();
             //获取表单中的业务数据控件
             var dataControls = $("#useForm [data-isbizfield='true']");
             //取出表单数据
@@ -98,7 +104,11 @@
                 var fieldValue = "";
                 switch (controlType) {
                     case "checkbox":
-                        fieldValue = $(v).is(":checked");
+                        var checkboxItems=$(v).find(":checkbox");
+                        var valarr = _.map($(v).find(":checkbox"), function (e) {
+                            return { value: e.value, selected: $(e).is(":checked") };
+                        });
+                        fieldValue = valarr;
                         break;
                     case "input":
                         //boundContext.model.setField(name, $e.val());
@@ -138,13 +148,26 @@
             g_globalModel.GlobalModelRef.saveFormData({ "DataFields": dataFields, "FormInstanceId": 0, "FormTemplateId": 0 });
 
         }
-      , loadFormData: function (formData) {//加载表单数据
-          //hide all popovers
-          $(".popover").hide();
-          var formTemplateStr = "";
-          var formTemplateModel = JSON.parse($("#formTemplateData").val());
+      , getFormViewCollection: function(){//获得表单的model
 
+          return JSON.parse($("#loadFormDataJsonText").val());
+      }
+      , loadFormData: function (formData) {//加载表单数据
+          var formTemplateStr = $("#formTemplateData").val();
+          var formTemplateModel = JSON.parse(formTemplateStr);
+          var ctrGroups = formTemplateModel.FormTemplateData.ControlGroups;
+          _.each(ctrGroups, function (ctrGroup) {
+            if(ctrGroup["title"]!="Form Name")
+            {
+              var fieldKey = ctrGroup["FormFieldMapKey"];
+              var fieldVal = _.findWhere(formData.DataFields, { "FormFieldMapKey": fieldKey })["FieldValue"];
+              ctrGroup["fieldvalue"]=fieldVal;
+            }
+            
+          });
+          $("#loadFormDataJsonText").val(JSON.stringify(ctrGroups));
           //获取表单中的业务数据控件
+          /*
           var dataControls = $("#useForm [data-isbizfield='true']");
           _.each(dataControls, function (dataCtr) {
               var fieldKey = $(dataCtr).attr("data-formfieldmapkey");
@@ -164,24 +187,10 @@
                       dataCtr.val(fieldVal);
                       break;
                   case "select":
-                      /*
-                        var valArr=JSON.parse(fieldVal);
-                        _.map($(dataCtr).find("option"), function(e){
-                          return {value: e.value, selected: e.selected, label:$(e).text()};
-                          if(e.value==fieldKey)
-                          {
-                            e.selected=true;
-                          }
-                          else
-                          {
-                            e.selected=false;
-                          }
-                        });
-                        dataCtr.model.setField(name, valarr);
-                        */
                       break;
               }
           });
+*/
       }
     }
 });
