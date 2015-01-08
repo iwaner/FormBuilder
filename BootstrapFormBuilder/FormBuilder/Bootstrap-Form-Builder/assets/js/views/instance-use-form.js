@@ -54,6 +54,13 @@ define([
                     });
                     fieldValue = valarr;
                     break;
+                case "radio":
+                    var radioItems=$(v).find(":radio");
+                    var valarr = _.map($(v).find(":radio"), function (e) {
+                        return { value: e.value, selected: $(e).is(":selected") };
+                    });
+                    fieldValue = valarr;
+                    break;
                 case "input":
                     //boundContext.model.setField(name, $e.val());
                     fieldValue = $(v).val();
@@ -80,6 +87,7 @@ define([
                     fieldValue = valarr;
 
                     break;
+
             }
 
             return {

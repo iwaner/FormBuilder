@@ -5,7 +5,12 @@
     <select id="<%- id %>" name="<%- id %>" class="<%- inputsize %>"
 data-isbizfield="true" data-controltype="select" data-FormFieldMapKey="<%- FormFieldMapKey %>"
     	><% _.each(options, function(option) { %>
-      <option><%- option %></option><% }); %>
+	      	<% if(_.find(fieldvalue,function(item){ return item.value==option&&item.selected==true})){ %>
+	    		<option selected="true"><%- option %></option>
+			<% }else{ %>
+				<option><%- option %></option>
+			<% } %>
+      <% }); %>
     </select>
   </div>
 </div>

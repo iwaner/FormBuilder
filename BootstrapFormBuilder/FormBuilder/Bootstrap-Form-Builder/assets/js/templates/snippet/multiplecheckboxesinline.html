@@ -3,7 +3,9 @@
   <label class="control-label" for="<%- name %>"><%- label %></label>
   <div class="controls" data-isbizfield="true" data-controltype="checkbox" data-FormFieldMapKey="<%- FormFieldMapKey %>" ><% _.each(checkboxes, function(checkbox, i){ %>
     <label class="checkbox inline" for="<%- name+'-'+i %>">
-      <input type="checkbox" name="<%- name %>" id="<%- name+'-'+i %>" value="<%- checkbox %>"<% if(required){ %> required="required"<% } %>>
+      <input type="checkbox" name="<%- name %>" id="<%- name+'-'+i %>" value="<%- checkbox %>"
+      <% if(_.find(fieldvalue,function(item){ return item.value==checkbox && item.selected==true})){ %>  checked=true <% } %> 
+      <% if(required){ %> required="required"<% } %>>
       <%- checkbox %>
     </label><% }); %>
   </div>

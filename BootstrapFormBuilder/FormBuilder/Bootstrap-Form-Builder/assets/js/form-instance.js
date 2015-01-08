@@ -110,23 +110,27 @@
                         });
                         fieldValue = valarr;
                         break;
+                    case "radio":
+                        var radioItems=$(v).find(":radio");
+                        var valarr = _.map($(v).find(":radio"), function (e) {
+                            return { value: e.value, selected: $(e).is(":selected") };
+                        });
+                        fieldValue = valarr;
+                        break;
                     case "input":
                         //boundContext.model.setField(name, $e.val());
                         fieldValue = $(v).val();
                         break;
                     case "textarea":
+
                         //boundContext.model.setField(name, $e.val());
                         fieldValue = $(v).val();
                         break;
                     case "textarea-split":
-                        /*
-                          boundContext.model.setField(name,
-                            _.chain($e.val().split("\n"))
+                        fieldValue=_.chain($(v).val().split("\n"))
                               .map(function(t){return $.trim(t)})
                               .filter(function(t){return t.length > 0})
                               .value()
-                              );
-              */
                         break;
                     case "select":
                         /**/
@@ -134,7 +138,6 @@
                             return { value: e.value, selected: e.selected };
                         });
                         fieldValue = valarr;
-
                         break;
                 }
 

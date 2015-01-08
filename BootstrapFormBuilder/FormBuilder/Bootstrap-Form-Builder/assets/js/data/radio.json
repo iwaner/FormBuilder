@@ -25,7 +25,11 @@
         "value": "radios"
       }
     },
-    "title": "Multiple Radios"
+    "title": "Multiple Radios",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"multipleradios"
   },
   {
     "fields": {
@@ -52,7 +56,11 @@
         "value": "radios"
       }
     },
-    "title": "Multiple Radios Inline"
+    "title": "Multiple Radios Inline",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"multipleradiosinline"
   },
   {
     "fields": {
@@ -80,7 +88,11 @@
         "value": "checkboxes"
       }
     },
-    "title": "Multiple Checkboxes"
+    "title": "Multiple Checkboxes",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"multiplecheckboxes"
   },
   {
     "fields": {
@@ -107,6 +119,10 @@
         "value": "checkboxes"
       }
     },
-    "title": "Multiple Checkboxes Inline"
+    "title": "Multiple Checkboxes Inline",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"multiplecheckboxesinline"
   }
 ]

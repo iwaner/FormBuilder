@@ -29,14 +29,6 @@ define([
           that.saveFormData();
 
       });
-      $("#loadFormData").bind("click", function (argument) {
-          //加载表单数据
-          //hide all popovers
-          $(".popover").hide();
-          var formData=JSON.parse($("#formDataJsonText").val()).FormData;
-          that.loadFormData(formData);
-
-      });
       this.renderForm = _.template(_renderForm);
       this.render();
     }
@@ -49,13 +41,6 @@ define([
       });
       this.delegateEvents();
  
-    }
-    , saveFormData:function(){//保存表单数据
-      
-      
-    }
-    , loadFormData: function (formData) {//加载表单数据
-      
     }
   })
 
