@@ -3,7 +3,7 @@
   <label class="control-label" for="<%- name %>"><%- label %></label>
   <div class="controls" data-isbizfield="true" data-controltype="radio" data-FormFieldMapKey="<%- FormFieldMapKey %>" ><% _.each(radios, function(radio, i){ %>
     <label class="radio" for="<%- name+'-'+i %>">
-      <input type="radio" name="<%- name %>" id="<%- name+'-'+i %>" value="<%- radio %>"  <% if (i < 1) { %> checked="checked" <% } %><% if(required){ %> required="required"<% } %>>
+      <input type="radio" name="<%- name %>" id="<%- name+'-'+i %>" value="<%- radio %>"  <% if ((!fieldvalue && i < 1) ||(_.find(fieldvalue,function(item){ return item.value==radio && item.selected==true})) ) { %> checked="checked" <% } %><% if(required){ %> required="required"<% } %>>
       <%- radio %>
     </label><% }); %>
   </div>

@@ -31,6 +31,17 @@ define([
       fields[name]["value"] = value;
       this.set("fields", fields);
     }
+    , getField: function(name) {
+      var fields = this.get("fields")
+      if(fields[name])
+      {
+        return fields[name]["value"];
+      }
+      else
+      {
+        return null;
+      }
+    }
     , setFieldMapKey: function(value) {
       this.set("FormFieldMapKey", value);
     }

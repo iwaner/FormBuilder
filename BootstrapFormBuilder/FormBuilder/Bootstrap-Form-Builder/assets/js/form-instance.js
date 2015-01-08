@@ -113,7 +113,7 @@
                     case "radio":
                         var radioItems=$(v).find(":radio");
                         var valarr = _.map($(v).find(":radio"), function (e) {
-                            return { value: e.value, selected: $(e).is(":selected") };
+                            return { value: e.value, selected: $(e).is(":checked") };
                         });
                         fieldValue = valarr;
                         break;
