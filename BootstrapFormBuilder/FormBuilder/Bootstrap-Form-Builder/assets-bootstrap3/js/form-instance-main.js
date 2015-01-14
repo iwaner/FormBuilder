@@ -1,5 +1,5 @@
 ﻿require.config({
-    baseUrl: "assets/js/lib/"
+    baseUrl: "assets-bootstrap3/js/lib/"
   , shim: {
       'backbone': {
           deps: ['underscore', 'jquery'],

@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/lib/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets-bootstrap3/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets-bootstrap3/css/lib/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="assets-bootstrap3/css/custom.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -84,7 +84,7 @@
         var g_globalModel = {};
 
     </script>
-    <script data-main="assets/js/main.js" src="assets/js/lib/require.js" ></script>
+    <script data-main="assets-bootstrap3/js/main.js" src="assets-bootstrap3/js/lib/require.js" ></script>
 
   </body>
 </html>
