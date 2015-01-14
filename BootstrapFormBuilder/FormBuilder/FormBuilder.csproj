@@ -149,6 +149,7 @@
     <Content Include="Bootstrap-Form-Builder\assets\js\views\use-form.js" />
     <Content Include="Bootstrap-Form-Builder\DragForm.html" />
     <Content Include="Bootstrap-Form-Builder\DragForm2.html" />
+    <Content Include="Bootstrap-Form-Builder\FormBuilderMain-v3.aspx" />
     <Content Include="Bootstrap-Form-Builder\FormBuilderMain.aspx" />
     <Content Include="Bootstrap-Form-Builder\FormInstance.aspx" />
     <Content Include="Bootstrap-Form-Builder\FormTemplateList.aspx" />
@@ -339,6 +340,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap-Form-Builder\FormBuilderMain-v3.aspx.cs">
+      <DependentUpon>FormBuilderMain-v3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap-Form-Builder\FormBuilderMain-v3.aspx.designer.cs">
+      <DependentUpon>FormBuilderMain-v3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap-Form-Builder\FormBuilderMain.aspx.cs">
       <DependentUpon>FormBuilderMain.aspx</DependentUpon>

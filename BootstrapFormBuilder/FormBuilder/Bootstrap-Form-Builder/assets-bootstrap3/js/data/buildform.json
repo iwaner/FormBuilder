@@ -1,0 +1,32 @@
+  {
+    "FormTemplateId":"0",
+    "FormName":"表单名称",
+    "FormDescription":"表单描述",
+    "FormTemplateData":{
+        "FormTemplateId":"0",
+        "FormName":"",
+        "ControlGroups": [{
+          "title":"formname",
+          "ControlType": "",
+          "OrderInForm":"0",
+          "FormFieldMapKey":"",
+          "ControlGroupTemplateModel": {
+              "fields": {
+                "id": {
+                  "type": "input",
+                  "label": "ID / Name",
+                  "value": "filebutton"
+                },
+                "label": {
+                  "type": "input",
+                  "label": "Label Text",
+                  "value": "File Button"
+                }
+              },
+              "title": "File Button"
+            }
+          }
+        ],
+        "title": "File Button"
+      }
+  }

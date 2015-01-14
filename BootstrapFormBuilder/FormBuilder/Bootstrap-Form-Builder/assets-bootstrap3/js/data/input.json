@@ -1,0 +1,695 @@
+[
+  {
+    "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "textinput"
+      },
+      "inputsize": {
+        "type": "select",
+        "label": "Input Size",
+        "value": [
+          {
+            "label": "Mini",
+            "value": "input-mini",
+            "selected": false
+          },
+          {
+            "label": "Small",
+            "value": "input-small",
+            "selected": false
+          },
+          {
+            "label": "Medium",
+            "value": "input-medium",
+            "selected": false
+          },
+          {
+            "label": "Large",
+            "value": "input-large",
+            "selected": false
+          },
+          {
+            "label": "Xlarge",
+            "value": "input-xlarge",
+            "selected": true
+          },
+          {
+            "label": "Xxlarge",
+            "value": "input-xxlarge",
+            "selected": false
+          }
+        ]
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Text Input文本框"
+      },
+      "helptext": {
+        "type": "input",
+        "label": "Help Text",
+        "value": "help"
+      },
+      "placeholder": {
+        "type": "input",
+        "label": "Placeholder",
+        "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
+      "required": {
+        "type": "checkbox",
+        "label": "Required",
+        "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
+      }
+    },
+    "title": "Text Input",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"textinput"
+  },
+  {
+    "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "passwordinput"
+      },
+      "inputsize": {
+        "type": "select",
+        "label": "Input Size",
+        "value": [
+          {
+            "label": "Mini",
+            "value": "input-mini",
+            "selected": false
+          },
+          {
+            "label": "Small",
+            "value": "input-small",
+            "selected": false
+          },
+          {
+            "label": "Medium",
+            "value": "input-medium",
+            "selected": false
+          },
+          {
+            "label": "Large",
+            "value": "input-large",
+            "selected": false
+          },
+          {
+            "label": "Xlarge",
+            "value": "input-xlarge",
+            "selected": true
+          },
+          {
+            "label": "Xxlarge",
+            "value": "input-xxlarge",
+            "selected": false
+          }
+        ]
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Password Input密码"
+      },
+      "helptext": {
+        "type": "input",
+        "label": "Help Text",
+        "value": "help"
+      },
+      "placeholder": {
+        "type": "input",
+        "label": "Placeholder",
+        "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
+      "required": {
+        "type": "checkbox",
+        "label": "Required",
+        "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
+      }
+    },
+    "title": "Password Input",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"passwordinput"
+  },
+  {
+    "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "searchinput"
+      },
+      "inputsize": {
+        "type": "select",
+        "label": "Input Size",
+        "value": [
+          {
+            "label": "Mini",
+            "value": "input-mini",
+            "selected": false
+          },
+          {
+            "label": "Small",
+            "value": "input-small",
+            "selected": false
+          },
+          {
+            "label": "Medium",
+            "value": "input-medium",
+            "selected": false
+          },
+          {
+            "label": "Large",
+            "value": "input-large",
+            "selected": false
+          },
+          {
+            "label": "Xlarge",
+            "value": "input-xlarge",
+            "selected": true
+          },
+          {
+            "label": "Xxlarge",
+            "value": "input-xxlarge",
+            "selected": false
+          }
+        ]
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Search Input搜索框"
+      },
+      "helptext": {
+        "type": "input",
+        "label": "Help Text",
+        "value": "help"
+      },
+      "placeholder": {
+        "type": "input",
+        "label": "Placeholder",
+        "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
+      "required": {
+        "type": "checkbox",
+        "label": "Required",
+        "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
+      }
+    },
+    "title": "Search Input",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"searchinput"
+  },
+  {
+    "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "prependedtext"
+      },
+      "prepend": {
+        "type": "input",
+        "label": "Prepend",
+        "value": "prepend"
+      },
+      "inputsize": {
+        "type": "select",
+        "label": "Input Size",
+        "value": [
+          {
+            "label": "Mini",
+            "value": "input-mini",
+            "selected": false
+          },
+          {
+            "label": "Small",
+            "value": "input-small",
+            "selected": false
+          },
+          {
+            "label": "Medium",
+            "value": "input-medium",
+            "selected": false
+          },
+          {
+            "label": "Large",
+            "value": "input-large",
+            "selected": false
+          },
+          {
+            "label": "Xlarge",
+            "value": "input-xlarge",
+            "selected": true
+          },
+          {
+            "label": "Xxlarge",
+            "value": "input-xxlarge",
+            "selected": false
+          }
+        ]
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Prepended Text"
+      },
+      "helptext": {
+        "type": "input",
+        "label": "Help Text",
+        "value": "help"
+      },
+      "placeholder": {
+        "type": "input",
+        "label": "Placeholder",
+        "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
+      "required": {
+        "type": "checkbox",
+        "label": "Required",
+        "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
+      }
+    },
+    "title": "Prepended Text",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"prependedtext"
+  },
+  {
+    "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "appendedtext"
+      },
+      "append": {
+        "type": "input",
+        "label": "Append",
+        "value": "append"
+      },
+      "inputsize": {
+        "type": "select",
+        "label": "Input Size",
+        "value": [
+          {
+            "label": "Mini",
+            "value": "input-mini",
+            "selected": false
+          },
+          {
+            "label": "Small",
+            "value": "input-small",
+            "selected": false
+          },
+          {
+            "label": "Medium",
+            "value": "input-medium",
+            "selected": false
+          },
+          {
+            "label": "Large",
+            "value": "input-large",
+            "selected": false
+          },
+          {
+            "label": "Xlarge",
+            "value": "input-xlarge",
+            "selected": true
+          },
+          {
+            "label": "Xxlarge",
+            "value": "input-xxlarge",
+            "selected": false
+          }
+        ]
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Appended Text"
+      },
+      "helptext": {
+        "type": "input",
+        "label": "Help Text",
+        "value": "help"
+      },
+      "placeholder": {
+        "type": "input",
+        "label": "Placeholder",
+        "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
+      "required": {
+        "type": "checkbox",
+        "label": "Required",
+        "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
+      }
+    },
+    "title": "Appended Text",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"appendedtext"
+  },
+  {
+    "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "prependedcheckbox"
+      },
+      "inputsize": {
+        "type": "select",
+        "label": "Input Size",
+        "value": [
+          {
+            "label": "Mini",
+            "value": "input-mini",
+            "selected": false
+          },
+          {
+            "label": "Small",
+            "value": "input-small",
+            "selected": false
+          },
+          {
+            "label": "Medium",
+            "value": "input-medium",
+            "selected": false
+          },
+          {
+            "label": "Large",
+            "value": "input-large",
+            "selected": false
+          },
+          {
+            "label": "Xlarge",
+            "value": "input-xlarge",
+            "selected": true
+          },
+          {
+            "label": "Xxlarge",
+            "value": "input-xxlarge",
+            "selected": false
+          }
+        ]
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Prepended Checkbox"
+      },
+      "helptext": {
+        "type": "input",
+        "label": "Help Text",
+        "value": "help"
+      },
+      "placeholder": {
+        "type": "input",
+        "label": "Placeholder",
+        "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
+      "checked": {
+        "type": "checkbox",
+        "label": "Checked",
+        "value": false
+      },
+      "required": {
+        "type": "checkbox",
+        "label": "Required",
+        "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
+      }
+    },
+    "title": "Prepended Checkbox",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"prependedcheckbox"
+  },
+  {
+    "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "appendedcheckbox"
+      },
+      "inputsize": {
+        "type": "select",
+        "label": "Input Size",
+        "value": [
+          {
+            "label": "Mini",
+            "value": "input-mini",
+            "selected": false
+          },
+          {
+            "label": "Small",
+            "value": "input-small",
+            "selected": false
+          },
+          {
+            "label": "Medium",
+            "value": "input-medium",
+            "selected": false
+          },
+          {
+            "label": "Large",
+            "value": "input-large",
+            "selected": false
+          },
+          {
+            "label": "Xlarge",
+            "value": "input-xlarge",
+            "selected": true
+          },
+          {
+            "label": "Xxlarge",
+            "value": "input-xxlarge",
+            "selected": false
+          }
+        ]
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Appended Checkbox"
+      },
+      "helptext": {
+        "type": "input",
+        "label": "Help Text",
+        "value": "help"
+      },
+      "placeholder": {
+        "type": "input",
+        "label": "Placeholder",
+        "value": "placeholder"
+      },
+      "fieldvalue": {
+        "type": "input",
+        "label": "value",
+        "value": ""
+      },
+      "checked": {
+        "type": "checkbox",
+        "label": "Checked",
+        "value": false
+      },
+      "required": {
+        "type": "checkbox",
+        "label": "Required",
+        "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
+      }
+    },
+    "title": "Appended Checkbox",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"appendedcheckbox"
+  },
+  {
+    "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "buttondropdown"
+      },
+      "buttonoptions": {
+        "type": "textarea-split",
+        "label": "Options",
+        "value": [
+          "Option one",
+          "Option two",
+          "Option three"
+        ]
+      },
+      "buttontext": {
+        "type": "input",
+        "label": "Button Text",
+        "value": "Action"
+      },
+      "inputsize": {
+        "type": "select",
+        "label": "Input Size",
+        "value": [
+          {
+            "label": "Mini",
+            "value": "input-mini",
+            "selected": false
+          },
+          {
+            "label": "Small",
+            "value": "input-small",
+            "selected": false
+          },
+          {
+            "label": "Medium",
+            "value": "input-medium",
+            "selected": false
+          },
+          {
+            "label": "Large",
+            "value": "input-large",
+            "selected": false
+          },
+          {
+            "label": "Xlarge",
+            "value": "input-xlarge",
+            "selected": true
+          },
+          {
+            "label": "Xxlarge",
+            "value": "input-xxlarge",
+            "selected": false
+          }
+        ]
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Button Drop Down"
+      },
+      "placeholder": {
+        "type": "input",
+        "label": "Placeholder",
+        "value": "placeholder"
+      },
+      "required": {
+        "type": "checkbox",
+        "label": "Required",
+        "value": false
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
+      }
+    },
+    "title": "Button Drop Down",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"buttondropdown"
+  },
+  {
+    "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "textarea"
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Text Area"
+      },
+      "textarea": {
+        "type": "textarea",
+        "label": "Starting Text",
+        "value": "default text"
+      },
+      "iseditable": {
+        "type": "checkbox",
+        "label": "Editable",
+        "value": true
+      }
+    },
+    "title": "Text Area",
+    "IsEditable":"true",
+    "OrderInForm":0,
+    "FormFieldMapKey":"",
+    "ControlGroupType":"textarea"
+  }
+]
