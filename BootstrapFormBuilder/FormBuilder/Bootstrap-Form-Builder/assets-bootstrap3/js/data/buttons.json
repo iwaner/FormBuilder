@@ -3,12 +3,12 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "filebutton"
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "文件按钮"
       }
     },
@@ -18,40 +18,40 @@
     "fields": {
       "buttontype": {
         "type": "select",
-        "label": "Button Type",
+        "label": "按钮类型",
         "value": [
           {
-            "label": "Default",
+            "label": "默认",
             "value": "btn-default",
             "selected": false
           },
           {
-            "label": "Primary",
+            "label": "原生",
             "value": "btn-primary",
             "selected": true
           },
           {
-            "label": "Info",
+            "label": "信息",
             "value": "btn-info",
             "selected": false
           },
           {
-            "label": "Success",
+            "label": "成功",
             "value": "btn-success",
             "selected": false
           },
           {
-            "label": "Warning",
+            "label": "警告",
             "value": "btn-warning",
             "selected": false
           },
           {
-            "label": "Danger",
+            "label": "危险",
             "value": "btn-danger",
             "selected": false
           },
           {
-            "label": "Inverse",
+            "label": "反向",
             "value": "btn-inverse",
             "selected": false
           }
@@ -59,12 +59,12 @@
       },
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "singlebutton"
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "单个按钮"
       },
       "buttonlabel": {
@@ -79,40 +79,40 @@
     "fields": {
       "button2type": {
         "type": "select",
-        "label": "Button Type",
+        "label": "按钮类型",
         "value": [
           {
-            "label": "Default",
+            "label": "默认",
             "value": "btn-default",
             "selected": false
           },
           {
-            "label": "Primary",
+            "label": "原生",
             "value": "btn-primary",
             "selected": false
           },
           {
-            "label": "Info",
+            "label": "信息",
             "value": "btn-info",
             "selected": false
           },
           {
-            "label": "Success",
+            "label": "成功",
             "value": "btn-success",
             "selected": false
           },
           {
-            "label": "Warning",
+            "label": "警告",
             "value": "btn-warning",
             "selected": false
           },
           {
-            "label": "Danger",
+            "label": "危险",
             "value": "btn-danger",
             "selected": true
           },
           {
-            "label": "Inverse",
+            "label": "反向",
             "value": "btn-inverse",
             "selected": false
           }
@@ -130,45 +130,45 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "双按钮"
       },
       "button1type": {
         "type": "select",
-        "label": "Button Type",
+        "label": "按钮类型",
         "value": [
           {
-            "label": "Default",
+            "label": "默认",
             "value": "btn-default",
             "selected": false
           },
           {
-            "label": "Primary",
+            "label": "原生",
             "value": "btn-primary",
             "selected": false
           },
           {
-            "label": "Info",
+            "label": "信息",
             "value": "btn-info",
             "selected": false
           },
           {
-            "label": "Success",
+            "label": "成功",
             "value": "btn-success",
             "selected": true
           },
           {
-            "label": "Warning",
+            "label": "警告",
             "value": "btn-warning",
             "selected": false
           },
           {
-            "label": "Danger",
+            "label": "危险",
             "value": "btn-danger",
             "selected": false
           },
           {
-            "label": "Inverse",
+            "label": "反向",
             "value": "btn-inverse",
             "selected": false
           }
@@ -177,12 +177,12 @@
       "button1label": {
         "type": "input",
         "label": "Button Label",
-        "value": "确认"
+        "value": "按钮"
       },
       "button2label": {
         "type": "input",
         "label": "Button Label",
-        "value": "取消"
+        "value": "按钮"
       }
     },
     "title": "Double Button"

@@ -37,31 +37,38 @@ define([
       });
       //Bootstrap tabs from json.
       new TabView({
-        title: "Input文本框"
+        title: "Input"
+        ,showntitle: "文本框"
         , collection: new SnippetsCollection(JSON.parse(inputJSON))
       });
       new TabView({
-        title: "Radios / Checkboxes单选/复选框"
+        title: "Radios / Checkboxes"
+        ,showntitle: "单选/复选框"
         , collection: new SnippetsCollection(JSON.parse(radioJSON))
       });
       new TabView({
-        title: "Select下拉选择"
+        title: "Select"
+        ,showntitle: "下拉选择"
         , collection: new SnippetsCollection(JSON.parse(selectJSON))
       });
       new TabView({
-        title: "Buttons按钮"
+        title: "Buttons"
+        ,showntitle: "按钮"
         , collection: new SnippetsCollection(JSON.parse(buttonsJSON))
       });
       new TabView({
-        title: "Rendered代码"
+        title: "Rendered"
+        ,showntitle: "代码"
         , content: renderTab
       });
       new TabView({
-        title: "PreView表单预览"
+        title: "PreView"
+        ,showntitle: "表单预览"
         , content: preViewTab
       });
       new TabView({
-        title: "ViewFormTemplateData表单模板数据"
+        title: "ViewFormTemplateData"
+        ,showntitle: "表单模板数据"
         , content: formTemplateDataTab
       });
 
@@ -72,7 +79,8 @@ define([
       });
       */
       new TabView({
-        title: "UserDoc帮助文档"
+        title: "UserDoc"
+        ,showntitle: "帮助文档"
         , content: userDocTab
       });
       

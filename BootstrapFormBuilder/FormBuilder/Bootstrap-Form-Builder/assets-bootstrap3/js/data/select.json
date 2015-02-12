@@ -3,48 +3,48 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "selectbasic"
       },
       "options": {
         "type": "textarea-split",
-        "label": "Options",
+        "label": "选项",
         "value": [
-          "Option one",
-          "Option two"
+          "选项一",
+          "选项二"
         ]
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "输入大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -52,8 +52,8 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
-        "value": "Select Basic"
+        "label": "标题文本",
+        "value": "单选下拉"
       }
     },
     "title": "Select Basic",
@@ -66,48 +66,48 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "selectmultiple"
       },
       "options": {
         "type": "textarea-split",
-        "label": "Options",
+        "label": "选项",
         "value": [
-          "Option one",
-          "Option two"
+          "选项一",
+          "选项二"
         ]
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "输入大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -115,8 +115,8 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
-        "value": "Select Multiple"
+        "label": "标题文本",
+        "value": "多选下拉"
       }
     },
     "title": "Select Multiple",

@@ -3,40 +3,40 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "textinput"
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "文本框大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -44,7 +44,7 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "文本框"
       },
       "helptext": {
@@ -54,22 +54,22 @@
       },
       "placeholder": {
         "type": "input",
-        "label": "Placeholder",
+        "label": "占位符",
         "value": "placeholder"
       },
       "fieldvalue": {
         "type": "input",
-        "label": "value",
+        "label": "值",
         "value": ""
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "iseditable": {
         "type": "checkbox",
-        "label": "Editable",
+        "label": "是否可编辑",
         "value": true
       }
     },
@@ -83,40 +83,40 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "passwordinput"
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "文本框大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -124,7 +124,7 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "密码框"
       },
       "helptext": {
@@ -134,22 +134,22 @@
       },
       "placeholder": {
         "type": "input",
-        "label": "Placeholder",
+        "label": "占位符",
         "value": "placeholder"
       },
       "fieldvalue": {
         "type": "input",
-        "label": "value",
+        "label": "值",
         "value": ""
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "iseditable": {
         "type": "checkbox",
-        "label": "Editable",
+        "label": "是否可编辑",
         "value": true
       }
     },
@@ -163,40 +163,40 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "searchinput"
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "文本框大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -204,7 +204,7 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "搜索框"
       },
       "helptext": {
@@ -214,22 +214,22 @@
       },
       "placeholder": {
         "type": "input",
-        "label": "Placeholder",
+        "label": "占位符",
         "value": "placeholder"
       },
       "fieldvalue": {
         "type": "input",
-        "label": "value",
+        "label": "值",
         "value": ""
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "iseditable": {
         "type": "checkbox",
-        "label": "Editable",
+        "label": "是否可编辑",
         "value": true
       }
     },
@@ -243,7 +243,7 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "prependedtext"
       },
       "prepend": {
@@ -253,35 +253,35 @@
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "文本框大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -289,7 +289,7 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "输入框"
       },
       "helptext": {
@@ -299,22 +299,22 @@
       },
       "placeholder": {
         "type": "input",
-        "label": "Placeholder",
+        "label": "占位符",
         "value": "placeholder"
       },
       "fieldvalue": {
         "type": "input",
-        "label": "value",
+        "label": "值",
         "value": ""
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "iseditable": {
         "type": "checkbox",
-        "label": "Editable",
+        "label": "是否可编辑",
         "value": true
       }
     },
@@ -328,7 +328,7 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "appendedtext"
       },
       "append": {
@@ -338,35 +338,35 @@
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "文本框大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -374,7 +374,7 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "输入框"
       },
       "helptext": {
@@ -384,22 +384,22 @@
       },
       "placeholder": {
         "type": "input",
-        "label": "Placeholder",
+        "label": "占位符",
         "value": "placeholder"
       },
       "fieldvalue": {
         "type": "input",
-        "label": "value",
+        "label": "值",
         "value": ""
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "iseditable": {
         "type": "checkbox",
-        "label": "Editable",
+        "label": "是否可编辑",
         "value": true
       }
     },
@@ -413,40 +413,40 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "prependedcheckbox"
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "文本框大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -454,7 +454,7 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "复选框"
       },
       "helptext": {
@@ -464,12 +464,12 @@
       },
       "placeholder": {
         "type": "input",
-        "label": "Placeholder",
+        "label": "占位符",
         "value": "placeholder"
       },
       "fieldvalue": {
         "type": "input",
-        "label": "value",
+        "label": "值",
         "value": ""
       },
       "checked": {
@@ -479,12 +479,12 @@
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "iseditable": {
         "type": "checkbox",
-        "label": "Editable",
+        "label": "是否可编辑",
         "value": true
       }
     },
@@ -498,40 +498,40 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "appendedcheckbox"
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "文本框大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -539,7 +539,7 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "复选框"
       },
       "helptext": {
@@ -549,12 +549,12 @@
       },
       "placeholder": {
         "type": "input",
-        "label": "Placeholder",
+        "label": "占位符",
         "value": "placeholder"
       },
       "fieldvalue": {
         "type": "input",
-        "label": "value",
+        "label": "值",
         "value": ""
       },
       "checked": {
@@ -564,12 +564,12 @@
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "iseditable": {
         "type": "checkbox",
-        "label": "Editable",
+        "label": "是否可编辑",
         "value": true
       }
     },
@@ -583,7 +583,7 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "buttondropdown"
       },
       "buttonoptions": {
@@ -602,35 +602,35 @@
       },
       "inputsize": {
         "type": "select",
-        "label": "Input Size",
+        "label": "文本框大小",
         "value": [
           {
-            "label": "Mini",
+            "label": "迷你",
             "value": "input-mini",
             "selected": false
           },
           {
-            "label": "Small",
+            "label": "小",
             "value": "input-small",
             "selected": false
           },
           {
-            "label": "Medium",
+            "label": "中等",
             "value": "input-medium",
             "selected": false
           },
           {
-            "label": "Large",
+            "label": "大",
             "value": "input-large",
             "selected": false
           },
           {
-            "label": "Xlarge",
+            "label": "稍大",
             "value": "input-xlarge",
             "selected": true
           },
           {
-            "label": "Xxlarge",
+            "label": "超级大",
             "value": "input-xxlarge",
             "selected": false
           }
@@ -638,22 +638,22 @@
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
-        "value": "Button Drop Down"
+        "label": "标题文本",
+        "value": "带按钮的下拉框"
       },
       "placeholder": {
         "type": "input",
-        "label": "Placeholder",
+        "label": "占位符",
         "value": "placeholder"
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "iseditable": {
         "type": "checkbox",
-        "label": "Editable",
+        "label": "是否可编辑",
         "value": true
       }
     },
@@ -667,12 +667,12 @@
     "fields": {
       "id": {
         "type": "input",
-        "label": "ID / Name",
+        "label": "ID / 名称",
         "value": "textarea"
       },
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "多行文本框"
       },
       "textarea": {
@@ -682,7 +682,7 @@
       },
       "iseditable": {
         "type": "checkbox",
-        "label": "Editable",
+        "label": "是否可编辑",
         "value": true
       }
     },

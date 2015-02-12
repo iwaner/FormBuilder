@@ -3,25 +3,25 @@
     "fields": {
       "label": {
         "type": "input",
-        "label": "Label Text",
+        "label": "标题文本",
         "value": "单选框"
       },
       "radios": {
         "type": "textarea-split",
-        "label": "Radios",
+        "label": "选项",
         "value": [
-          "Option one",
-          "Option two"
+          "选项一",
+          "选项二"
         ]
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "name": {
         "type": "input",
-        "label": "Group Name",
+        "label": "选项分组名",
         "value": "radios"
       }
     },
@@ -35,28 +35,28 @@
     "fields": {
       "label": {
         "type": "input",
-        "label": "Label Text",
-        "value": "Inline Radios"
+        "label": "标题文本",
+        "value": "单行多选框"
       },
       "radios": {
         "type": "textarea-split",
-        "label": "Radios",
+        "label": "选项",
         "value": [
           1234
         ]
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "name": {
         "type": "input",
-        "label": "Group Name",
+        "label": "选项分组名",
         "value": "radios"
       }
     },
-    "title": "内联单选框",
+    "title": "Multiple Radios Inline",
     "IsEditable":"true",
     "OrderInForm":0,
     "FormFieldMapKey":"",
@@ -66,29 +66,29 @@
     "fields": {
       "label": {
         "type": "input",
-        "label": "Label Text",
-        "value": "Multiple Checkboxes"
+        "label": "标题文本",
+        "value": "复选框"
       },
       "checkboxes": {
         "type": "textarea-split",
         "label": "Checkboxes",
         "value": [
-          "Option one",
-          "Option two"
+          "选项一",
+          "选项二"
         ]
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "name": {
         "type": "input",
-        "label": "Group Name",
+        "label": "选项分组名",
         "value": "checkboxes"
       }
     },
-    "title": "复选框",
+    "title": "Multiple Checkboxes",
     "IsEditable":"true",
     "OrderInForm":0,
     "FormFieldMapKey":"",
@@ -98,8 +98,8 @@
     "fields": {
       "label": {
         "type": "input",
-        "label": "Label Text",
-        "value": "Inline Checkboxes"
+        "label": "标题文本",
+        "value": "单行复选框"
       },
       "checkboxes": {
         "type": "textarea-split",
@@ -110,16 +110,16 @@
       },
       "required": {
         "type": "checkbox",
-        "label": "Required",
+        "label": "是否必填",
         "value": false
       },
       "name": {
         "type": "input",
-        "label": "Group Name",
+        "label": "选项分组名",
         "value": "checkboxes"
       }
     },
-    "title": "内联多选框",
+    "title": "Multiple Checkboxes Inline",
     "IsEditable":"true",
     "OrderInForm":0,
     "FormFieldMapKey":"",
