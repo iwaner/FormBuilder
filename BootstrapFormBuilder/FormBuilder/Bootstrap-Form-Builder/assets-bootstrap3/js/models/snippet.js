@@ -21,6 +21,10 @@ define([
       modelValues["FormFieldMapKey"]=this.get("FormFieldMapKey");
       modelValues["ControlGroupType"]=this.get("ControlGroupType");
       modelValues["fieldvalue"]=this.get("fieldvalue");
+      if($("#isFormEditable").val()=="false")
+      {
+        modelValues["iseditable"]=false;
+      }
       return modelValues;
     }
     , idFriendlyTitle: function(){//移除非单词字符后的title：字符数字之外的字符
@@ -45,5 +49,6 @@ define([
     , setFieldMapKey: function(value) {
       this.set("FormFieldMapKey", value);
     }
+
   });
 });

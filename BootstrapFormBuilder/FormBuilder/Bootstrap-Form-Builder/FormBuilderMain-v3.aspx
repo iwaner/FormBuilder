@@ -106,9 +106,9 @@
       </div>
 
     </div> <!-- /container -->
+      <input type="hidden" value="true" id="isFormEditable"/>
     <script type="text/javascript" >
         var g_globalModel = {};
-
     </script>
     <script data-main="assets-bootstrap3/js/main.js" src="assets-bootstrap3/js/lib/require.js" ></script>
 

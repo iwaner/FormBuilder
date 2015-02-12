@@ -4,6 +4,7 @@
   <div class="controls">
     <div class="input-group">
       <input id="<%- id %>" name="<%- id %>" class="form-control <%- inputsize %>" placeholder="<%- placeholder %>" type="text"<% if(required) {%> required <% } %> 
+      <% if(!iseditable) {%> readonly <% } %> 
       value="<%- fieldvalue %>" data-isbizfield="true" data-controltype="input" data-FormFieldMapKey="<%- FormFieldMapKey %>" />
       <span class="input-group-addon"><%- append %></span>
     </div>

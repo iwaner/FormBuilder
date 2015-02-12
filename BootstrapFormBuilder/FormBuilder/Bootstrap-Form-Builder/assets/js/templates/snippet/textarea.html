@@ -4,6 +4,6 @@
   <div class="controls">                     
     <textarea id="<%- id %>" name="<%- id %>" <% if(!iseditable) {%> readonly <% } %>
 data-isbizfield="true" data-controltype="input" data-FormFieldMapKey="<%- FormFieldMapKey %>"
-     ><%- textarea %></textarea>
+     ><% if(fieldvalue) {%><%- fieldvalue %><% } else {%><%- textarea %><% } %></textarea>
   </div>
 </div>

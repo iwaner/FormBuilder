@@ -680,6 +680,11 @@
         "label": "Starting Text",
         "value": "default text"
       },
+      "fieldvalue": {
+        "type": "input",
+        "label": "值",
+        "value": ""
+      },
       "iseditable": {
         "type": "checkbox",
         "label": "是否可编辑",

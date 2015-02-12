@@ -38,7 +38,7 @@ define([
         "items" : that.model.get("fields"),
         "popoverTemplates": that.popoverTemplates
       });
-      //根据此参数可以控制展示的组件片段是否需要添加额外的属性，如下，自己何可增加想使用的字段
+      //根据此参数可以控制展示的组件片段是否需要添加额外的属性，如下，自己还可增加想使用的字段
       if (withAttributes) {
         return this.$el.html(
           that.template(that.model.getValues())

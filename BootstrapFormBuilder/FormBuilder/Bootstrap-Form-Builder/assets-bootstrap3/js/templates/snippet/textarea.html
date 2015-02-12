@@ -3,7 +3,8 @@
   <label class="control-label" for ="<%- id %>"><%- label %></label>
   <div class="controls">                     
     <textarea id="<%- id %>" name="<%- id %>" class="form-control" rows="3" <% if(!iseditable) {%> readonly <% } %>
+    	value="<%- fieldvalue %>"
 data-isbizfield="true" data-controltype="input" data-FormFieldMapKey="<%- FormFieldMapKey %>"
-     ><%- textarea %></textarea>
+     ><% if(fieldvalue) {%><%- fieldvalue %><% } else {%><%- textarea %><% } %></textarea>
   </div>
 </div>

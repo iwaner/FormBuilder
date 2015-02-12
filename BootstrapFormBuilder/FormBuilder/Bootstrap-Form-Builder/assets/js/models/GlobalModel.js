@@ -46,6 +46,7 @@ define([
             var postData = this.buildFormTemplateForPostJson(ctrGroups);
             var templateJson = JSON.stringify(postData);
             $("#formTemplateData").val(templateJson);
+            /*
             $.ajax({
                 type: "post",
                 url: "../../FormBuilderMainajax.aspx",
@@ -55,6 +56,7 @@ define([
                     alert("保存表单模板");
                 }
             });
+            */
         }
         , saveFormData: function (formData) {
             //保存表单数据
