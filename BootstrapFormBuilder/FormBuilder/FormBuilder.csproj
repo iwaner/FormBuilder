@@ -228,6 +228,7 @@
     <Content Include="Bootstrap-Form-Builder\DragForm2.html" />
     <Content Include="Bootstrap-Form-Builder\FormBuilderMain-v3.aspx" />
     <Content Include="Bootstrap-Form-Builder\FormBuilderMain.aspx" />
+    <Content Include="Bootstrap-Form-Builder\FormInstance-v3.aspx" />
     <Content Include="Bootstrap-Form-Builder\FormInstance.aspx" />
     <Content Include="Bootstrap-Form-Builder\FormTemplateList.aspx" />
     <Content Include="Bootstrap-Form-Builder\HelloTest.htm" />
@@ -432,6 +433,13 @@
     <Compile Include="Bootstrap-Form-Builder\FormBuilderMain.aspx.designer.cs">
       <DependentUpon>FormBuilderMain.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Bootstrap-Form-Builder\FormInstance-v3.aspx.cs">
+      <DependentUpon>FormInstance-v3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap-Form-Builder\FormInstance-v3.aspx.designer.cs">
+      <DependentUpon>FormInstance-v3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Bootstrap-Form-Builder\FormInstance.aspx.cs">
       <DependentUpon>FormInstance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -556,7 +564,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51345</DevelopmentServerPort>
+          <DevelopmentServerPort>25561</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

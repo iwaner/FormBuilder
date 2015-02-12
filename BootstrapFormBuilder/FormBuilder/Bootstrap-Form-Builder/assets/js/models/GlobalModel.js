@@ -61,15 +61,15 @@ define([
             var postData = this.buildFormDataForPostJson(formData);
                 var instanceJson = JSON.stringify(postData);
                 $("#formDataJsonText").val(instanceJson);
-            $.ajax({
-                type: "post",
-                url: "../../FormInstanceajax.aspx",
-                data: instanceJson,
-                contentType: "text/json;",
-                success: function () {
-                    alert("保存表单数据");
-                }
-            });
+//            $.ajax({
+//                type: "post",
+//                url: "../../FormInstanceajax.aspx",
+//                data: instanceJson,
+//                contentType: "text/json;",
+//                success: function () {
+//                    alert("保存表单数据");
+//                }
+//            });
         }
         , buildFormTemplateForPostJson: function (ctrGroups) {//构建表结构对应的post数据
            g_globalModel.FormTemplate.FormTemplateData.ControlGroups=ctrGroups;

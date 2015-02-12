@@ -9,7 +9,7 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "File Button"
+        "value": "文件按钮"
       }
     },
     "title": "File Button"
@@ -65,12 +65,12 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Single Button"
+        "value": "单个按钮"
       },
       "buttonlabel": {
         "type": "input",
         "label": "Button Label",
-        "value": "Button"
+        "value": "按钮"
       }
     },
     "title": "Single Button"
@@ -131,7 +131,7 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Double Button"
+        "value": "双按钮"
       },
       "button1type": {
         "type": "select",
@@ -177,12 +177,12 @@
       "button1label": {
         "type": "input",
         "label": "Button Label",
-        "value": "Good Button"
+        "value": "确认"
       },
       "button2label": {
         "type": "input",
         "label": "Button Label",
-        "value": "Scary Button"
+        "value": "取消"
       }
     },
     "title": "Double Button"

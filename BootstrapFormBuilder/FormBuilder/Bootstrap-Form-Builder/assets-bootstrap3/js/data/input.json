@@ -45,12 +45,12 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Text Input文本框"
+        "value": "文本框"
       },
       "helptext": {
         "type": "input",
         "label": "Help Text",
-        "value": "help"
+        "value": "帮助"
       },
       "placeholder": {
         "type": "input",
@@ -125,12 +125,12 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Password Input密码"
+        "value": "密码框"
       },
       "helptext": {
         "type": "input",
         "label": "Help Text",
-        "value": "help"
+        "value": "帮助"
       },
       "placeholder": {
         "type": "input",
@@ -205,12 +205,12 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Search Input搜索框"
+        "value": "搜索框"
       },
       "helptext": {
         "type": "input",
         "label": "Help Text",
-        "value": "help"
+        "value": "帮助"
       },
       "placeholder": {
         "type": "input",
@@ -290,12 +290,12 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Prepended Text"
+        "value": "输入框"
       },
       "helptext": {
         "type": "input",
         "label": "Help Text",
-        "value": "help"
+        "value": "帮助"
       },
       "placeholder": {
         "type": "input",
@@ -375,12 +375,12 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Appended Text"
+        "value": "输入框"
       },
       "helptext": {
         "type": "input",
         "label": "Help Text",
-        "value": "help"
+        "value": "帮助"
       },
       "placeholder": {
         "type": "input",
@@ -455,12 +455,12 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Prepended Checkbox"
+        "value": "复选框"
       },
       "helptext": {
         "type": "input",
         "label": "Help Text",
-        "value": "help"
+        "value": "帮助"
       },
       "placeholder": {
         "type": "input",
@@ -540,12 +540,12 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Appended Checkbox"
+        "value": "复选框"
       },
       "helptext": {
         "type": "input",
         "label": "Help Text",
-        "value": "help"
+        "value": "帮助"
       },
       "placeholder": {
         "type": "input",
@@ -673,7 +673,7 @@
       "label": {
         "type": "input",
         "label": "Label Text",
-        "value": "Text Area"
+        "value": "多行文本框"
       },
       "textarea": {
         "type": "textarea",

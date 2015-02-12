@@ -66,4 +66,3 @@ D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.DataAcces
 D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.csprojResolveAssemblyReference.cache
 D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.dll
 D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\obj\Debug\FormBuilder.pdb
-D:\MyCode\FormBuilder\BootstrapFormBuilder\FormBuilder\bin\FormBuilder.dll.config
