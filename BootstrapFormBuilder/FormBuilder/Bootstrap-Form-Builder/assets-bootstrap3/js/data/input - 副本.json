@@ -12,32 +12,32 @@
         "value": [
           {
             "label": "迷你",
-            "value": "input-mini",
+            "value": "col-md-1",
             "selected": false
           },
           {
             "label": "小",
-            "value": "input-small",
+            "value": "col-md-2",
             "selected": false
           },
           {
             "label": "中等",
-            "value": "input-medium",
+            "value": "col-md-3",
             "selected": false
           },
           {
             "label": "大",
-            "value": "input-large",
+            "value": "col-md-4",
             "selected": false
           },
           {
             "label": "稍大",
-            "value": "input-xlarge",
+            "value": "col-md-5",
             "selected": true
           },
           {
             "label": "超级大",
-            "value": "input-xxlarge",
+            "value": "col-md-6",
             "selected": false
           }
         ]
@@ -92,32 +92,32 @@
         "value": [
           {
             "label": "迷你",
-            "value": "input-mini",
+            "value": "col-md-1",
             "selected": false
           },
           {
             "label": "小",
-            "value": "input-small",
+            "value": "col-md-2",
             "selected": false
           },
           {
             "label": "中等",
-            "value": "input-medium",
+            "value": "col-md-3",
             "selected": false
           },
           {
             "label": "大",
-            "value": "input-large",
+            "value": "col-md-4",
             "selected": false
           },
           {
             "label": "稍大",
-            "value": "input-xlarge",
+            "value": "col-md-5",
             "selected": true
           },
           {
             "label": "超级大",
-            "value": "input-xxlarge",
+            "value": "col-md-6",
             "selected": false
           }
         ]
@@ -172,32 +172,32 @@
         "value": [
           {
             "label": "迷你",
-            "value": "input-mini",
+            "value": "col-md-1",
             "selected": false
           },
           {
             "label": "小",
-            "value": "input-small",
+            "value": "col-md-2",
             "selected": false
           },
           {
             "label": "中等",
-            "value": "input-medium",
+            "value": "col-md-3",
             "selected": false
           },
           {
             "label": "大",
-            "value": "input-large",
+            "value": "col-md-4",
             "selected": false
           },
           {
             "label": "稍大",
-            "value": "input-xlarge",
+            "value": "col-md-5",
             "selected": true
           },
           {
             "label": "超级大",
-            "value": "input-xxlarge",
+            "value": "col-md-6",
             "selected": false
           }
         ]
@@ -249,7 +249,7 @@
       "prepend": {
         "type": "input",
         "label": "Prepend",
-        "value": "标题"
+        "value": "prepend"
       },
       "inputsize": {
         "type": "select",
@@ -257,32 +257,32 @@
         "value": [
           {
             "label": "迷你",
-            "value": "input-mini",
+            "value": "col-md-1",
             "selected": false
           },
           {
             "label": "小",
-            "value": "input-small",
+            "value": "col-md-2",
             "selected": false
           },
           {
             "label": "中等",
-            "value": "input-medium",
+            "value": "col-md-3",
             "selected": false
           },
           {
             "label": "大",
-            "value": "input-large",
+            "value": "col-md-4",
             "selected": false
           },
           {
             "label": "稍大",
-            "value": "input-xlarge",
+            "value": "col-md-5",
             "selected": true
           },
           {
             "label": "超级大",
-            "value": "input-xxlarge",
+            "value": "col-md-6",
             "selected": false
           }
         ]
@@ -334,7 +334,7 @@
       "append": {
         "type": "input",
         "label": "Append",
-        "value": "标题"
+        "value": "append"
       },
       "inputsize": {
         "type": "select",
@@ -342,32 +342,32 @@
         "value": [
           {
             "label": "迷你",
-            "value": "input-mini",
+            "value": "col-md-1",
             "selected": false
           },
           {
             "label": "小",
-            "value": "input-small",
+            "value": "col-md-2",
             "selected": false
           },
           {
             "label": "中等",
-            "value": "input-medium",
+            "value": "col-md-3",
             "selected": false
           },
           {
             "label": "大",
-            "value": "input-large",
+            "value": "col-md-4",
             "selected": false
           },
           {
             "label": "稍大",
-            "value": "input-xlarge",
+            "value": "col-md-5",
             "selected": true
           },
           {
             "label": "超级大",
-            "value": "input-xxlarge",
+            "value": "col-md-6",
             "selected": false
           }
         ]
@@ -422,32 +422,32 @@
         "value": [
           {
             "label": "迷你",
-            "value": "input-mini",
+            "value": "col-md-1",
             "selected": false
           },
           {
             "label": "小",
-            "value": "input-small",
+            "value": "col-md-2",
             "selected": false
           },
           {
             "label": "中等",
-            "value": "input-medium",
+            "value": "col-md-3",
             "selected": false
           },
           {
             "label": "大",
-            "value": "input-large",
+            "value": "col-md-4",
             "selected": false
           },
           {
             "label": "稍大",
-            "value": "input-xlarge",
+            "value": "col-md-5",
             "selected": true
           },
           {
             "label": "超级大",
-            "value": "input-xxlarge",
+            "value": "col-md-6",
             "selected": false
           }
         ]
@@ -507,32 +507,32 @@
         "value": [
           {
             "label": "迷你",
-            "value": "input-mini",
+            "value": "col-md-1",
             "selected": false
           },
           {
             "label": "小",
-            "value": "input-small",
+            "value": "col-md-2",
             "selected": false
           },
           {
             "label": "中等",
-            "value": "input-medium",
+            "value": "col-md-3",
             "selected": false
           },
           {
             "label": "大",
-            "value": "input-large",
+            "value": "col-md-4",
             "selected": false
           },
           {
             "label": "稍大",
-            "value": "input-xlarge",
+            "value": "col-md-5",
             "selected": true
           },
           {
             "label": "超级大",
-            "value": "input-xxlarge",
+            "value": "col-md-6",
             "selected": false
           }
         ]
@@ -606,32 +606,32 @@
         "value": [
           {
             "label": "迷你",
-            "value": "input-mini",
+            "value": "col-md-1",
             "selected": false
           },
           {
             "label": "小",
-            "value": "input-small",
+            "value": "col-md-2",
             "selected": false
           },
           {
             "label": "中等",
-            "value": "input-medium",
+            "value": "col-md-3",
             "selected": false
           },
           {
             "label": "大",
-            "value": "input-large",
+            "value": "col-md-4",
             "selected": false
           },
           {
             "label": "稍大",
-            "value": "input-xlarge",
+            "value": "col-md-5",
             "selected": true
           },
           {
             "label": "超级大",
-            "value": "input-xxlarge",
+            "value": "col-md-6",
             "selected": false
           }
         ]

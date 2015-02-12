@@ -20,6 +20,32 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+     <%-- <style>
+        .input-mini {
+        width: 60px
+        }
+
+        .input-small {
+        width: 90px
+        }
+
+        .input-medium {
+        width: 150px
+        }
+
+        .input-large {
+        width: 210px
+        }
+
+        .input-xlarge {
+        width: 270px
+        }
+
+        .input-xxlarge {
+        width: 530px
+        }
+
+      </style>--%>
   </head>
 
   <body>
